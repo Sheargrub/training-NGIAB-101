@@ -10,7 +10,25 @@
     <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/advanced-topics.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/data-preparation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/evaluation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/images.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/installation.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
@@ -22,10 +40,37 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/advanced-topics.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/data-preparation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/evaluation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/installation.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/model-execution.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
@@ -34,7 +79,16 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor-notes.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/model-execution.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
