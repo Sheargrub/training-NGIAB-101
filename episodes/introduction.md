@@ -73,7 +73,9 @@ Steps common to all hydrologic modeling frameworks include data collection and p
 
 To maximize the potential benefit of this flexible framework, **community contribution is essential**, as experts in various models and geographic areas will be needed to address the complex hydrologic challenges of continental scale operational simulation. NGIAB makes this possible in research settings by easing setup and providing easy-to-run demos, allowing hydrologists and researchers to quickly configure and modify localized water models. Its open-source framework allows hydrologists and stakeholders to easily inspect, compare, and refine model predictions. Its lightweight container size also empowers hydrologists to execute large-scale simulations efficiently and reduce computational bottlenecks. By strengthening collaboration across research teams, NGIAB will help drive the evolution of community-scale water modeling and accelerate the transition from academic innovation to real-world operational use.
 
-## Self-Assessment Questions
+## Your Turn
+
+Here are some self-assessment questions for discussion or consideration:
 
 - Do I understand how NGIAB fits into the NextGen Framework?
 - What are the key design features and extensions of NGIAB?

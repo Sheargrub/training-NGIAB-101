@@ -82,7 +82,7 @@ NextGen requires a single geopackage file. This file is the [hydrofabric (Johnso
 
 #### Installing and Using the Data Preprocess Tool
 
-The Data Preprocess tool (like all of our software) is constantly being updated and refined. To install and use the Data Preprocess tool, follow the latest instructions [here](https://github.com/CIROH-UA/NGIAB_data_preprocess). Now, you should be able to create a run directory for your desired catchment that can be used with NGIAB. Try out both the GUI and the CLI, and experiment with different arguments and selection tools!
+The Data Preprocess tool (like all of our software) is constantly being updated and refined. To install and use the Data Preprocess tool, follow the latest instructions [here](https://github.com/CIROH-UA/NGIAB_data_preprocess). 
 
 | ![Figure 1](images/fig3-1.png) |
 | :--: |
@@ -91,6 +91,10 @@ The Data Preprocess tool (like all of our software) is constantly being updated 
 | ![Figure 2](images/fig1-4.png) |
 | :--: |
 | *Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
+
+## Your Turn
+
+Using the Data Preprocess tool, you should be able to create a run directory for your desired catchment that can be used with NGIAB. Try out both the GUI and the CLI, and experiment with different arguments and selection tools!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

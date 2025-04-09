@@ -48,7 +48,7 @@ DataStreamCLI is the backend software for the NextGen Research DataStream and ca
 | :--: |
 | *Figure 1: DataStreamCLI Workflow* |
 
-## Community Contributions to NGIAB
+## Community Contributions to NGIAB/NextGen
 
 The most up-to-date guidelines on community contributions for each repository can be found on its respective GitHub page. 
 
@@ -64,6 +64,14 @@ The most up-to-date guidelines on community contributions for each repository ca
   - Commit to your local branch
   - Push commits to your GitHub fork
   - Create a pull request when the changes are ready to be incorporated
+
+## Your Turn
+
+Based on your own interests and use cases, try out some of these options:
+- Build a development version of NGIAB locally
+- Install and use NGIAB on your HPC environment
+- Explore the Research DataStream AWS S3 bucket
+- Contribute to NGIAB/NextGen!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

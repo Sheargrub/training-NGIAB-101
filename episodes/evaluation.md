@@ -37,7 +37,9 @@ Through this systematic approach, NGIAB and TEEHR together foster a community mo
 
 A TEEHR run is executed by default upon execution of the main NGIAB guide script. A separate `runTeehr.sh` script is also available in the NGIAB-CloudInfra repository.
 
-Go ahead and execute the TEEHR run and explore your TEEHR folder!
+## Your Turn
+
+Go ahead and execute the TEEHR run using the guide script and explore your TEEHR folder!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
