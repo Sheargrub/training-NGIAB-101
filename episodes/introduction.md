@@ -87,7 +87,7 @@ Here are some self-assessment questions for discussion or consideration:
 - The Next Generation Water Resources Modeling Framework (NextGen) advances the National Water Model with flexible, modular, and regionally adaptive hydrologic modeling at national scale.
 - NextGen In A Box (NGIAB) packages the complex NextGen system into an open-source, containerized application for easier access and usability.
 - NGIAB uses Docker and Singularity for portability across local machines, cloud platforms, and HPC systems.
-- NGIAB's multi-layered architecture integrates hydrologic modeling tools, CI/CD pipelines, and supportive technologies and is complemented by a suite of extensions that allow for end-to-end workflows from data acquisiton to visualization and evaluation.
+- NGIAB's multi-layered architecture integrates hydrologic modeling tools, CI/CD pipelines, and supportive technologies and is complemented by a suite of extensions that allow for end-to-end workflows from data acquisition to visualization and evaluation.
 - NGIAB fosters an open ecosystem where researchers, developers, and practitioners actively contribute new models, extensions, and workflows.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
