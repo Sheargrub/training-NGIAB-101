@@ -21,7 +21,7 @@ carpentry_description: 'Lesson Description'
 title: 'NGIAB 101' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2025-04-09 # FIXME
+created: 2025-04-10 # FIXME
 
 # Comma-separated list of keywords for the lesson
 keywords: 'NextGen Framework, National WAter Model (NWM), Hydrologic Modeling, Community Modeling' # FIXME
@@ -54,9 +54,9 @@ contact: 'team@carpentries.org' # FIXME
 # - introduction.md
 # - first-steps.md
 #
-learners:
+# learners:
 # - setup.md
-- reference.md
+# - reference.md
 #
 # instructors:
 # - instructor-notes.md
@@ -77,6 +77,8 @@ episodes:
 
 # Information for Learners
 learners:
+- setup.md
+- reference.md
 
 # Information for Instructors
 instructors:
