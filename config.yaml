@@ -40,7 +40,7 @@ source: 'https://github.com/CIROH-UA/training-NGIAB-101' # FIXME
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'apatel54@ua.edu' 
 
 # Navigation ------------------------------------------------
 #
