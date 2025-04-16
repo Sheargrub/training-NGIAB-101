@@ -4,38 +4,53 @@ title: 'Reference'
 
 ## Glossary
 
-- National Water Model (NWM)
-  - Hydrologic model used operationally by NOAA's National Weather Service to provide hydroloigc predictions for over 3.4 million rivers and streams across the United States
-- Next Generation Water Resources Modeling Framework (NextGen)
-  - An advancement of the NWM, a standards-based and model-agnostic modular set of software tools that applies the Basic Model Interface
-- NextGen in a Box (NGIAB)
-  - An open-source, containerized solution that encapsulates the NextGen framework and essential modeling components into a self-contained, reproducible application
-- Containerization
-  - Encapsulating applications, their dependencies, and runtime environments into a single, portable unit to address compatibility issues and hardware variation challenges
-- Docker
-  - A widely used containerization platform that provides a lightweight, portable, and scalable solution for software deployment
-- Singularity
-  - A containerization platform for HPC environments
-- Data Preprocess
-  - A tool to streamline data preparation for NextGen simulations
-- Tools for Exploratory Evaluation in Hydrologic Research (TEEHR)
-  - A Python-based package enabling iterative and explorative analysis of hydrologic model performance
-- Data Visualizer
-  - A tool that provides a robust environment for geospatial and time series visualization of catchments and nexus points
-- NextGen Research DataStream
-  - Daily, CONUS-wide, spatially distributed hydrologic numerical simulations in the AWS cloud
-- Forcings
-  - External inputs that drive a model
-- t-route
-  - Channel routing model
-- ngen
-  - The NextGen model engine
-- Realization file
-  - A file that configures models and the variables exchanged between them
-- Basic Model Interface (BMI)
-  - A standardized system designed to enhance interoperability between models and datasets
-- Hydrofabric
-  - See [here](https://noaa-owp.github.io/hydrofabric/articles/01-intro-deep-dive.html)
-- Tethys Platform
-  - Platform for geospatial web app development
+- Modeling Terms
+  - National Water Model (NWM)
+    - Hydrologic model used operationally by NOAA's National Weather Service to provide hydroloigc predictions for over 3.4 million rivers and streams across the United States
+  - Next Generation Water Resources Modeling Framework (NextGen)
+    - An advancement of the NWM, a standards-based and model-agnostic modular set of software tools that applies the Basic Model Interface
+  - NextGen in a Box (NGIAB)
+    - An open-source, containerized solution that encapsulates the NextGen framework and essential modeling components into a self-contained, reproducible application
+  - Data Preprocess
+    - A tool to streamline data preparation for NextGen simulations
+  - Tools for Exploratory Evaluation in Hydrologic Research (TEEHR)
+    - A Python-based package enabling iterative and explorative analysis of hydrologic model performance
+  - Data Visualizer
+    - A tool that provides a robust environment for geospatial and time series visualization of catchments and nexus points
+  - Forcings
+    - External inputs that drive a model
+  - t-route
+    - Channel routing model
+  - ngen
+    - The NextGen model engine
+  - Realization file
+    - A file that configures models and the variables exchanged between them
+  - Hydrofabric
+    - See [here](https://noaa-owp.github.io/hydrofabric/articles/01-intro-deep-dive.html)
+- Computing Terms
+  - Containerization
+    - Encapsulating applications, their dependencies, and runtime environments into a single, portable unit to address compatibility issues and hardware variation challenges
+  - Docker
+    - A widely used containerization platform that provides a lightweight, portable, and scalable solution for software deployment
+  - Singularity
+    - A containerization platform for HPC environments
+  - Basic Model Interface (BMI)
+    - A standardized system designed to enhance interoperability between models and datasets
+  - Tethys Platform
+    - Platform for geospatial web app development
+  - High-Performance Computing (HPC)
+    - Systems with clusters of parallel processors that process data and perform calculations at high speeds
+  - Job scheduler (e.g. SLURM/PBS/LSF)
+    - A software that manages which tasks run where and when on an HPC system
+  - Open-source
+    - Software or data that is publicly accessible and can be redistributed or modified
+- Hydrologic Terms
+  - Catchment
+    - Area from which precipitation collects and drains into an output point like a river or water body. Also known as a watershed
+  - Streamflow
+    - The flow of water in a channel, measured in units of volume/time (e.g. cubic meters per second (CMS), cubic feet per second (CFS))
+  - Hydrologic simulation
+    - A computer-based replication of the natural water cycle
+  - CONUS (Continental United States)
+    - Refers to the 48 contiguous states and D.C.
 

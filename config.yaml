@@ -21,7 +21,7 @@ carpentry_description: 'Lesson Description'
 title: 'NGIAB 101' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2025-04-09 # FIXME
+created: 2025-04-10 # FIXME
 
 # Comma-separated list of keywords for the lesson
 keywords: 'NextGen Framework, National WAter Model (NWM), Hydrologic Modeling, Community Modeling' # FIXME
@@ -40,7 +40,7 @@ source: 'https://github.com/CIROH-UA/training-NGIAB-101' # FIXME
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'apatel54@ua.edu' 
 
 # Navigation ------------------------------------------------
 #
@@ -48,23 +48,6 @@ contact: 'team@carpentries.org' # FIXME
 # individual pages in each dropdown section. Leave blank to
 # include all pages in the folder.
 #
-# Example -------------
-#
-# episodes:
-# - introduction.md
-# - first-steps.md
-#
-learners:
-# - setup.md
-- reference.md
-#
-# instructors:
-# - instructor-notes.md
-#
-# profiles:
-# - one-learner.md
-# - another-learner.md
-
 # Order of episodes in your lesson
 episodes:
 - introduction.md
@@ -77,6 +60,9 @@ episodes:
 
 # Information for Learners
 learners:
+- setup.md
+- reference.md
+- troubleshooting.md
 
 # Information for Instructors
 instructors:
