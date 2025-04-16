@@ -1,61 +1,219 @@
 ---
 title: "Advanced Topics"
-teaching: 10
-exercises: 2
+teaching: 5
+exercises: 60
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- TBD
+- How can I build NGIAB locally?
+- How do I use NGIAB on an high-performance computing (HPC) system?
+- How can I contribute to NGIAB?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- TBD
+- Build a development version of NGIAB locally
+- Install and use NGIAB on an HPC
+- Explain the NGIAB community contribution process
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Building NGIAB locally
 
-TBD
+If you would like to build the NGIAB image locally instead of pulling the latest image from the Docker remote registry, use the following commands:
+```
+cd docker
+docker build -f Dockerfile -t awiciroh/ciroh-ngen-image:latest . --no-cache
+```
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+## Using NGIAB on High-Performance Computing (HPC) Environments
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+The most up-to-date information on installing NGIAB on an HPC can be found [here](https://github.com/CIROH-UA/NGIAB-HPCInfra). Other than a different installation process and the use of Singularity instead of Docker, the workflow is the same to execute a NextGen run. Tools like the Data Preprocessor, TEEHR, and the Data Visualizer are still available. The NGIAB-HPCInfra contains its own interactive `guide.sh` script, which allows users to specify input data pathways and run configurations (serial or parallel), as well as trigger the execution of TEEHR and the Data Visualizer.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#### Singularity
 
-::::::::::::::::::::::::::::::::::::: challenge 
+NGIAB uses Singularity as its containerization platform for HPC environments. Singularity enables secure execution of containerized applications on multi-user HPC clusters. Key features of Singularity include native HPC integration, which allows the execution of containerized applications within existing batch job schedulers such as SLURM (Simple Linux Utility for Resource Management) workload manager, PBS (Portable Batch System) and LSF (Load Sharing Facility); enforced security – it runs containers as non-root users, reducing security risks; and seamless access to host file systems – it enables users to interact with datasets and computational resources without additional configuration directly. Singularity images, known as Singularity Image Format (SIF) files, encapsulate the entire runtime environment, ensuring full reproducibility of simulations. These images can be transferred between systems without requiring reinstallation of software dependencies, making Singularity a reliable choice for running hydrologic models on large-scale computational infrastructures (Jajula and Bangalore, 2024).
 
-## Challenge 1: If Needed
+#### Run NGIAB on Pantarhei HPC (Singularity Version)
 
-TBD
+This section explains how to run **NextGen In A Box (NGIAB)** using **Singularity** on the **Pantarhei HPC system** at the University of Alabama.
+
+---
+
+##### 1. Log Into Pantarhei
+
+Open a terminal and connect to the login node:
+
+```bash
+ssh <USERNAME>@pantarhei.ua.edu
+
+```
+
+Replace `<USERNAME>` with your actual Pantarhei username.
+
+----------
+
+##### 2. Request a Compute Node (Do NOT run on login node)
+
+On the login node, request an interactive session:
+
+```bash
+srun --partition=normal --nodes=1 --ntasks=1 --time=02:00:00 --pty bash
+
+```
+
+Use the `normal` partition unless you require more time or special resources.
+
+----------
+
+##### 3. Verify that Singularity is available:
 
 
-:::::::::::::::::::::::: solution 
+```bash
+singularity --version
 
-## Output
- 
-TBD
+```
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+----------
 
-## Figures
+##### 4. Prepare Project Directory
 
-TBD
+Create the directory and move into it:
 
-::::::::::::::::::::::::::::::::::::: callout
+```bash
+mkdir -p ~/NextGen/ngen-data
+cd ~/NextGen/ngen-data
 
-TBD
-::::::::::::::::::::::::::::::::::::::::::::::::
+```
 
+----------
+
+##### 5. Download Sample Dataset
+
+Pick one of the sample datasets to download and extract:
+
+###### Option 1: AWI-009 (Provo River, UT)
+
+```bash
+wget https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-009/AWI_16_10154200_009.tar.gz
+tar -xf AWI_16_10154200_009.tar.gz
+
+```
+
+Other options: AWI-007 or AWI-008 can be used similarly.
+
+----------
+
+##### 6. Clone the NGIAB-HPCInfra Repository
+
+```bash
+cd ~/NextGen
+git clone https://github.com/CIROH-UA/NGIAB-HPCInfra.git
+cd NGIAB-HPCInfra
+
+```
+
+> ✅ **Note:** Always run `guide.sh` from inside the `NGIAB-HPCInfra` folder.
+
+----------
+
+##### 7. Run the NGIAB Guide Script
+
+Make the script executable if needed:
+
+```bash
+chmod +x guide.sh
+
+```
+
+Then run it:
+
+```bash
+./guide.sh
+
+```
+
+Follow the prompts:
+
+-   When asked **“Do you want to use the same path?”**, type `n`
+    
+-   Then enter the **full absolute path** to your extracted dataset folder. Example:
+    
+
+```bash
+/home/<username>/NextGen/ngen-data/AWI_16_10154200_009
+
+```
+
+This folder must contain:
+
+```
+forcings/
+config/
+outputs/
+
+```
+
+The script will:
+
+-   Detect system architecture
+    
+-   Pull the correct Singularity image
+    
+-   Mount your dataset
+    
+-   Allow running in:
+    
+    -   Serial mode
+        
+    -   Parallel mode
+        
+    -   Interactive container shell
+        
+
+----------
+
+##### Notes
+
+-   Do not run the model or load modules on the login node.
+    
+-   All commands should be executed on a **compute node**.
+    
+-   If output files don’t appear, double-check the input path and folder structure.
+    
+-   If `outputs/` doesn't exist, create an empty folder manually before running.
+
+## Community Contributions to NGIAB/NextGen
+
+The most up-to-date guidelines on community contributions for each repository can be found on its respective GitHub page. 
+
+#### General contribution guidance
+
+- You can use the issue tracker on GitHub to suggest feature requests, report bugs, or ask questions.
+- You can change the codebase through Git:
+  - Create a fork
+  - Clone the repository locally
+  - Keep the fork and clone up-to-date
+  - Create branches when you want to contribute
+  - Make changes to the code
+  - Commit to your local branch
+  - Push commits to your GitHub fork
+  - Create a pull request when the changes are ready to be incorporated
+
+## Your Turn
+
+Based on your own interests and use cases, try out some of these options:
+- Build a development version of NGIAB locally
+- Install and use NGIAB on your HPC environment
+- Contribute to NGIAB/NextGen!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- TBD
+- NGIAB can be built locally using Docker, allowing for development without pulling from the remote registry.
+- NGIAB supports HPC environments through Singularity, not Docker, but the workflow mirrors the local Docker use.
+- Community contribution guidelines are available in each repository's GitHub page.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

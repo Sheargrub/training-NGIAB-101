@@ -1,61 +1,48 @@
 ---
-title: "Model Evaluation"
-teaching: 10
-exercises: 2
+title: "Model Execution"
+teaching: 5
+exercises: 5
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- TBD
+- How do I execute a NextGen run?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- TBD
+- Recognize methods to execute NextGen models
+- Run a NextGen simulation using NGIAB
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## Model Execution using NGIAB container
 
-TBD
+To run a NextGen simulation, simply execute the following commands:
+```
+cd NextGen
+git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
+cd NGIAB-CloudInfra
+./guide.sh
+```
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+The interactive guide script `guide.sh` will prompt you to enter input data pathways and allow you to select a computational mode (serial or parallel processing). After the simulation is complete, the guide script will give you the option to evaluate model predictions and visualize results (discussed in the next two episodes).
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: If Needed
-
-TBD
+## Model Execution using Data Preprocess tool
+A secondary method for executing a NextGen simulation is by using the Data Preprocess tool's CLI. The `-a` argument in the command will schedule an automatic execution of NGIAB after preprocessing selected data. As this module is being updated constantly, check back on its [GitHub page](https://github.com/CIROH-UA/NGIAB_data_preprocess) for the latest updates on its functionality.
 
 
-:::::::::::::::::::::::: solution 
+## Your Turn
 
-## Output
- 
-TBD
+Use the guide script `guide.sh` to run a NextGen simulation using your preprocessed data.
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-TBD
-
-::::::::::::::::::::::::::::::::::::: callout
-
-TBD
-::::::::::::::::::::::::::::::::::::::::::::::::
-
+Extra Credit: Use the Data Preprocess tool to automatically execute a NextGen run.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- TBD
+- To execute a NextGen simulation with full functionality, use the interactive guide script `guide.sh` in the NGIAB container.
+- A NextGen simulation can also be automatically executed post-preprocessing using the Data Preprocess tool.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
