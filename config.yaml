@@ -18,13 +18,13 @@ carpentry: 'incubator'
 carpentry_description: 'Lesson Description'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'NGIAB 101' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2025-04-10 # FIXME
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'NextGen Framework, National WAter Model (NWM), Hydrologic Modeling, Community Modeling' # FIXME
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
@@ -34,13 +34,13 @@ life_cycle: 'pre-alpha' # FIXME
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/CIROH-UA/training-NGIAB-101' # FIXME
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'apatel54@ua.edu' 
 
 # Navigation ------------------------------------------------
 #
@@ -48,22 +48,6 @@ contact: 'team@carpentries.org' # FIXME
 # individual pages in each dropdown section. Leave blank to
 # include all pages in the folder.
 #
-# Example -------------
-#
-# episodes:
-# - introduction.md
-# - first-steps.md
-#
-# learners:
-# - setup.md
-#
-# instructors:
-# - instructor-notes.md
-#
-# profiles:
-# - one-learner.md
-# - another-learner.md
-
 # Order of episodes in your lesson
 episodes:
 - introduction.md
@@ -71,10 +55,14 @@ episodes:
 - data-preparation.md
 - model-execution.md
 - evaluation.md
+- visualization.md
 - advanced-topics.md
 
 # Information for Learners
 learners:
+- setup.md
+- reference.md
+- troubleshooting.md
 
 # Information for Instructors
 instructors:
