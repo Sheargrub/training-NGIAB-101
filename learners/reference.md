@@ -22,8 +22,6 @@ title: 'Reference'
   - A Python-based package enabling iterative and explorative analysis of hydrologic model performance
 - Data Visualizer
   - A tool that provides a robust environment for geospatial and time series visualization of catchments and nexus points
-- NextGen Research DataStream
-  - Daily, CONUS-wide, spatially distributed hydrologic numerical simulations in the AWS cloud
 - Forcings
   - External inputs that drive a model
 - t-route
