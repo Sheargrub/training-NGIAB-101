@@ -47,27 +47,23 @@ Figure 1 illustrates the layered architecture of NGIAB. At its core (Layer 1) li
 
 ## Extensions of NGIAB
 
-Several extensions of NGIAB are already integrated with NextGen-related tools like Data Preprocess, Tools for Exploratory Evaluation in Hydrologic Research (TEEHR), and Data Visualizer (Figure 2). There is also a cloud-based system of NextGen-configured hydrologic simulations referred to as NextGen Research DataStream (Figure 3) that uses NGIAB as a core component. These extensions will be discussed in later episodes.
+Several extensions of NGIAB are already integrated with NextGen-related tools like Data Preprocess, Tools for Exploratory Evaluation in Hydrologic Research (TEEHR), and Data Visualizer (Figure 2). These extensions will be discussed in later episodes.
 
 | ![Figure 2](images/fig1-2.png) |
 | :--: |
 | *Figure 2: Workflow of data acquisition, model execution, evaluation, and results visualization.* |
 
-| ![Figure 3](images/fig1-3.png) |
-| :--: |
-| *Figure 3: NextGen Research DataStream workflow.* |
-
 ## Example Applications
 
-Steps common to all hydrologic modeling frameworks include data collection and preparation, framework setup and model execution, evaluation, results visualization, and calibration. Researchers can use NGIAB to run simulations for their basins of interest. *Note that calibration is not yet an integrated capability within NGIAB.* Figures 4 and 5 show examples of how NGIAB and its extensions have been used to simulate streamflow for five years in the Provo River basin.
+Steps common to all hydrologic modeling frameworks include data collection and preparation, framework setup and model execution, evaluation, results visualization, and calibration. Researchers can use NGIAB to run simulations for their basins of interest. *Note that calibration is not yet an integrated capability within NGIAB.* Figures 3 and 4 show examples of how NGIAB and its extensions have been used to simulate streamflow for five years in the Provo River basin.
 
-| ![Figure 4](images/fig1-4.png) |
+| ![Figure 3](images/fig1-4.png) |
 | :--: |
-| *Figure 4: Map showing the drainage basin used as our demonstration case, the Provo River near Woodland, UT (Gage-10154200). This view shows the NGIAB interactive preprocessing tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
+| *Figure 3: Map showing the drainage basin used as our demonstration case, the Provo River near Woodland, UT (Gage-10154200). This view shows the NGIAB interactive preprocessing tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
 
-| ![Figure 5](images/fig1-5.png) |
+| ![Figure 4](images/fig1-5.png) |
 | :--: |
-| *Figure 5: Map showing the geospatial visualization using the Data Visualizer for a selected outlet point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labelled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.* |
+| *Figure 4: Map showing the geospatial visualization using the Data Visualizer for a selected outlet point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labelled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.* |
 
 ## Why should I use NGIAB?
 
