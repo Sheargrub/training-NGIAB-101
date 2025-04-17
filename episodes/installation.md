@@ -4,6 +4,8 @@ teaching: 10
 exercises: 2
 ---
 
+This episode can be a standalone tutorial for those who want a quick introduction to NGIAB. This tutorial follows the case study from our [CloudInfra repository](https://github.com/CIROH-UA/NGIAB-CloudInfra). Users who wish to learn more about NGIAB can explore our other episodes in this module. 
+
 ## Questions
 
 - How do I install and set up NGIAB?
