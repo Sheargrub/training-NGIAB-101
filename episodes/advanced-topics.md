@@ -26,7 +26,7 @@ exercises: 60
 ## Building NGIAB locally
 
 If you would like to build the NGIAB image locally instead of pulling the latest image from the Docker remote registry, use the following commands:
-```
+``` bash
 cd docker
 docker build -f Dockerfile -t awiciroh/ciroh-ngen-image:latest . --no-cache
 ```
@@ -165,32 +165,32 @@ outputs/
 
 The script will:
 
--   Detect system architecture
+- Detect system architecture
     
--   Pull the correct Singularity image
+- Pull the correct Singularity image
     
--   Mount your dataset
+- Mount your dataset
     
--   Allow running in:
+- Allow running in:
     
-    -   Serial mode
+    - Serial mode
         
-    -   Parallel mode
+    - Parallel mode
         
-    -   Interactive container shell
+    - Interactive container shell
         
 
 ----------
 
 ##### Notes
 
--   Do not run the model or load modules on the login node.
+- Do not run the model or load modules on the login node.
     
--   All commands should be executed on a **compute node**.
+- All commands should be executed on a **compute node**.
     
--   If output files don’t appear, double-check the input path and folder structure.
+- If output files don’t appear, double-check the input path and folder structure.
     
--   If `outputs/` doesn't exist, create an empty folder manually before running.
+- If `outputs/` doesn't exist, create an empty folder manually before running.
 ::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
@@ -233,6 +233,7 @@ The most up-to-date guidelines on community contributions for each repository ca
 ## Your Turn
 
 Based on your own interests and use cases, try out some of these options:
+
 - Build a development version of NGIAB locally
 - Install and use NGIAB on your HPC environment
 - Use NGIAB through an SSH connection

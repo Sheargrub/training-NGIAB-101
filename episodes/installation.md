@@ -6,17 +6,21 @@ exercises: 2
 
 This episode can be a standalone tutorial for those who want a quick introduction to NGIAB. This tutorial follows the case study from our [CloudInfra repository](https://github.com/CIROH-UA/NGIAB-CloudInfra). Users who wish to learn more about NGIAB can explore our other episodes in this module. 
 
-## Questions
+:::::::::::::::::::::::::::::::::::::: questions 
 
 - How do I install and set up NGIAB?
 - What are the prerequisites for running NGIAB?
 - How do I verify my installation?
 
-## Objectives
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
 
 - Install and verify Docker
 - Set up NGIAB project directories
 - Run a sample NGIAB simulation
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
@@ -194,7 +198,7 @@ tar  -xf  AWI_16_10154200_009.tar.gz
 ```
 ### Are You in the Right Directory?
 Before running any script, always check your current folder:
-```
+``` bash
 pwd
 ```
 You **should see something like**:
@@ -202,7 +206,7 @@ You **should see something like**:
 /home/yourname/NextGen/NGIAB-CloudInfra
 ```
 If not, move into the folder:
-```
+``` bash 
 cd ~/NextGen/NGIAB-CloudInfra
 ```
 ## Additional Resources

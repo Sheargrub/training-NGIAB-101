@@ -41,6 +41,12 @@ A TEEHR run is executed by default upon execution of the main NGIAB guide script
 
 Go ahead and execute the TEEHR run using the guide script and explore your TEEHR folder!
 
+::::::::::::::::::::::::::::::::::::: callout 
+
+- The default TEEHR image is fine to use.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Tools for Exploratory Evaluation in Hydrologic Research (TEEHR) is a Python-based backage for hydrologic model evaluation.

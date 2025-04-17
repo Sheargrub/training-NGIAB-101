@@ -29,11 +29,11 @@ Once a simulation is complete, users can launch the Data Visualizer through thei
 
 Figures 1 and 2 demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation.
 
-| ![Figure 1](images/fig6-1.png) |
+| ![Figure 1](fig/fig6-1.png) |
 | :--: |
 | *Figure 1: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for an entire study area (Provo River near Woodland, UT).* |
 
-| ![alt text](images/fig1-5.png) |
+| ![alt text](fig/fig1-5.png) |
 | :--: |
 | *Figure 2: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for a selected outlet nexus point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labeled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.* |
 
@@ -46,12 +46,6 @@ To use the Data Visualizer through an SSH connection, you will have to set up po
 ## Your Turn
 
 Go ahead and run the Data Visualizer in the guide script, open it in your browser, and explore the visualization of your NextGen run.
-
-::::::::::::::::::::::::::::::::::::: callout 
-
-- The default TEEHR image is fine to use.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
