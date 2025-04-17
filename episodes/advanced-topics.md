@@ -8,6 +8,7 @@ exercises: 60
 
 - How can I build NGIAB locally?
 - How do I use NGIAB on an high-performance computing (HPC) system?
+- How do I use the Data Visualizer through an SSH connection?
 - How can I contribute to NGIAB?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -16,6 +17,7 @@ exercises: 60
 
 - Build a development version of NGIAB locally
 - Install and use NGIAB on an HPC
+- Use port forwarding to view NGIAB results
 - Explain the NGIAB community contribution process
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -185,6 +187,20 @@ The script will:
     
 -   If `outputs/` doesn't exist, create an empty folder manually before running.
 
+## Using NGIAB through an SSH connection
+
+NGIAB's core functions work through an SSH connection without port forwarding. However, to use the Data Visualizer, you will have to set up port forwarding to view visualization results on your local machine's browser.
+
+To do so, open a terminal on your local machine and run:
+
+```bash
+ssh -L 80:localhost:80 username@remote_host
+
+```
+Replace `username@remote_host` with your credentials.
+
+Now, you should be able to run NGIAB as usual through your SSH tunnel, and access Data Visualizer results in your local browser.
+
 ## Community Contributions to NGIAB/NextGen
 
 The most up-to-date guidelines on community contributions for each repository can be found on its respective GitHub page. 
@@ -207,12 +223,14 @@ The most up-to-date guidelines on community contributions for each repository ca
 Based on your own interests and use cases, try out some of these options:
 - Build a development version of NGIAB locally
 - Install and use NGIAB on your HPC environment
+- Use NGIAB through an SSH connection
 - Contribute to NGIAB/NextGen!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - NGIAB can be built locally using Docker, allowing for development without pulling from the remote registry.
 - NGIAB supports HPC environments through Singularity, not Docker, but the workflow mirrors the local Docker use.
+- Port forwarding is required to use the Data Visualizer through an SSH connection.
 - Community contribution guidelines are available in each repository's GitHub page.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

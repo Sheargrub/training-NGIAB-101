@@ -37,6 +37,12 @@ Figures 1 and 2 demonstrate several ways the Data Visualizer can be used to visu
 | :--: |
 | *Figure 2: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for a selected outlet nexus point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labeled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.* |
 
+::::::::::::::::::::::::::::::::::::: callout
+
+To use the Data Visualizer through an SSH connection, you will have to set up port forwarding. See the instructions in the Advanced Topics episode.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Your Turn
 
 Go ahead and run the Data Visualizer in the guide script, open it in your browser, and explore the visualization of your NextGen run.
