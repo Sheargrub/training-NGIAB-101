@@ -47,6 +47,12 @@ To use the Data Visualizer through an SSH connection, you will have to set up po
 
 Go ahead and run the Data Visualizer in the guide script, open it in your browser, and explore the visualization of your NextGen run.
 
+::::::::::::::::::::::::::::::::::::: callout 
+
+- The default TEEHR image is fine to use.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - The Data Visualizer, built on the Tethys Platform, provides interactive geospatial and time series visualization for NextGen model outputs.
