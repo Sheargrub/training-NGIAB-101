@@ -124,7 +124,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <hr>
 <li><a class="dropdown-item" href="reference.html">Reference</a></li>
-<li><a class="dropdown-item" href="troubleshooting.html"></a></li>
+<li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
           </ul>
 </li>
       </ul>
@@ -352,7 +352,7 @@
                       </li>
                       <hr>
 <li><a class="dropdown-item" href="reference.html">Reference</a></li>
-<li><a class="dropdown-item" href="troubleshooting.html"></a></li>
+<li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
                     </ul>
 </div>
                 </div>
@@ -384,7 +384,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -490,7 +490,7 @@ NWM within a reproducible environment.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig1-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig1-1.png" alt="Figure 1" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 1: Architecture of the NGIAB, highlighting
@@ -523,7 +523,7 @@ Evaluation in Hydrologic Research (TEEHR), and Data Visualizer (Figure
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig1-2.png" alt="Figure 2" class="figure"></th>
+<th align="center"><img src="../fig/fig1-2.png" alt="Figure 2" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 2: Workflow of data acquisition, model
@@ -542,7 +542,7 @@ used to simulate streamflow for five years in the Provo River basin.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig1-4.png" alt="Figure 3" class="figure"></th>
+<th align="center"><img src="../fig/fig1-4.png" alt="Figure 3" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 3: Map showing the drainage basin used as
@@ -557,7 +557,7 @@ stations (black dots).</em></td>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig1-5.png" alt="Figure 4" class="figure"></th>
+<th align="center"><img src="../fig/fig1-5.png" alt="Figure 4" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 4: Map showing the geospatial
@@ -630,28 +630,47 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-installation"><p>Content from <a href="installation.html">Installation and Setup</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/installation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<section><h2 class="section-heading" id="questions">Questions<a class="anchor" aria-label="anchor" href="#questions"></a>
-</h2>
-<hr class="half-width">
+<p>This episode can be a standalone tutorial for those who want a quick
+introduction to NGIAB. This tutorial follows the case study from our <a href="https://github.com/CIROH-UA/NGIAB-CloudInfra" class="external-link">CloudInfra
+repository</a>. Users who wish to learn more about NGIAB can explore our
+other episodes in this module.</p>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
 <ul>
 <li>How do I install and set up NGIAB?</li>
 <li>What are the prerequisites for running NGIAB?</li>
 <li>How do I verify my installation?</li>
-</ul></section><section><h2 class="section-heading" id="objectives">Objectives<a class="anchor" aria-label="anchor" href="#objectives"></a>
-</h2>
-<hr class="half-width">
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
 <ul>
 <li>Install and verify Docker</li>
 <li>Set up NGIAB project directories</li>
 <li>Run a sample NGIAB simulation</li>
-</ul></section><section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
 <p>This lesson guides you through installing and setting up NGIAB, a
@@ -867,11 +886,19 @@ following again:</p>
 <h3 id="are-you-in-the-right-directory">Are You in the Right Directory?<a class="anchor" aria-label="anchor" href="#are-you-in-the-right-directory"></a>
 </h3>
 <p>Before running any script, always check your current folder:</p>
-<pre><code><span><span class="va">pwd</span></span></code></pre>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre>
+</div>
 <p>You <strong>should see something like</strong>:</p>
 <pre><code>/home/yourname/NextGen/NGIAB-CloudInfra</code></pre>
 <p>If not, move into the folder:</p>
-<pre><code>cd ~/NextGen/NGIAB-CloudInfra</code></pre>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="bu">cd</span> ~/NextGen/NGIAB-CloudInfra</span></code></pre>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="additional-resources">Additional Resources<a class="anchor" aria-label="anchor" href="#additional-resources"></a>
 </h2>
@@ -906,13 +933,37 @@ working directory, you’re ready to run the interactive guide script:</p>
 </div>
 <p>This will walk you through the NGIAB setup and launch your first
 simulation.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<ul>
+<li>A series of prompts will appear that ask you if you want to use the
+existing Docker image or update to the latest image. Updating to the
+latest image will take longer, so for the purposes of this tutorial,
+using the existing Docker image is fine.</li>
+<li>When prompted to run NextGen in serial or parallel mode, either is
+fine.</li>
+<li>The option to open a Bash shell (interactive shell) will allow you
+to explore the data directory without quitting NGIAB.</li>
+<li>Redirecting command output to <code>/dev/null</code> significantly
+reduces the amount of output. Either is fine, but if you are curious
+about what is happening inside NextGen, we suggest that you don’t
+redirect the output.</li>
+</ul>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></section><section id="aio-data-preparation"><p>Content from <a href="data-preparation.html">Data Preparation</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/data-preparation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -1045,7 +1096,7 @@ follow the latest instructions <a href="https://github.com/CIROH-UA/NGIAB_data_p
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig3-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig3-1.png" alt="Figure 1" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 1: Map showing an example drainage basin.
@@ -1055,7 +1106,7 @@ View from the USGS National Map.</em></td>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig1-4.png" alt="Figure 2" class="figure"></th>
+<th align="center"><img src="../fig/fig1-4.png" alt="Figure 2" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 2: Map showing an example drainage basin.
@@ -1100,7 +1151,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-model-execution"><p>Content from <a href="model-execution.html">Model Execution</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/model-execution.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1138,10 +1189,14 @@ any links that you are not going to use.
 <hr class="half-width">
 <p>To run a NextGen simulation, simply execute the following
 commands:</p>
-<pre><code>cd NextGen
-git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
-cd NGIAB-CloudInfra
-./guide.sh</code></pre>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> NextGen</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> NGIAB-CloudInfra</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">./guide.sh</span></span></code></pre>
+</div>
 <p>The interactive guide script <code>guide.sh</code> will prompt you to
 enter input data pathways and allow you to select a computational mode
 (serial or parallel processing). After the simulation is complete, the
@@ -1186,7 +1241,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-evaluation"><p>Content from <a href="evaluation.html">Evaluation</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/evaluation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1253,7 +1308,7 @@ examples of capabilities for customized plotting functions.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig5-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig5-1.png" alt="Figure 1" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 1: Comparison of the NextGen-based
@@ -1293,6 +1348,19 @@ available in the NGIAB-CloudInfra repository.</p>
 <hr class="half-width">
 <p>Go ahead and execute the TEEHR run using the guide script and explore
 your TEEHR folder!</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<ul>
+<li>The default TEEHR image is fine to use.</li>
+</ul>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1318,7 +1386,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-visualization"><p>Content from <a href="visualization.html">Visualization</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/visualization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1386,7 +1454,7 @@ representation.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig6-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig6-1.png" alt="Figure 1" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 1: A map showing the geospatial
@@ -1397,7 +1465,7 @@ an entire study area (Provo River near Woodland, UT).</em></td>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../images/fig1-5.png" alt="alt text" class="figure"></th>
+<th align="center"><img src="../fig/fig1-5.png" alt="alt text" class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 2: A map showing the geospatial
@@ -1409,6 +1477,19 @@ relative bias). The Visualizer can also show the performance of the NWM
 3.0 compared to the observed time series.</em></td>
 </tr></tbody>
 </table>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>To use the Data Visualizer through an SSH connection, you will have
+to set up port forwarding. See the instructions in the Advanced Topics
+episode.</p>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
 </h2>
@@ -1441,7 +1522,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-advanced-topics"><p>Content from <a href="advanced-topics.html">Advanced Topics</a></p>
 <hr>
-<p>Last updated on 2025-04-16 |
+<p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/advanced-topics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 65 minutes</p>
@@ -1459,6 +1540,7 @@ any links that you are not going to use.
 <li>How can I build NGIAB locally?</li>
 <li>How do I use NGIAB on an high-performance computing (HPC)
 system?</li>
+<li>How do I use the Data Visualizer through an SSH connection?</li>
 <li>How can I contribute to NGIAB?</li>
 </ul>
 </div>
@@ -1471,6 +1553,7 @@ system?</li>
 <ul>
 <li>Build a development version of NGIAB locally</li>
 <li>Install and use NGIAB on an HPC</li>
+<li>Use port forwarding to view NGIAB results</li>
 <li>Explain the NGIAB community contribution process</li>
 </ul>
 </div>
@@ -1478,17 +1561,39 @@ system?</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="building-ngiab-locally">Building NGIAB locally<a class="anchor" aria-label="anchor" href="#building-ngiab-locally"></a>
-</h2>
-<hr class="half-width">
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Building NGIAB locally
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
 <p>If you would like to build the NGIAB image locally instead of pulling
 the latest image from the Docker remote registry, use the following
 commands:</p>
-<pre><code>cd docker
-docker build -f Dockerfile -t awiciroh/ciroh-ngen-image:latest . --no-cache</code></pre>
-</section><section><h2 class="section-heading" id="using-ngiab-on-high-performance-computing-hpc-environments">Using NGIAB on High-Performance Computing (HPC) Environments<a class="anchor" aria-label="anchor" href="#using-ngiab-on-high-performance-computing-hpc-environments"></a>
-</h2>
-<hr class="half-width">
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> docker</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-f</span> Dockerfile <span class="at">-t</span> awiciroh/ciroh-ngen-image:latest . <span class="at">--no-cache</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Using NGIAB on High-Performance Computing (HPC) Environments: General Info
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
 <p>The most up-to-date information on installing NGIAB on an HPC can be
 found <a href="https://github.com/CIROH-UA/NGIAB-HPCInfra" class="external-link">here</a>.
 Other than a different installation process and the use of Singularity
@@ -1519,9 +1624,20 @@ dependencies, making Singularity a reliable choice for running
 hydrologic models on large-scale computational infrastructures (Jajula
 and Bangalore, 2024).</p>
 </div>
-<div class="section level4">
-<h4 id="run-ngiab-on-pantarhei-hpc-singularity-version">Run NGIAB on Pantarhei HPC (Singularity Version)<a class="anchor" aria-label="anchor" href="#run-ngiab-on-pantarhei-hpc-singularity-version"></a>
-</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Run NGIAB on Pantarhei HPC (Singularity Version)
+  </h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
 <p>This section explains how to run <strong>NextGen In A Box
 (NGIAB)</strong> using <strong>Singularity</strong> on the
 <strong>Pantarhei HPC system</strong> at the University of Alabama.</p>
@@ -1669,9 +1785,46 @@ manually before running.</p></li>
 </ul>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="community-contributions-to-ngiabnextgen">Community Contributions to NGIAB/NextGen<a class="anchor" aria-label="anchor" href="#community-contributions-to-ngiabnextgen"></a>
-</h2>
-<hr class="half-width">
+</div>
+</div>
+</div>
+<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
+  <h3 class="accordion-header" id="headingSpoiler4">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Using NGIAB through an SSH connection
+  </h3>
+</button>
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div class="accordion-body">
+<p>NGIAB’s core functions work through an SSH connection without port
+forwarding. However, to use the Data Visualizer, you will have to set up
+port forwarding to view visualization results on your local machine’s
+browser.</p>
+<p>To do so, open a terminal on your local machine and run:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-L</span> 80:localhost:80 username@remote_host</span></code></pre>
+</div>
+<p>Replace <code>username@remote_host</code> with your credentials.</p>
+<p>Now, you should be able to run NGIAB as usual through your SSH
+tunnel, and access Data Visualizer results in your local browser.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
+  <h3 class="accordion-header" id="headingSpoiler5">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Community Contributions to NGIAB/NextGen
+  </h3>
+</button>
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div class="accordion-body">
 <p>The most up-to-date guidelines on community contributions for each
 repository can be found on its respective GitHub page.</p>
 <div class="section level4">
@@ -1695,12 +1848,21 @@ incorporated</li>
 </li>
 </ul>
 </div>
-</section><section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
 </h2>
 <hr class="half-width">
 <p>Based on your own interests and use cases, try out some of these
-options: - Build a development version of NGIAB locally - Install and
-use NGIAB on your HPC environment - Contribute to NGIAB/NextGen!</p>
+options:</p>
+<ul>
+<li>Build a development version of NGIAB locally</li>
+<li>Install and use NGIAB on your HPC environment</li>
+<li>Use NGIAB through an SSH connection</li>
+<li>Contribute to NGIAB/NextGen!</li>
+</ul>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1713,6 +1875,8 @@ use NGIAB on your HPC environment - Contribute to NGIAB/NextGen!</p>
 without pulling from the remote registry.</li>
 <li>NGIAB supports HPC environments through Singularity, not Docker, but
 the workflow mirrors the local Docker use.</li>
+<li>Port forwarding is required to use the Data Visualizer through an
+SSH connection.</li>
 <li>Community contribution guidelines are available in each repository’s
 GitHub page.</li>
 </ul>
@@ -1771,8 +1935,8 @@ any links that you are not going to use.
   "url": "https://CIROH-UA.github.io/training-NGIAB-101/instructor/aio.html",
   "identifier": "https://CIROH-UA.github.io/training-NGIAB-101/instructor/aio.html",
   "dateCreated": "2025-04-10",
-  "dateModified": "2025-04-16",
-  "datePublished": "2025-04-16"
+  "dateModified": "2025-04-18",
+  "datePublished": "2025-04-18"
 }
 
   </script><script>

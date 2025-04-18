@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html"></a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -225,9 +225,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#questions">Questions</a></li>
-<li><a href="#objectives">Objectives</a></li>
-<li><a href="#introduction">Introduction</a></li>
+        <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#system-requirements">System Requirements</a></li>
 <li><a href="#docker-installation">Docker Installation</a></li>
 <li><a href="#challenge-1-verify-docker">✅ Challenge 1: Verify Docker</a></li>
@@ -309,7 +307,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li><li><a href="troubleshooting.html"></a></li>
+                      <li><a href="reference.html">Reference</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -345,7 +343,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Installation and Setup</h1>
-        <p>Last updated on 2025-04-16 |
+        <p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/installation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -357,15 +355,36 @@
 
         
 
-<section><h2 class="section-heading" id="questions">Questions<a class="anchor" aria-label="anchor" href="#questions"></a></h2>
-<hr class="half-width"><ul><li>How do I install and set up NGIAB?</li>
+<p>This episode can be a standalone tutorial for those who want a quick
+introduction to NGIAB. This tutorial follows the case study from our <a href="https://github.com/CIROH-UA/NGIAB-CloudInfra" class="external-link">CloudInfra
+repository</a>. Users who wish to learn more about NGIAB can explore our
+other episodes in this module.</p>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>How do I install and set up NGIAB?</li>
 <li>What are the prerequisites for running NGIAB?</li>
 <li>How do I verify my installation?</li>
-</ul></section><section><h2 class="section-heading" id="objectives">Objectives<a class="anchor" aria-label="anchor" href="#objectives"></a></h2>
-<hr class="half-width"><ul><li>Install and verify Docker</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Install and verify Docker</li>
 <li>Set up NGIAB project directories</li>
 <li>Run a sample NGIAB simulation</li>
-</ul></section><section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>This lesson guides you through installing and setting up NGIAB, a
 containerized solution designed to simplify running the NextGen modeling
 framework locally. NGIAB leverages Docker containers to ensure
@@ -548,11 +567,19 @@ following again:</p>
 <div class="section level3">
 <h3 id="are-you-in-the-right-directory">Are You in the Right Directory?<a class="anchor" aria-label="anchor" href="#are-you-in-the-right-directory"></a></h3>
 <p>Before running any script, always check your current folder:</p>
-<pre><code><span><span class="va">pwd</span></span></code></pre>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre>
+</div>
 <p>You <strong>should see something like</strong>:</p>
 <pre><code>/home/yourname/NextGen/NGIAB-CloudInfra</code></pre>
 <p>If not, move into the folder:</p>
-<pre><code>cd ~/NextGen/NGIAB-CloudInfra</code></pre>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="bu">cd</span> ~/NextGen/NGIAB-CloudInfra</span></code></pre>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="additional-resources">Additional Resources<a class="anchor" aria-label="anchor" href="#additional-resources"></a></h2>
 <hr class="half-width"><p>Are you interested in customizing your run with your own catchments
@@ -578,6 +605,28 @@ working directory, you’re ready to run the interactive guide script:</p>
 </div>
 <p>This will walk you through the NGIAB setup and launch your first
 simulation.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<ul><li>A series of prompts will appear that ask you if you want to use the
+existing Docker image or update to the latest image. Updating to the
+latest image will take longer, so for the purposes of this tutorial,
+using the existing Docker image is fine.</li>
+<li>When prompted to run NextGen in serial or parallel mode, either is
+fine.</li>
+<li>The option to open a Bash shell (interactive shell) will allow you
+to explore the data directory without quitting NGIAB.</li>
+<li>Redirecting command output to <code>/dev/null</code> significantly
+reduces the amount of output. Either is fine, but if you are curious
+about what is happening inside NextGen, we suggest that you don’t
+redirect the output.</li>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -640,8 +689,8 @@ any links that you are not going to use.
   "url": "https://CIROH-UA.github.io/training-NGIAB-101/installation.html",
   "identifier": "https://CIROH-UA.github.io/training-NGIAB-101/installation.html",
   "dateCreated": "2025-04-10",
-  "dateModified": "2025-04-16",
-  "datePublished": "2025-04-16"
+  "dateModified": "2025-04-18",
+  "datePublished": "2025-04-18"
 }
 
   </script><script>

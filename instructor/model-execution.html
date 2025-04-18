@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html"></a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -301,7 +301,7 @@
                       <li>
                         <a href="../instructor/images.html">Extract All Images</a>
                       </li>
-                      <hr><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html"></a></li>
+                      <hr><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -337,7 +337,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Model Execution</h1>
-        <p>Last updated on 2025-04-16 |
+        <p>Last updated on 2025-04-18 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/model-execution.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -376,10 +376,14 @@
 <section><h2 class="section-heading" id="model-execution-using-ngiab-container">Model Execution using NGIAB container<a class="anchor" aria-label="anchor" href="#model-execution-using-ngiab-container"></a></h2>
 <hr class="half-width"><p>To run a NextGen simulation, simply execute the following
 commands:</p>
-<pre><code>cd NextGen
-git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
-cd NGIAB-CloudInfra
-./guide.sh</code></pre>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> NextGen</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> NGIAB-CloudInfra</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">./guide.sh</span></span></code></pre>
+</div>
 <p>The interactive guide script <code>guide.sh</code> will prompt you to
 enter input data pathways and allow you to select a computational mode
 (serial or parallel processing). After the simulation is complete, the
@@ -474,8 +478,8 @@ any links that you are not going to use.
   "url": "https://CIROH-UA.github.io/training-NGIAB-101/instructor/model-execution.html",
   "identifier": "https://CIROH-UA.github.io/training-NGIAB-101/instructor/model-execution.html",
   "dateCreated": "2025-04-10",
-  "dateModified": "2025-04-16",
-  "datePublished": "2025-04-16"
+  "dateModified": "2025-04-18",
+  "datePublished": "2025-04-18"
 }
 
   </script><script>
