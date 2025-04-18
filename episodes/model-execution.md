@@ -20,7 +20,7 @@ exercises: 5
 ## Model Execution using NGIAB container
 
 To run a NextGen simulation, simply execute the following commands:
-```
+``` bash
 cd NextGen
 git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
 cd NGIAB-CloudInfra

@@ -84,11 +84,11 @@ NextGen requires a single geopackage file. This file is the [hydrofabric (Johnso
 
 The Data Preprocess tool (like all of our software) is constantly being updated and refined. To install and use the Data Preprocess tool, follow the latest instructions [here](https://github.com/CIROH-UA/NGIAB_data_preprocess). 
 
-| ![Figure 1](images/fig3-1.png) |
+| ![Figure 1](fig/fig3-1.png) |
 | :--: |
 | *Figure 1: Map showing an example drainage basin. View from the USGS National Map.* |
 
-| ![Figure 2](images/fig1-4.png) |
+| ![Figure 2](fig/fig1-4.png) |
 | :--: |
 | *Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
 

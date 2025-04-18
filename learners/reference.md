@@ -44,6 +44,8 @@ title: 'Reference'
     - A software that manages which tasks run where and when on an HPC system
   - Open-source
     - Software or data that is publicly accessible and can be redistributed or modified
+  - Secure Shell (SSH)
+    - Network protocol that provides secure remote access with encrypted connections
 - Hydrologic Terms
   - Catchment
     - Area from which precipitation collects and drains into an output point like a river or water body. Also known as a watershed

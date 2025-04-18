@@ -4,17 +4,23 @@ teaching: 10
 exercises: 2
 ---
 
-## Questions
+This episode can be a standalone tutorial for those who want a quick introduction to NGIAB. This tutorial follows the case study from our [CloudInfra repository](https://github.com/CIROH-UA/NGIAB-CloudInfra). Users who wish to learn more about NGIAB can explore our other episodes in this module. 
+
+:::::::::::::::::::::::::::::::::::::: questions 
 
 - How do I install and set up NGIAB?
 - What are the prerequisites for running NGIAB?
 - How do I verify my installation?
 
-## Objectives
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
 
 - Install and verify Docker
 - Set up NGIAB project directories
 - Run a sample NGIAB simulation
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
@@ -192,7 +198,7 @@ tar  -xf  AWI_16_10154200_009.tar.gz
 ```
 ### Are You in the Right Directory?
 Before running any script, always check your current folder:
-```
+``` bash
 pwd
 ```
 You **should see something like**:
@@ -200,7 +206,7 @@ You **should see something like**:
 /home/yourname/NextGen/NGIAB-CloudInfra
 ```
 If not, move into the folder:
-```
+``` bash 
 cd ~/NextGen/NGIAB-CloudInfra
 ```
 ## Additional Resources
@@ -231,3 +237,12 @@ If you've completed the steps above and verified your dataset and working direct
 ./guide.sh
 ```
 This will walk you through the NGIAB setup and launch your first simulation.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+- A series of prompts will appear that ask you if you want to use the existing Docker image or update to the latest image. Updating to the latest image will take longer, so for the purposes of this tutorial, using the existing Docker image is fine.
+- When prompted to run NextGen in serial or parallel mode, either is fine.
+- The option to open a Bash shell (interactive shell) will allow you to explore the data directory without quitting NGIAB.
+- Redirecting command output to `/dev/null` significantly reduces the amount of output. Either is fine, but if you are curious about what is happening inside NextGen, we suggest that you don't redirect the output.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
