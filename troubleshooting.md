@@ -1,3 +1,6 @@
+---
+title: Troubleshooting
+---
 
 # 💧 NGIAB-CloudInfra – Workshop Setup Guide
 

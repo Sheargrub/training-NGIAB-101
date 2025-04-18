@@ -39,7 +39,7 @@ NGIAB leverages Docker ([Boettiger, 2015](https://doi.org/10.1145/2723872.272388
 
 NGIAB is designed as a multi-layered containerized tool that encapsulates the NextGen framework and many components relevant to the NWM within a reproducible environment. 
 
-| ![Figure 1](images/fig1-1.png) |
+| ![Figure 1](fig/fig1-1.png) |
 | :--: |
 | *Figure 1: Architecture of the NGIAB, highlighting its core modeling foundation, CI/CD pipelines, containerized tools and supporting technologies.* |
 
@@ -49,7 +49,7 @@ Figure 1 illustrates the layered architecture of NGIAB. At its core (Layer 1) li
 
 Several extensions of NGIAB are already integrated with NextGen-related tools like Data Preprocess, Tools for Exploratory Evaluation in Hydrologic Research (TEEHR), and Data Visualizer (Figure 2). These extensions will be discussed in later episodes.
 
-| ![Figure 2](images/fig1-2.png) |
+| ![Figure 2](fig/fig1-2.png) |
 | :--: |
 | *Figure 2: Workflow of data acquisition, model execution, evaluation, and results visualization.* |
 
@@ -57,11 +57,11 @@ Several extensions of NGIAB are already integrated with NextGen-related tools li
 
 Steps common to all hydrologic modeling frameworks include data collection and preparation, framework setup and model execution, evaluation, results visualization, and calibration. Researchers can use NGIAB to run simulations for their basins of interest. *Note that calibration is not yet an integrated capability within NGIAB.* Figures 3 and 4 show examples of how NGIAB and its extensions have been used to simulate streamflow for five years in the Provo River basin.
 
-| ![Figure 3](images/fig1-4.png) |
+| ![Figure 3](fig/fig1-4.png) |
 | :--: |
 | *Figure 3: Map showing the drainage basin used as our demonstration case, the Provo River near Woodland, UT (Gage-10154200). This view shows the NGIAB interactive preprocessing tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
 
-| ![Figure 4](images/fig1-5.png) |
+| ![Figure 4](fig/fig1-5.png) |
 | :--: |
 | *Figure 4: Map showing the geospatial visualization using the Data Visualizer for a selected outlet point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labelled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.* |
 
