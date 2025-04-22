@@ -35,21 +35,25 @@ docker build -f Dockerfile -t awiciroh/ciroh-ngen-image:latest . --no-cache
 :::::::::::::::: spoiler
 ## Using NGIAB on High-Performance Computing (HPC) Environments: General Info
 
-The most up-to-date information on installing NGIAB on an HPC can be found [here](https://github.com/CIROH-UA/NGIAB-HPCInfra). Other than a different installation process and the use of Singularity instead of Docker, the workflow is the same to execute a NextGen run. Tools like the Data Preprocessor, TEEHR, and the Data Visualizer are still available. The NGIAB-HPCInfra contains its own interactive `guide.sh` script, which allows users to specify input data pathways and run configurations (serial or parallel), as well as trigger the execution of TEEHR and the Data Visualizer.
+The most up-to-date information on installing NGIAB on an HPC can be found on [CIROH'S NGIAB HPC GitHub page](https://github.com/CIROH-UA/NGIAB-HPCInfra). Other than a different installation process and the use of Singularity instead of Docker, the workflow is the same to execute a NextGen run in NGIAB. Tools like the Data Preprocessor, TEEHR, and the Data Visualizer are still available. The NGIAB-HPCInfra contains its own interactive `guide.sh` script, which allows users to specify input data pathways and run configurations (serial or parallel), as well as trigger the execution of TEEHR and the Data Visualizer.
 
-#### Singularity
+### Singularity
 
-NGIAB uses Singularity as its containerization platform for HPC environments. Singularity enables secure execution of containerized applications on multi-user HPC clusters. Key features of Singularity include native HPC integration, which allows the execution of containerized applications within existing batch job schedulers such as SLURM (Simple Linux Utility for Resource Management) workload manager, PBS (Portable Batch System) and LSF (Load Sharing Facility); enforced security – it runs containers as non-root users, reducing security risks; and seamless access to host file systems – it enables users to interact with datasets and computational resources without additional configuration directly. Singularity images, known as Singularity Image Format (SIF) files, encapsulate the entire runtime environment, ensuring full reproducibility of simulations. These images can be transferred between systems without requiring reinstallation of software dependencies, making Singularity a reliable choice for running hydrologic models on large-scale computational infrastructures (Jajula and Bangalore, 2024).
+NGIAB uses Singularity as its containerization platform for HPC environments. Singularity enables secure execution of containerized applications on multi-user HPC clusters. Key features of Singularity include:
+
+ - Native HPC integration, which allows the execution of containerized applications within existing batch job schedulers such as SLURM (Simple Linux Utility for Resource Management) workload manager, PBS (Portable Batch System) and LSF (Load Sharing Facility)
+ - Enforced security – it runs containers as non-root users, reducing security risks; and 
+ - Access to host file systems – it enables users to interact with datasets and computational resources without additional configuration directly. 
 ::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
-#### Run NGIAB on Pantarhei HPC (Singularity Version)
+## Run NGIAB on Pantarhei HPC (Singularity Version)
 
-This section explains how to run **NextGen In A Box (NGIAB)** using **Singularity** on the **Pantarhei HPC system** at the University of Alabama. To access Pantarhei, please follow the instructions [here](https://docs.ciroh.org/docs/services/access/#accessing-on-premises-infrastructure).
+This section explains how to run **NextGen In A Box (NGIAB)** using **Singularity** on the **Pantarhei HPC system** at the University of Alabama. To access Pantarhei, please follow the instructions on [CIROH's DocuHub page](https://docs.ciroh.org/docs/services/access/#accessing-on-premises-infrastructure).
 
 ---
 
-##### 1. Log Into Pantarhei
+### 1. Log Into Pantarhei
 
 Open a terminal and connect to the login node:
 
@@ -62,7 +66,7 @@ Replace `<USERNAME>` with your actual Pantarhei username.
 
 ----------
 
-##### 2. Request a Compute Node (Do NOT run on login node)
+### 2. Request a Compute Node (Do NOT run on login node)
 
 On the login node, request an interactive session:
 
@@ -75,7 +79,7 @@ Use the `normal` partition unless you require more time or special resources.
 
 ----------
 
-##### 3. Verify that Singularity is available:
+### 3. Verify that Singularity is available:
 
 
 ```bash
@@ -85,7 +89,7 @@ singularity --version
 
 ----------
 
-##### 4. Prepare Project Directory
+### 4. Prepare Project Directory
 
 Create the directory and move into it:
 
@@ -97,7 +101,7 @@ cd ~/NextGen/ngen-data
 
 ----------
 
-##### 5. Download Sample Dataset
+### 5. Download Sample Dataset
 
 Pick one of the sample datasets to download and extract:
 
@@ -109,11 +113,11 @@ tar -xf AWI_16_10154200_009.tar.gz
 
 ```
 
-Other options: AWI-007 or AWI-008 can be used similarly.
+Other options: AWI-007 or AWI-008 can be used similarly, see the [Installation and Setup episode](/site/docs/installation.html#step-2-download-sample-data).
 
 ----------
 
-##### 6. Clone the NGIAB-HPCInfra Repository
+### 6. Clone the NGIAB-HPCInfra Repository
 
 ```bash
 cd ~/NextGen
@@ -126,7 +130,7 @@ cd NGIAB-HPCInfra
 
 ----------
 
-##### 7. Run the NGIAB Guide Script
+### 7. Run `guide.sh`
 
 Make the script executable if needed:
 
@@ -182,15 +186,15 @@ The script will:
 
 ----------
 
-##### Notes
+#### Notes
 
 - Do not run the model or load modules on the login node.
     
 - All commands should be executed on a **compute node**.
     
-- If output files don’t appear, double-check the input path and folder structure.
+- If output files do not appear, double-check the input path and folder structure.
     
-- If `outputs/` doesn't exist, create an empty folder manually before running.
+- If `outputs/` does not exist, create an empty folder manually before running.
 ::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
@@ -198,7 +202,7 @@ The script will:
 
 NGIAB's core functions work through an SSH connection without port forwarding. However, to use the Data Visualizer, you will have to set up port forwarding to view visualization results on your local machine's browser.
 
-To do so, open a terminal on your local machine and run:
+To do so, run the following command on your local machine:
 
 ```bash
 ssh -L 80:localhost:80 username@remote_host
@@ -215,7 +219,7 @@ Now, you should be able to run NGIAB as usual through your SSH tunnel, and acces
 
 The most up-to-date guidelines on community contributions for each repository can be found on its respective GitHub page. 
 
-#### General contribution guidance
+### General contribution guidance
 
 - You can use the issue tracker on GitHub to suggest feature requests, report bugs, or ask questions.
 - You can change the codebase through Git:

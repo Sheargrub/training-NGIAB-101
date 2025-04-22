@@ -18,13 +18,12 @@ This episode can be a standalone tutorial for those who want a quick introductio
 
 - Install and verify Docker
 - Set up NGIAB project directories
-- Run a sample NGIAB simulation
-
+- Run a sample NGIAB run
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
-This lesson guides you through installing and setting up NGIAB, a containerized solution designed to simplify running the NextGen modeling framework locally. NGIAB leverages Docker containers to ensure consistent and reproducible simulations.
+This lesson guides you through installing and setting up NGIAB, a containerized solution designed to simplify running the NextGen modeling framework locally. NGIAB leverages Docker containers to ensure consistent and reproducible runs.
 
 ## System Requirements
 
@@ -34,12 +33,20 @@ Before installing NGIAB, ensure you have:
 - **Software:** Docker, Git  
 - **Recommended Minimum RAM:** 8 GB
 
+::::::::::::::::::::::::::::::::::::: callout
+
+## Connecting to a remote machine through SSH?
+
+To use the Data Visualizer through an Secure Shell (SSH) connection, you will have to set up port forwarding when connecting to the remote machine. Port forwarding will allow you to access a remotely hosted browser session on your local machine. See the instructions under "Using NGIAB through an SSH connection" in the [Advanced Topics episode](/site/docs/advanced-topics.html) in this training module. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Docker Installation
 
 :::::::::::::::: spoiler
 
 ### Windows (WSL)
-Note: Users who already have Docker installed will still need to install a separate WSL distro and set it as their default, if they haven't already.
+Note: Users who already have Docker installed will still need to install a separate WSL distro and set it as their default, if they have not already.
 
 1. Install Windows Subsystem for Linux (WSL):
    ``` bash
@@ -124,7 +131,7 @@ sudo systemctl start docker
 
 ## NGIAB Setup
 
-These steps will lead you through the process of running NGIAB with a set of pre-configured input data and realization files.
+These steps will lead you through the process of running NGIAB with a set of pre-configured input data and realization files. A realization file is a scenario using a specific model on a specific region.
 
 ### Step 1: Create Project Directory
 
@@ -136,7 +143,7 @@ cd NextGen/ngen-data
 
 ### Step 2: Download Sample Data
 
-Choose one of the following datasets:
+Choose one of the following datasets. File sizes and model configurations are provided so that you can download a dataset suitable for your interests, available disk space, and network speed.
 
 #### Option 1: AWI-009
 
@@ -207,24 +214,24 @@ cd NGIAB-CloudInfra
 
 ```
 
-## ✅ You're All Set!
+## ✅ Ready to Go!
 
-If you've completed the steps above and verified your dataset and working directory, you're ready to run the interactive guide script `guide.sh`. It will prompt you to select input data, processing modes, and will initiate your simulation.
+If you've completed the steps above and verified your dataset and working directory, you are ready to run the interactive guide script `guide.sh`. It will prompt you to select input data, processing modes, and will initiate your run.
 
 
 ```bash
 ./guide.sh
 ```
-This will walk you through the NGIAB setup and launch your first simulation.
+This will walk you through the NGIAB setup and launch your first run.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-### Guide Script Tips
+### `guide.sh` Tips
 
 - A series of prompts will appear that ask you if you want to use the existing Docker image or update to the latest image. Updating to the latest image will take longer, so for the purposes of this tutorial, using the existing Docker image is fine.
 - When prompted to run NextGen in serial or parallel mode, either is fine.
 - The option to open a Bash shell (interactive shell) will allow you to explore the data directory without quitting NGIAB.
-- Redirecting command output to `/dev/null` significantly reduces the amount of output. Either is fine, but if you are curious about what is happening inside NextGen, we suggest that you don't redirect the output.
+- Redirecting command output to `/dev/null` significantly reduces the amount of output. Either is fine, but if you are curious about what is happening inside the model, we suggest that you do not redirect the output.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -257,13 +264,13 @@ cd ~/NextGen/NGIAB-CloudInfra
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
->**Tip:** Always run a quick simulation with provided sample datasets to verify the successful setup of NGIAB.\
+>**Tip:** Always execute a quick run with provided sample datasets to verify the successful setup of NGIAB.\
 
 ----------
 
 ## Additional Resources
 
-Are you interested in customizing your run with your own catchments and run configurations? Do you want to explore more functionalities of NGIAB? Check out the following episodes:
+Are you interested in customizing your run with your own catchments (watersheds) and run configurations? Do you want to explore more functionalities of NGIAB? Check out the following episodes:
 
 -   [Data Preparation - NGIAB Data Preprocessor](/site/docs/data-preparation.html)
     
@@ -273,11 +280,12 @@ Are you interested in customizing your run with your own catchments and run conf
 
 -   [Advanced Topics](/site/docs/advanced-topics.html)
     
+::::::::::::::::::::::::::::::::::::: keypoints 
 
-## Key Points
+-   NGIAB simplifies NextGen framework deployment through Docker.  
+-   Use `guide.sh` for interactive configuration and run execution.   
+-   Always confirm successful setup by executing provided sample runs.
 
--   NGIAB simplifies NextGen framework deployment through Docker.
-    
--   Use `guide.sh` for interactive configuration and simulation execution.
-    
--   Always confirm successful setup by running provided sample simulations.
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
