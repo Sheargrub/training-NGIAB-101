@@ -36,14 +36,17 @@ Before installing NGIAB, ensure you have:
 
 ## Docker Installation
 
+:::::::::::::::: spoiler
+
 ### Windows (WSL)
+Note: Users who already have Docker installed will still need to install a separate WSL distro and set it as their default, if they haven't already.
 
 1. Install Windows Subsystem for Linux (WSL):
    ``` bash
    wsl --install
 	```
 
-2.  Install Docker Desktop from Docker's official website.
+2.  Install Docker Desktop from [Docker's official website](https://docs.docker.com/desktop/setup/install/windows-install/).
     
 3.  Launch Docker Desktop and open WSL terminal as administrator.
     
@@ -53,11 +56,15 @@ Before installing NGIAB, ensure you have:
     docker run hello-world
     
     ```
-    
+    This should generate a message that shows that your installation is working.
+
+::::::::::::::::::::::::
+
+:::::::::::::::: spoiler
 
 ### macOS
 
-1.  Install Docker Desktop from Docker's official Mac installer.
+1.  Install Docker Desktop from [Docker's official Mac installer](https://docs.docker.com/desktop/setup/install/mac-install/).
     
 2.  Launch Docker Desktop.
     
@@ -67,11 +74,15 @@ Before installing NGIAB, ensure you have:
     docker run hello-world
     
     ```
-    
+    This should generate a message that shows that your installation is working.
+
+::::::::::::::::::::::::
+
+:::::::::::::::: spoiler
 
 ### Linux
 
-1.  Install Docker by following the official Docker guide.
+1.  Install Docker by following the [official Docker guide](https://docs.docker.com/desktop/setup/install/linux/).
     
 2.  Start Docker service and verify:
     
@@ -80,9 +91,13 @@ Before installing NGIAB, ensure you have:
     docker run hello-world
     
     ```
-    
+    This should generate a message that shows that your installation is working.
 
-## ✅ Challenge 1: Verify Docker
+::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Verify Docker
 
 Run the command below:
 
@@ -93,7 +108,9 @@ docker ps -a
 
 Confirm it executes without errors. If errors occur, revisit Docker installation steps.
 
-### Solution
+:::::::::::::::::::::::: solution 
+
+## Troubleshooting 
 
 If `docker ps -a` fails, ensure Docker Desktop is running, or Docker service is active on Linux:
 
@@ -101,6 +118,9 @@ If `docker ps -a` fails, ensure Docker Desktop is running, or Docker service is 
 sudo systemctl start docker
 
 ```
+
+:::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## NGIAB Setup
 
@@ -118,7 +138,11 @@ cd NextGen/ngen-data
 
 Choose one of the following datasets:
 
-**Option 1: Provo River (AWI-009)**
+#### Option 1: AWI-009
+
+Models: SLOTH (dummy model), NoahOWP (land surface model), CFE (conceptual rainfall-runoff model, functionally equivalent to NWM)
+
+Compressed file size: 249 MB | Extracted file size: 1.77 GB
 
 ```bash
 wget https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-009/AWI_16_10154200_009.tar.gz
@@ -126,7 +150,11 @@ tar -xf AWI_16_10154200_009.tar.gz
 
 ```
 
-**Option 2: AWI-007**
+#### Option 2: AWI-007
+
+Models: SLOTH, NoahOWP, CFE
+
+Compressed file size: 1.87 MB | Extracted file size: 5.53 MB
 
 ```bash
 wget https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-007/AWI_16_2863657_007.tar.gz
@@ -134,7 +162,11 @@ tar -xf AWI_16_2863657_007.tar.gz
 
 ```
 
-**Option 3: AWI-008 (with LSTM)**
+#### Option 3: AWI-008
+
+Models: SLOTH, LSTM (long short-term memory, recurrent neural network)
+
+Compressed file size: 1.50 MB | Extracted file size: 5.46 MB
 
 ```bash
 wget https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-008/AWI_16_2863806_008.tar.gz
@@ -142,32 +174,59 @@ tar -xf AWI_16_2863806_008.tar.gz
 
 ```
 
+::::::::::::::::::::::::::::::::::::: challenge
+## Check: Did You Download the Dataset?
+Run this command:
+```bash
+ls  ~/NextGen/ngen-data
+```
+
+:::::::::::::::::::::::: solution 
+
+## Output 
+
+You should see a folder like:
+```
+AWI_16_10154200_009
+```
+ If you see it, your dataset was downloaded and extracted correctly.
+
+If you see nothing or just the `.tar.gz` file, run the following again:
+```bash
+tar  -xf  AWI_16_10154200_009.tar.gz
+```
+::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 ### Step 3: Clone and Run NGIAB
 
 ```bash
 cd ../  # back to NextGen folder
 git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
 cd NGIAB-CloudInfra
+
+```
+
+## ✅ You're All Set!
+
+If you've completed the steps above and verified your dataset and working directory, you're ready to run the interactive guide script `guide.sh`. It will prompt you to select input data, processing modes, and will initiate your simulation.
+
+
+```bash
 ./guide.sh
-
 ```
+This will walk you through the NGIAB setup and launch your first simulation.
 
-The interactive `guide.sh` script will prompt you to select input data, processing modes, and will initiate your simulation.
+::::::::::::::::::::::::::::::::::::: callout
 
-### Directory Structure (`ngen-run/`)
+### Guide Script Tips
 
-```
-ngen-run/
-├── config/
-├── forcings/
-├── lakeout/ (optional)
-├── metadata/ (auto-generated, do not edit)
-├── outputs/
-└── restart/ (optional)
+- A series of prompts will appear that ask you if you want to use the existing Docker image or update to the latest image. Updating to the latest image will take longer, so for the purposes of this tutorial, using the existing Docker image is fine.
+- When prompted to run NextGen in serial or parallel mode, either is fine.
+- The option to open a Bash shell (interactive shell) will allow you to explore the data directory without quitting NGIAB.
+- Redirecting command output to `/dev/null` significantly reduces the amount of output. Either is fine, but if you are curious about what is happening inside NextGen, we suggest that you don't redirect the output.
 
-```
-
->**Tip:** Always run a quick simulation with provided sample datasets to verify the successful setup of NGIAB.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Troubleshooting
 
@@ -181,22 +240,9 @@ sudo usermod -aG docker ${USER}
 newgrp docker
 
 ```
-### Check: Did You Download the Dataset?
-Run this command:
-```bash
-ls  ~/NextGen/ngen-data
-```
-You should see a folder like:
-```
-AWI_16_10154200_009
-```
- If you see it, your dataset was downloaded and extracted correctly.
-
-If you see nothing or just the `.tar.gz` file, run the following again:
-```bash
-tar  -xf  AWI_16_10154200_009.tar.gz
-```
+::::::::::::::::::::::::::::::::::::: callout
 ### Are You in the Right Directory?
+
 Before running any script, always check your current folder:
 ``` bash
 pwd
@@ -209,15 +255,23 @@ If not, move into the folder:
 ``` bash 
 cd ~/NextGen/NGIAB-CloudInfra
 ```
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+>**Tip:** Always run a quick simulation with provided sample datasets to verify the successful setup of NGIAB.\
+
+----------
+
 ## Additional Resources
 
 Are you interested in customizing your run with your own catchments and run configurations? Do you want to explore more functionalities of NGIAB? Check out the following episodes:
 
--   Data Preparation - NGIAB Data Preprocessor
+-   [Data Preparation - NGIAB Data Preprocessor](/site/docs/data-preparation.html)
     
--   Evaluation - NGIAB TEEHR Integration
+-   [Evaluation - NGIAB TEEHR Integration](/site/docs/evaluation.html)
     
--   Visualization - Data Visualizer
+-   [Visualization - Data Visualizer](/site/docs/visualization.html)
+
+-   [Advanced Topics](/site/docs/advanced-topics.html)
     
 
 ## Key Points
@@ -227,22 +281,3 @@ Are you interested in customizing your run with your own catchments and run conf
 -   Use `guide.sh` for interactive configuration and simulation execution.
     
 -   Always confirm successful setup by running provided sample simulations.
-
-----------
-## ✅ You're All Set!
-
-If you've completed the steps above and verified your dataset and working directory, you're ready to run the interactive guide script:
-
-```bash
-./guide.sh
-```
-This will walk you through the NGIAB setup and launch your first simulation.
-
-::::::::::::::::::::::::::::::::::::: callout
-
-- A series of prompts will appear that ask you if you want to use the existing Docker image or update to the latest image. Updating to the latest image will take longer, so for the purposes of this tutorial, using the existing Docker image is fine.
-- When prompted to run NextGen in serial or parallel mode, either is fine.
-- The option to open a Bash shell (interactive shell) will allow you to explore the data directory without quitting NGIAB.
-- Redirecting command output to `/dev/null` significantly reduces the amount of output. Either is fine, but if you are curious about what is happening inside NextGen, we suggest that you don't redirect the output.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
