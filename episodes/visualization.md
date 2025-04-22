@@ -19,13 +19,13 @@ exercises: 10
 
 ## Data Visualizer
 
-The Data Visualizer component developed using the Tethys Platform [(Swain et al., 2015)](https://doi.org/10.1016/j.envsoft.2015.01.014) complements NGIAB and its other extensions by providing a robust environment for **geospatial and time series visualization of catchments and nexus points**. Through a web-based architecture, researchers can seamlessly explore hydrological data in a spatiotemporal context, facilitating a deeper understanding of model outputs and key hydrological processes [(CIROH, 2025)](https://github.com/CIROH-UA/ngiab-client). In addition to standard map-based displays, this component also **supports the visualization of the TEEHR output**, including tabular metrics and interactive time series plots.
+The Data Visualizer component developed using the Tethys Platform [(Swain et al., 2015)](https://doi.org/10.1016/j.envsoft.2015.01.014) complements NGIAB by providing an environment for **geospatial and time series visualization of catchments and nexus points**. Through a web-based architecture, researchers can explore hydrological data in a spatiotemporal context [(CIROH, 2025)](https://github.com/CIROH-UA/ngiab-client). In addition to standard map-based displays, this component also **supports the visualization of the TEEHR output**, including tabular metrics and interactive time series plots.
 
 #### Using the Data Visualizer with NGIAB
 
-Like TEEHR, the Data Visualizer is automatically executed by default upon execution of the main NGIAB guide script, `guide.sh`. A separate `viewOnTethys.sh` script is also available in the NGIAB-CloudInfra repository.
+Like TEEHR, the Data Visualizer can be activated upon execution of the main NGIAB guide script, `guide.sh`. A separate `viewOnTethys.sh` script is also available in the NGIAB-CloudInfra repository.
 
-Once a simulation is complete, users can launch the Data Visualizer through their web browser when prompted by the guide script. Through its interactive tools, users can analyze geospatial patterns, temporal trends, and overall model behavior. Although TEEHR’s outputs can be displayed within the Data Visualizer, this tool is primarily designed to provide a broad overview of model results. Users seeking TEEHR’s more advanced analysis features can still access them outside the Data Visualizer.
+Once a simulation is complete, users can launch the Data Visualizer through their web browser when prompted by the guide script. Although TEEHR’s outputs can be displayed within the Data Visualizer, this tool is primarily designed to provide a broad overview of model results. Users seeking TEEHR’s more advanced analysis features can still access them outside the Data Visualizer.
 
 Figures 1 and 2 demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation.
 
@@ -39,7 +39,7 @@ Figures 1 and 2 demonstrate several ways the Data Visualizer can be used to visu
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-To use the Data Visualizer through an SSH connection, you will have to set up port forwarding. See the instructions in the Advanced Topics episode.
+To use the Data Visualizer through an SSH connection, you will have to set up port forwarding. See the instructions in the [Advanced Topics episode](/site/docs/advanced-topics.html).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

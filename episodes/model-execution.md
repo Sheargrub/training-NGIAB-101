@@ -17,9 +17,10 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Model Execution using NGIAB container
+## Model Execution using NGIAB Guide Script
 
-To run a NextGen simulation, simply execute the following commands:
+The `guide.sh` script is used to run pre-configured NextGen simulations. Execute the following commands:
+
 ``` bash
 cd NextGen
 git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
@@ -27,7 +28,7 @@ cd NGIAB-CloudInfra
 ./guide.sh
 ```
 
-The interactive guide script `guide.sh` will prompt you to enter input data pathways and allow you to select a computational mode (serial or parallel processing). After the simulation is complete, the guide script will give you the option to evaluate model predictions and visualize results (discussed in the next two episodes).
+This interactive guide script will prompt you to enter input data pathways and allow you to select a computational mode (serial or parallel processing). After the simulation is complete, the guide script will give you the option to evaluate model predictions and visualize results (discussed in the next two episodes).
 
 ## Model Execution using Data Preprocess tool
 A secondary method for executing a NextGen simulation is by using the Data Preprocess tool's CLI. The `-a` argument in the command will schedule an automatic execution of NGIAB after preprocessing selected data. As this module is being updated constantly, check back on its [GitHub page](https://github.com/CIROH-UA/NGIAB_data_preprocess) for the latest updates on its functionality.

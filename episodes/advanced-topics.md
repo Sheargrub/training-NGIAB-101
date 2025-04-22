@@ -45,7 +45,7 @@ NGIAB uses Singularity as its containerization platform for HPC environments. Si
 :::::::::::::::: spoiler
 #### Run NGIAB on Pantarhei HPC (Singularity Version)
 
-This section explains how to run **NextGen In A Box (NGIAB)** using **Singularity** on the **Pantarhei HPC system** at the University of Alabama.
+This section explains how to run **NextGen In A Box (NGIAB)** using **Singularity** on the **Pantarhei HPC system** at the University of Alabama. To access Pantarhei, please follow the instructions [here](https://docs.ciroh.org/docs/services/access/#accessing-on-premises-infrastructure).
 
 ---
 
