@@ -1,8 +1,8 @@
 ---
-title: Troubleshooting
+title: DevCon 2025 Troubleshooting
 ---
 
-# 💧 NGIAB-CloudInfra – Workshop Setup Guide
+# 💧 NGIAB-CloudInfra – DevCon 2025 Workshop Setup Guide
 
 Welcome to the NGIAB Workshop!  
 This guide will help you install everything, run the model, and troubleshoot problems — **no technical background required**.
