@@ -21,14 +21,14 @@ exercises: 45
 
 ## NextGen Run Directory Structure (`ngen-run/`)
 
-Running NextGen requires building a standard run directory complete with only the necessary files. Below is an explanation of the standard.
+Running NextGen requires building a standard run directory complete with only the necessary files. Below is an explanation of the standard run directory.
 
 A NextGen run directory `ngen-run` contains the following subfolders:
 
 - `config`:  model configuration files and hydrofabric configuration files. (required)
 - `forcings`: catchment-level forcing timeseries files. Forcing files contain variables like wind speed, temperature, precipitation, and solar radiation. (required)
 - `lakeout`: for t-route  (optional)
-- `metadata` programmatically generated folder used within ngen. Do not edit this folder. (optional)
+- `metadata` programmatically generated folder used within ngen. Do not edit this folder. (automatically generated)
 - `outputs`: This is where ngen will place the output files. (required)
 - `restart`: For restart files (optional)
 
@@ -49,9 +49,9 @@ ngen-run/
 ```
  
 #### Configuration directory `ngen-run/config/`
-This folder contains the NextGen realization file, which serves as the primary model configuration for the ngen framework. This file specifies which models to run and with which parameters, run parameters like date and time, and hydrofabric specifications.
+This folder contains the NextGen realization file, which serves as the primary model configuration for the ngen framework. This file specifies which models to run (such as NoahOWP/CFE, LSTM, etc), run parameters like date and time, and hydrofabric specifications (like location, gage, catchment).
 
-Based on the models defined in the realization file, BMI configuration files may be required. For those models that require per-catchment configuration files, a folder will hold these files for each model in `ngen-run/config/cat-config`. See the directory structure convention below.
+Based on the models defined in the realization file, [BMI](https://bmi.csdms.io/en/stable/index.html) configuration files may be required. For those models that require per-catchment configuration files, a folder will hold these files for each model in `ngen-run/config/cat-config`. See the directory structure convention below.
 
 ```
 ngen-run/
