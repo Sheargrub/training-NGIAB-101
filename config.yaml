@@ -21,7 +21,7 @@ carpentry_description: 'Lesson Description'
 title: 'NGIAB 101' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2025-04-10 # FIXME
+created: 2025-04-22 # FIXME
 
 # Comma-separated list of keywords for the lesson
 keywords: 'NextGen Framework, National WAter Model (NWM), Hydrologic Modeling, Community Modeling' # FIXME
@@ -40,7 +40,7 @@ source: 'https://github.com/CIROH-UA/training-NGIAB-101' # FIXME
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'apatel54@ua.edu' 
+contact: 'ciroh-it-support@ua.edu' 
 
 # Navigation ------------------------------------------------
 #
