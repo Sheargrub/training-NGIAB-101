@@ -13,22 +13,38 @@ exercises: 45
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify the required data structure of a NextGen run
+- Identify the required data structure of a NextGen run in NGIAB
 - Explain how the Data Preprocess tool interacts with NGIAB
-- Prepare data for an NextGen run
+- Prepare data for an NextGen run in NGIAB
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Data Preprocess Tool
+
+**The Data Preprocess tool streamlines data preparation for NextGen runs in NGIAB.** This tool provides a graphical user interface (GUI) and a command line interface (CLI) to prepare input data and execute model runs. A graphical user interface facilitates catchment and date range selection options via an interactive map, simplifying the subsetting of hydrofabrics, generation of forcings, and creation of default NextGen realizations. While this module reduces procedural complexity, it incorporates pre-defined assumptions that may limit user flexibility in specific applications [(Cunningham, 2025)](https://github.com/CIROH-UA/NGIAB_data_preprocess).
+
+### Installing and Using the Data Preprocess Tool
+
+The Data Preprocess tool (like all of our software) is constantly being updated and refined. To install and use the Data Preprocess tool, follow the latest instructions on the [Data Preprocess GitHub page](https://github.com/CIROH-UA/NGIAB_data_preprocess). 
+
+| ![Figure 1: Map showing an example drainage basin. View from the USGS National Map.](fig/fig3-1.png) |
+| :--: |
+| *Figure 1: Map showing an example drainage basin. View from the USGS National Map.* |
+
+| ![Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).](fig/fig1-4.png) |
+| :--: |
+| *Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
+
 ## NextGen Run Directory Structure (`ngen-run/`)
 
-Running NextGen requires building a standard run directory complete with only the necessary files. Below is an explanation of the standard.
+Running NextGen requires building a standard run directory complete with only the necessary files. This is done automatically with the Data Preprocess tool. Below is an explanation of the standard run directory.
 
 A NextGen run directory `ngen-run` contains the following subfolders:
 
 - `config`:  model configuration files and hydrofabric configuration files. (required)
 - `forcings`: catchment-level forcing timeseries files. Forcing files contain variables like wind speed, temperature, precipitation, and solar radiation. (required)
 - `lakeout`: for t-route  (optional)
-- `metadata` programmatically generated folder used within ngen. Do not edit this folder. (optional)
+- `metadata` programmatically generated folder used within ngen. Do not edit this folder. (automatically generated)
 - `outputs`: This is where ngen will place the output files. (required)
 - `restart`: For restart files (optional)
 
@@ -48,10 +64,10 @@ ngen-run/
 ├── restart/
 ```
  
-#### Configuration directory `ngen-run/config/`
-This folder contains the NextGen realization file, which serves as the primary model configuration for the ngen framework. This file specifies which models to run and with which parameters, run parameters like date and time, and hydrofabric specifications.
+### Configuration directory `ngen-run/config/`
+This folder contains the NextGen realization file, which serves as the primary model configuration for the ngen framework. This file specifies which models to run (such as NoahOWP/CFE, LSTM, etc), run parameters like date and time, and hydrofabric specifications (like location, gage, catchment).
 
-Based on the models defined in the realization file, BMI configuration files may be required. For those models that require per-catchment configuration files, a folder will hold these files for each model in `ngen-run/config/cat-config`. See the directory structure convention below.
+Based on the models defined in the realization file, [BMI](https://bmi.csdms.io/en/stable/index.html) configuration files may be required. For those models that require per-catchment configuration files, a folder will hold these files for each model in `ngen-run/config/cat-config`. See the directory structure convention below.
 
 ```
 ngen-run/
@@ -73,24 +89,7 @@ ngen-run/
 |   |   ├──NOAH-OWP-M/
 ```
 
-NextGen requires a single geopackage file. This file is the [hydrofabric (Johnson, 2022)](https://mikejohnson51.github.io/hyAggregate/) (spatial data). An example geopackage can be found on Lynker-Spatial [here](https://www.lynker-spatial.com/data?path=hydrofabric%2Fv2.2%2F). Tools to subset a geopackage into a smaller domain can be found at [Lynker's hfsubset](https://github.com/LynkerIntel/hfsubset). 
-
-
-## Data Preprocess Tool
-
-**The Data Preprocess tool streamlines data preparation for NextGen simulations.** This tool provides a graphical user interface and a command line interface to prepare input data and run simulations. A graphical user interface facilitates catchment and date range selection options via an interactive map, simplifying the subsetting of hydrofabrics, generation of forcings, and creation of default NextGen realizations. While this module reduces procedural complexity, it incorporates pre-defined assumptions that may limit user flexibility in specific applications [(Cunningham, 2025)](https://github.com/CIROH-UA/NGIAB_data_preprocess).
-
-#### Installing and Using the Data Preprocess Tool
-
-The Data Preprocess tool (like all of our software) is constantly being updated and refined. To install and use the Data Preprocess tool, follow the latest instructions [here](https://github.com/CIROH-UA/NGIAB_data_preprocess). 
-
-| ![Figure 1](fig/fig3-1.png) |
-| :--: |
-| *Figure 1: Map showing an example drainage basin. View from the USGS National Map.* |
-
-| ![Figure 2](fig/fig1-4.png) |
-| :--: |
-| *Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
+NextGen requires a single geopackage file. This file is the [hydrofabric (Johnson, 2022)](https://mikejohnson51.github.io/hyAggregate/) (spatial data). An example geopackage can be found on [Lynker-Spatial's website](https://www.lynker-spatial.com/data?path=hydrofabric%2Fv2.2%2F). Tools to subset a geopackage into a smaller domain can be found at [Lynker's hfsubset](https://github.com/LynkerIntel/hfsubset). 
 
 ## Your Turn
 
