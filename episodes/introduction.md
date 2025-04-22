@@ -23,7 +23,7 @@ exercises: 5
 
 ## Introduction to NextGen
 
-The U.S. National Water Model (NWM) provides hydrologic predictions for over 3.4 million miles of rivers and streams across the United States ([Cosgrove et al., 2024](https://doi.org/10.1111/1752-1688.13184)). **The Next Generation Water Resources Modeling Framework (NextGen) is an advancement of the NWM**, setting the stage for a more flexible modeling approach. NextGen promotes model interoperability and standardizes data workflows, allowing the integration of various hydrologic models tailored to specific regional processes, providing key flexibility needed for future success with continental-scale modeling. The NextGen framework continues to undergo testing, improvements, and updates through research efforts at the NOAA Cooperative Institute for Research to Operations in Hydrology (CIROH). 
+The U.S. National Water Model (NWM) provides hydrologic predictions for over 2.7 million river reaches across the United States ([Cosgrove et al., 2024](https://doi.org/10.1111/1752-1688.13184)). **The Next Generation Water Resources Modeling Framework (NextGen) is an advancement of the NWM**, setting the stage for a more flexible modeling approach. NextGen promotes model interoperability and standardizes data workflows, allowing the integration of various hydrologic models tailored to specific regional processes, providing key flexibility needed for future success with continental-scale modeling. The NextGen framework continues to undergo testing, improvements, and updates through research efforts at the NOAA Cooperative Institute for Research to Operations in Hydrology (CIROH). 
 
 ## What is NGIAB?
 
@@ -31,9 +31,9 @@ Managing NextGen's complex software ecosystem remains challenging. The NextGen f
 
 ## Containerization
 
-Containerization effectively addresses compatibility issues and hardware variation challenges by **encapsulating applications, their dependencies, and runtime environments into a single, portable unit**. This ensures consistent execution across diverse computing environments, regardless of differences in hardware or software configurations. Unlike traditional virtual machines (VMs), which require separate guest operating systems and additional resource allocation, containers share the host system’s kernel, reducing overhead and improving computational efficiency. This lightweight approach allows for rapid deployment, scalability, and reproducibility, making it an ideal solution for complex scientific and engineering applications. 
-
-NGIAB leverages Docker ([Boettiger, 2015](https://doi.org/10.1145/2723872.2723882)) and Singularity ([Hunt et al., 2005](https://www.researchgate.net/publication/236160050_An_Overview_of_the_Singularity_Project)) to streamline deployment, ensuring cross-platform compatibility, accessibility, reproducibility, and ease of use. Although Docker is a common approach for containerizing software dependencies, we also provide a Singularity option for HPC environments because it is specifically designed to integrate with existing batch job schedulers and optimize performance for HPC applications. Unlike Docker, Singularity allows users to run containers without requiring root privileges, making it more secure and better suited for multi-user HPC environments where system administrators need to maintain strict security protocols.
+- Containerization addresses compatibility issues and hardware variation challenges by **encapsulating applications, their dependencies, and runtime environments into a single, portable unit**. 
+- This ensures consistent execution across diverse computing environments, regardless of differences in hardware or software configurations. 
+- NGIAB leverages Docker ([Boettiger, 2015](https://doi.org/10.1145/2723872.2723882)) and Singularity ([Hunt et al., 2005](https://www.researchgate.net/publication/236160050_An_Overview_of_the_Singularity_Project)) to streamline deployment.
 
 ## Architectural Components
 
@@ -43,7 +43,19 @@ NGIAB is designed as a multi-layered containerized tool that encapsulates the Ne
 | :--: |
 | *Figure 1: Architecture of the NGIAB, highlighting its core modeling foundation, CI/CD pipelines, containerized tools and supporting technologies.* |
 
-Figure 1 illustrates the layered architecture of NGIAB. At its core (Layer 1) lies a suite of integrated hydrological modeling components and hydrofabric, designed to work together within the NextGen framework. This core is wrapped by the CI/CD Pipeline layer (Layer 2), which leverages GitHub Actions to ensure automated testing, integration, and deployment capabilities for reproducible workflows. The NGIAB Containerization layer (Layer 3) provides the containerized environment and essential configuration tools. The outermost layer (Layer 4), Technologies & Methods, provides broader infrastructure, best practices, and support for deployment across different computing environments (local, cloud, HPC), and facilitates community engagement and contribution. **The architecture emphasizes four key aspects: core hydrological modeling framework capabilities, simplified access to modeling tools, facilitation of rapid development and reliability, and integration of supportive tools and practices.** 
+Figure 1 illustrates the layered architecture of NGIAB. 
+
+- **Layer 1:** At its core (Layer 1) lies a suite of integrated hydrological modeling components and hydrofabric, designed to work together within the NextGen framework. 
+- **Layer 2:** Layer 1 is wrapped by the CI/CD Pipeline layer (Layer 2), which leverages GitHub Actions to ensure automated testing, integration, and deployment capabilities for reproducible workflows. 
+- **Layer 3:** The NGIAB Containerization layer (Layer 3) provides the containerized environment and essential configuration tools. 
+- **Layer 4:** The outermost layer (Layer 4), Technologies & Methods, provides broader infrastructure, best practices, and support for deployment across different computing environments (local, cloud, HPC), and facilitates community engagement and contribution. 
+
+The architecture emphasizes four key aspects: 
+
+- core hydrological modeling framework capabilities, 
+- simplified access to modeling tools, 
+- facilitation of rapid development and reliability, 
+- and integration of supportive tools and practices.
 
 ## Extensions of NGIAB
 
@@ -67,7 +79,7 @@ Steps common to all hydrologic modeling frameworks include data collection and p
 
 ## Why should I use NGIAB?
 
-To maximize the potential benefit of this flexible framework, **community contribution is essential**, as experts in various models and geographic areas will be needed to address the complex hydrologic challenges of continental scale operational simulation. NGIAB makes this possible in research settings by easing setup and providing easy-to-run demos, allowing hydrologists and researchers to quickly configure and modify localized water models. Its open-source framework allows hydrologists and stakeholders to easily inspect, compare, and refine model predictions. Its lightweight container size also empowers hydrologists to execute large-scale simulations efficiently and reduce computational bottlenecks. By strengthening collaboration across research teams, NGIAB will help drive the evolution of community-scale water modeling and accelerate the transition from academic innovation to real-world operational use.
+NGIAB makes **community contribution** possible in research settings by easing setup and providing easy-to-run demos, allowing hydrologists and researchers to quickly configure and modify localized water models. Its open-source framework allows hydrologists and stakeholders to easily inspect, compare, and refine model predictions. Its lightweight container size also empowers hydrologists to execute large-scale simulations efficiently and reduce computational bottlenecks. By strengthening collaboration across research teams, NGIAB will help drive the evolution of community-scale water modeling and accelerate the transition from academic innovation to real-world operational use.
 
 ## Your Turn
 
