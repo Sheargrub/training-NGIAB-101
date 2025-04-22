@@ -124,7 +124,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <hr>
 <li><a class="dropdown-item" href="reference.html">Reference</a></li>
-<li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
+<li><a class="dropdown-item" href="troubleshooting.html">DevCon 2025 Troubleshooting</a></li>
           </ul>
 </li>
       </ul>
@@ -352,7 +352,7 @@
                       </li>
                       <hr>
 <li><a class="dropdown-item" href="reference.html">Reference</a></li>
-<li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
+<li><a class="dropdown-item" href="troubleshooting.html">DevCon 2025 Troubleshooting</a></li>
                     </ul>
 </div>
                 </div>
@@ -384,7 +384,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -425,9 +425,8 @@
 </h2>
 <hr class="half-width">
 <p>The U.S. National Water Model (NWM) provides hydrologic predictions
-for over 3.4 million miles of rivers and streams across the United
-States (<a href="https://doi.org/10.1111/1752-1688.13184" class="external-link">Cosgrove et
-al., 2024</a>). <strong>The Next Generation Water Resources Modeling
+for over 2.7 million river reaches across the United States (<a href="https://doi.org/10.1111/1752-1688.13184" class="external-link">Cosgrove et al.,
+2024</a>). <strong>The Next Generation Water Resources Modeling
 Framework (NextGen) is an advancement of the NWM</strong>, setting the
 stage for a more flexible modeling approach. NextGen promotes model
 interoperability and standardizes data workflows, allowing the
@@ -442,9 +441,7 @@ Cooperative Institute for Research to Operations in Hydrology
 <hr class="half-width">
 <p>Managing NextGen’s complex software ecosystem remains challenging.
 The NextGen framework’s implementation requires handling numerous
-software libraries and dependencies, which can be a barrier for users
-unfamiliar with its technical requirements. To bridge this gap in
-accessibility of the NextGen framework for community use, we developed
+software libraries and dependencies. To streamline this, we developed
 NextGen In A Box (NGIAB)—an open-source, containerized solution that
 encapsulates the NextGen framework and essential modeling components
 into a self-contained, reproducible application. By eliminating manual
@@ -455,33 +452,42 @@ researchers, academic institutions, and government agencies by providing
 a scalable, community-driven modeling environment. <strong>In essence,
 NGIAB provides a unified solution that powers NextGen models, including
 future versions of the NWM starting with version 4.</strong></p>
+<div id="terminology" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="terminology" class="callout-inner">
+<h3 class="callout-title">Terminology</h3>
+<div class="callout-content">
+<ul>
+<li>NextGen: overarching framework</li>
+<li>NGIAB: containerized packaging of NextGen</li>
+<li>
+<code>ngen</code>: the engine used within NextGen</li>
+<li>NWM: specific operational implementation used by the National
+Weather Service</li>
+</ul>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="containerization">Containerization<a class="anchor" aria-label="anchor" href="#containerization"></a>
 </h2>
 <hr class="half-width">
-<p>Containerization effectively addresses compatibility issues and
-hardware variation challenges by <strong>encapsulating applications,
-their dependencies, and runtime environments into a single, portable
-unit</strong>. This ensures consistent execution across diverse
-computing environments, regardless of differences in hardware or
-software configurations. Unlike traditional virtual machines (VMs),
-which require separate guest operating systems and additional resource
-allocation, containers share the host system’s kernel, reducing overhead
-and improving computational efficiency. This lightweight approach allows
-for rapid deployment, scalability, and reproducibility, making it an
-ideal solution for complex scientific and engineering applications.</p>
-<p>NGIAB leverages Docker (<a href="https://doi.org/10.1145/2723872.2723882" class="external-link">Boettiger, 2015</a>) and
+<ul>
+<li>Containerization addresses compatibility issues and hardware
+variation challenges by <strong>encapsulating applications, their
+dependencies, and runtime environments into a single, portable
+unit</strong>.</li>
+<li>Think of containerization like putting a model and all its tools
+into a sealed toolbox – you can carry and run it anywhere, and
+everything needed is inside..</li>
+<li>This ensures consistent execution across diverse computing
+environments, regardless of differences in hardware or software
+configurations.</li>
+<li>NGIAB leverages Docker (<a href="https://doi.org/10.1145/2723872.2723882" class="external-link">Boettiger, 2015</a>) and
 Singularity (<a href="https://www.researchgate.net/publication/236160050_An_Overview_of_the_Singularity_Project" class="external-link">Hunt
-et al., 2005</a>) to streamline deployment, ensuring cross-platform
-compatibility, accessibility, reproducibility, and ease of use. Although
-Docker is a common approach for containerizing software dependencies, we
-also provide a Singularity option for HPC environments because it is
-specifically designed to integrate with existing batch job schedulers
-and optimize performance for HPC applications. Unlike Docker,
-Singularity allows users to run containers without requiring root
-privileges, making it more secure and better suited for multi-user HPC
-environments where system administrators need to maintain strict
-security protocols.</p>
-</section><section><h2 class="section-heading" id="architectural-components">Architectural Components<a class="anchor" aria-label="anchor" href="#architectural-components"></a>
+et al., 2005</a>) to streamline deployment.</li>
+</ul></section><section><h2 class="section-heading" id="architectural-components">Architectural Components<a class="anchor" aria-label="anchor" href="#architectural-components"></a>
 </h2>
 <hr class="half-width">
 <p>NGIAB is designed as a multi-layered containerized tool that
@@ -490,7 +496,7 @@ NWM within a reproducible environment.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig1-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig1-1.png" alt="Figure 1: Architecture of the NGIAB, highlighting its core modeling foundation, CI/CD pipelines, containerized tools and supporting technologies." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 1: Architecture of the NGIAB, highlighting
@@ -498,32 +504,48 @@ its core modeling foundation, CI/CD pipelines, containerized tools and
 supporting technologies.</em></td>
 </tr></tbody>
 </table>
-<p>Figure 1 illustrates the layered architecture of NGIAB. At its core
-(Layer 1) lies a suite of integrated hydrological modeling components
-and hydrofabric, designed to work together within the NextGen framework.
-This core is wrapped by the CI/CD Pipeline layer (Layer 2), which
-leverages GitHub Actions to ensure automated testing, integration, and
-deployment capabilities for reproducible workflows. The NGIAB
-Containerization layer (Layer 3) provides the containerized environment
-and essential configuration tools. The outermost layer (Layer 4),
+<p>Figure 1 illustrates the layered architecture of NGIAB.</p>
+<ul>
+<li>
+<strong>Layer 1:</strong> At its core (Layer 1) lies a suite of
+integrated hydrological modeling components and hydrofabric (a geopatial
+dataset representing hydrologic features like rivers, basins, and
+connections), designed to work together within the NextGen
+framework.</li>
+<li>
+<strong>Layer 2:</strong> Layer 1 is wrapped by the Continuous
+Integration/Continuous Deployment (CI/CD) Pipeline layer (Layer 2).
+CI/CD are tools and practices that automate code testing and updates.
+NGIAB leverages GitHub Actions to ensure automated testing, integration,
+and deployment capabilities for reproducible workflows.</li>
+<li>
+<strong>Layer 3:</strong> The NGIAB Containerization layer (Layer 3)
+provides the containerized environment and essential configuration
+tools.</li>
+<li>
+<strong>Layer 4:</strong> The outermost layer (Layer 4),
 Technologies &amp; Methods, provides broader infrastructure, best
 practices, and support for deployment across different computing
 environments (local, cloud, HPC), and facilitates community engagement
-and contribution. <strong>The architecture emphasizes four key aspects:
-core hydrological modeling framework capabilities, simplified access to
-modeling tools, facilitation of rapid development and reliability, and
-integration of supportive tools and practices.</strong></p>
-</section><section><h2 class="section-heading" id="extensions-of-ngiab">Extensions of NGIAB<a class="anchor" aria-label="anchor" href="#extensions-of-ngiab"></a>
+and contribution.</li>
+</ul>
+<p>The architecture emphasizes four key aspects:</p>
+<ul>
+<li>core hydrological modeling framework capabilities,</li>
+<li>simplified access to modeling tools,</li>
+<li>facilitation of rapid development and reliability,</li>
+<li>and integration of supportive tools and practices.</li>
+</ul></section><section><h2 class="section-heading" id="extensions-of-ngiab">Extensions of NGIAB<a class="anchor" aria-label="anchor" href="#extensions-of-ngiab"></a>
 </h2>
 <hr class="half-width">
 <p>Several extensions of NGIAB are already integrated with
-NextGen-related tools like Data Preprocess, Tools for Exploratory
-Evaluation in Hydrologic Research (TEEHR), and Data Visualizer (Figure
-2). These extensions will be discussed in later episodes.</p>
+NextGen-related tools like <a href="../site/docs/data-preparation.html">Data Preprocess</a>, <a href="../site/docs/evaluation.html">Tools for Exploratory Evaluation in
+Hydrologic Research (TEEHR)</a>, and <a href="../site/docs/visualization.html">Data Visualizer</a> (Figure 2).
+These extensions will be discussed in later episodes.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig1-2.png" alt="Figure 2" class="figure"></th>
+<th align="center"><img src="../fig/fig1-2.png" alt="Figure 2: Workflow of data acquisition, model execution, evaluation, and results visualization." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 2: Workflow of data acquisition, model
@@ -535,14 +557,14 @@ execution, evaluation, and results visualization.</em></td>
 <p>Steps common to all hydrologic modeling frameworks include data
 collection and preparation, framework setup and model execution,
 evaluation, results visualization, and calibration. Researchers can use
-NGIAB to run simulations for their basins of interest. <em>Note that
+NGIAB to execute model runs for their basins of interest. <em>Note that
 calibration is not yet an integrated capability within NGIAB.</em>
 Figures 3 and 4 show examples of how NGIAB and its extensions have been
 used to simulate streamflow for five years in the Provo River basin.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig1-4.png" alt="Figure 3" class="figure"></th>
+<th align="center"><img src="../fig/fig1-4.png" alt="Figure 3: Map showing the drainage basin used as our demonstration case, the Provo River near Woodland, UT (Gage-10154200). This view shows the NGIAB interactive preprocessing tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots)." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 3: Map showing the drainage basin used as
@@ -557,34 +579,32 @@ stations (black dots).</em></td>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig1-5.png" alt="Figure 4" class="figure"></th>
+<th align="center"><img src="../fig/fig1-5.png" alt="Figure 4: Map showing the geospatial visualization using the Data Visualizer for a selected outlet point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labelled “ngen”; orange line) with the performance metrics (Kling-Gupta Efficiency (KGE), Nash-Sutcliffe Efficiency (NSE), and relative bias). These metrics assess how closely simulated results match observed data. The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 4: Map showing the geospatial
 visualization using the Data Visualizer for a selected outlet point as
 well as displaying a time series plot between observed (labeled “USGS”;
 blue line) and simulated (labelled “ngen”; orange line) with the
-performance metrics (KGE, NSE, and relative bias). The Visualizer can
-also show the performance of the NWM 3.0 compared to the observed time
+performance metrics (Kling-Gupta Efficiency (KGE), Nash-Sutcliffe
+Efficiency (NSE), and relative bias). These metrics assess how closely
+simulated results match observed data. The Visualizer can also show the
+performance of the NWM 3.0 compared to the observed time
 series.</em></td>
 </tr></tbody>
 </table></section><section><h2 class="section-heading" id="why-should-i-use-ngiab">Why should I use NGIAB?<a class="anchor" aria-label="anchor" href="#why-should-i-use-ngiab"></a>
 </h2>
 <hr class="half-width">
-<p>To maximize the potential benefit of this flexible framework,
-<strong>community contribution is essential</strong>, as experts in
-various models and geographic areas will be needed to address the
-complex hydrologic challenges of continental scale operational
-simulation. NGIAB makes this possible in research settings by easing
-setup and providing easy-to-run demos, allowing hydrologists and
-researchers to quickly configure and modify localized water models. Its
-open-source framework allows hydrologists and stakeholders to easily
-inspect, compare, and refine model predictions. Its lightweight
-container size also empowers hydrologists to execute large-scale
-simulations efficiently and reduce computational bottlenecks. By
-strengthening collaboration across research teams, NGIAB will help drive
-the evolution of community-scale water modeling and accelerate the
-transition from academic innovation to real-world operational use.</p>
+<p>NGIAB makes <strong>community contribution</strong> possible in
+research settings by simplifying setup and providing demos, allowing
+hydrologists and researchers to configure and modify localized water
+models. Its open-source framework allows hydrologists and stakeholders
+to inspect, compare, and refine model predictions. Its lightweight
+container size also empowers hydrologists to execute large-scale runs
+efficiently and reduce computational bottlenecks. By strengthening
+collaboration across research teams, NGIAB will help drive the evolution
+of community-scale water modeling and accelerate the transition from
+academic innovation to real-world operational use.</p>
 </section><section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
 </h2>
 <hr class="half-width">
@@ -630,7 +650,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-installation"><p>Content from <a href="installation.html">Installation and Setup</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/installation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -663,7 +683,7 @@ other episodes in this module.</p>
 <ul>
 <li>Install and verify Docker</li>
 <li>Set up NGIAB project directories</li>
-<li>Run a sample NGIAB simulation</li>
+<li>Run a sample NGIAB run</li>
 </ul>
 </div>
 </div>
@@ -676,7 +696,7 @@ other episodes in this module.</p>
 <p>This lesson guides you through installing and setting up NGIAB, a
 containerized solution designed to simplify running the NextGen modeling
 framework locally. NGIAB leverages Docker containers to ensure
-consistent and reproducible simulations.</p>
+consistent and reproducible runs.</p>
 </section><section><h2 class="section-heading" id="system-requirements">System Requirements<a class="anchor" aria-label="anchor" href="#system-requirements"></a>
 </h2>
 <hr class="half-width">
@@ -691,12 +711,39 @@ Linux<br>
 </li>
 <li>
 <strong>Recommended Minimum RAM:</strong> 8 GB</li>
-</ul></section><section><h2 class="section-heading" id="docker-installation">Docker Installation<a class="anchor" aria-label="anchor" href="#docker-installation"></a>
+</ul>
+<div id="connecting-to-a-remote-machine-through-ssh" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="connecting-to-a-remote-machine-through-ssh" class="callout-inner">
+<h3 class="callout-title">Connecting to a remote machine through SSH?</h3>
+<div class="callout-content">
+<p>To use the Data Visualizer through an Secure Shell (SSH) connection,
+you will have to set up port forwarding when connecting to the remote
+machine. Port forwarding will allow you to access a remotely hosted
+browser session on your local machine. See the instructions under “Using
+NGIAB through an SSH connection” in the <a href="../site/docs/advanced-topics.html">Advanced Topics episode</a> in
+this training module.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="docker-installation">Docker Installation<a class="anchor" aria-label="anchor" href="#docker-installation"></a>
 </h2>
 <hr class="half-width">
-<div class="section level3">
-<h3 id="windows-wsl">Windows (WSL)<a class="anchor" aria-label="anchor" href="#windows-wsl"></a>
-</h3>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Windows (WSL)
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
+<p>Note: Users who already have Docker installed will still need to
+install a separate WSL distro and set it as their default, if they have
+not already.</p>
 <ol style="list-style-type: decimal">
 <li>
 <p>Install Windows Subsystem for Linux (WSL):</p>
@@ -706,7 +753,8 @@ Linux<br>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span></span></code></pre>
 </div>
 </li>
-<li><p>Install Docker Desktop from Docker’s official website.</p></li>
+<li><p>Install Docker Desktop from <a href="https://docs.docker.com/desktop/setup/install/windows-install/" class="external-link">Docker’s
+official website</a>.</p></li>
 <li><p>Launch Docker Desktop and open WSL terminal as
 administrator.</p></li>
 <li>
@@ -716,15 +764,27 @@ administrator.</p></li>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre>
 </div>
+<p>This should generate a message that shows that your installation is
+working.</p>
 </li>
 </ol>
 </div>
-<div class="section level3">
-<h3 id="macos">macOS<a class="anchor" aria-label="anchor" href="#macos"></a>
-</h3>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  macOS
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li><p>Install Docker Desktop from Docker’s official Mac
-installer.</p></li>
+<li><p>Install Docker Desktop from <a href="https://docs.docker.com/desktop/setup/install/mac-install/" class="external-link">Docker’s
+official Mac installer</a>.</p></li>
 <li><p>Launch Docker Desktop.</p></li>
 <li>
 <p>Verify Docker installation:</p>
@@ -733,14 +793,27 @@ installer.</p></li>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre>
 </div>
+<p>This should generate a message that shows that your installation is
+working.</p>
 </li>
 </ol>
 </div>
-<div class="section level3">
-<h3 id="linux">Linux<a class="anchor" aria-label="anchor" href="#linux"></a>
-</h3>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Linux
+  </h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li><p>Install Docker by following the official Docker guide.</p></li>
+<li><p>Install Docker by following the <a href="https://docs.docker.com/desktop/setup/install/linux/" class="external-link">official
+Docker guide</a>.</p></li>
 <li>
 <p>Start Docker service and verify:</p>
 <div class="codewrapper sourceCode" id="cb4">
@@ -749,12 +822,21 @@ installer.</p></li>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">sudo</span> systemctl start docker</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre>
 </div>
+<p>This should generate a message that shows that your installation is
+working.</p>
 </li>
 </ol>
 </div>
-</section><section><h2 class="section-heading" id="challenge-1-verify-docker">✅ Challenge 1: Verify Docker<a class="anchor" aria-label="anchor" href="#challenge-1-verify-docker"></a>
-</h2>
-<hr class="half-width">
+</div>
+</div>
+</div>
+<div id="verify-docker" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="verify-docker" class="callout-inner">
+<h3 class="callout-title">Verify Docker</h3>
+<div class="callout-content">
 <p>Run the command below:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -763,9 +845,18 @@ installer.</p></li>
 </div>
 <p>Confirm it executes without errors. If errors occur, revisit Docker
 installation steps.</p>
-<div class="section level3">
-<h3 id="solution">Solution<a class="anchor" aria-label="anchor" href="#solution"></a>
-</h3>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Troubleshooting
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
 <p>If <code>docker ps -a</code> fails, ensure Docker Desktop is running,
 or Docker service is active on Linux:</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -774,11 +865,15 @@ or Docker service is active on Linux:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">sudo</span> systemctl start docker</span></code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="ngiab-setup">NGIAB Setup<a class="anchor" aria-label="anchor" href="#ngiab-setup"></a>
 </h2>
 <hr class="half-width">
 <p>These steps will lead you through the process of running NGIAB with a
-set of pre-configured input data and realization files.</p>
+set of pre-configured input data and realization files. A realization
+file is a scenario using a specific model on a specific region.</p>
 <div class="section level3">
 <h3 id="step-1-create-project-directory">Step 1: Create Project Directory<a class="anchor" aria-label="anchor" href="#step-1-create-project-directory"></a>
 </h3>
@@ -792,61 +887,139 @@ set of pre-configured input data and realization files.</p>
 <div class="section level3">
 <h3 id="step-2-download-sample-data">Step 2: Download Sample Data<a class="anchor" aria-label="anchor" href="#step-2-download-sample-data"></a>
 </h3>
-<p>Choose one of the following datasets:</p>
-<p><strong>Option 1: Provo River (AWI-009)</strong></p>
+<p>Choose one of the following datasets. File sizes and model
+configurations are provided so that you can download a dataset suitable
+for your interests, available disk space, and network speed.</p>
+<div class="section level4">
+<h4 id="option-1-awi-009">Option 1: AWI-009<a class="anchor" aria-label="anchor" href="#option-1-awi-009"></a>
+</h4>
+<p>Models: SLOTH (dummy model), NoahOWP (land surface model), CFE
+(conceptual rainfall-runoff model, functionally equivalent to NWM)</p>
+<p>Compressed file size: 249 MB | Extracted file size: 1.77 GB</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">wget</span> https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-009/AWI_16_10154200_009.tar.gz</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> AWI_16_10154200_009.tar.gz</span></code></pre>
 </div>
-<p><strong>Option 2: AWI-007</strong></p>
+</div>
+<div class="section level4">
+<h4 id="option-2-awi-007">Option 2: AWI-007<a class="anchor" aria-label="anchor" href="#option-2-awi-007"></a>
+</h4>
+<p>Models: SLOTH, NoahOWP, CFE</p>
+<p>Compressed file size: 1.87 MB | Extracted file size: 5.53 MB</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">wget</span> https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-007/AWI_16_2863657_007.tar.gz</span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> AWI_16_2863657_007.tar.gz</span></code></pre>
 </div>
-<p><strong>Option 3: AWI-008 (with LSTM)</strong></p>
+</div>
+<div class="section level4">
+<h4 id="option-3-awi-008">Option 3: AWI-008<a class="anchor" aria-label="anchor" href="#option-3-awi-008"></a>
+</h4>
+<p>Models: SLOTH, LSTM (long short-term memory, recurrent neural
+network)</p>
+<p>Compressed file size: 1.50 MB | Extracted file size: 5.46 MB</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">wget</span> https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-008/AWI_16_2863806_008.tar.gz</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> AWI_16_2863806_008.tar.gz</span></code></pre>
 </div>
+<div id="check-did-you-download-the-dataset" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="check-did-you-download-the-dataset" class="callout-inner">
+<h3 class="callout-title">Check: Did You Download the Dataset?</h3>
+<div class="callout-content">
+<p>Run this command:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ls</span>  ~/NextGen/ngen-data</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Output
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>You should see a folder like:</p>
+<pre><code><span><span class="va">AWI_16_10154200_009</span></span></code></pre>
+<p>If you see it, your dataset was downloaded and extracted
+correctly.</p>
+<p>If you see nothing or just the <code>.tar.gz</code> file, run the
+following again:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">tar</span>  <span class="at">-xf</span>  AWI_16_10154200_009.tar.gz</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="step-3-clone-and-run-ngiab">Step 3: Clone and Run NGIAB<a class="anchor" aria-label="anchor" href="#step-3-clone-and-run-ngiab"></a>
 </h3>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="bu">cd</span> ../  <span class="co"># back to NextGen folder</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="bu">cd</span> NGIAB-CloudInfra</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="ex">./guide.sh</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">cd</span> ../  <span class="co"># back to NextGen folder</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="bu">cd</span> NGIAB-CloudInfra</span></code></pre>
 </div>
-<p>The interactive <code>guide.sh</code> script will prompt you to
-select input data, processing modes, and will initiate your
-simulation.</p>
 </div>
-<div class="section level3">
-<h3 id="directory-structure-ngen-run">Directory Structure (<code>ngen-run/</code>)<a class="anchor" aria-label="anchor" href="#directory-structure-ngen-run"></a>
+</section><section><h2 class="section-heading" id="ready-to-go">✅ Ready to Go!<a class="anchor" aria-label="anchor" href="#ready-to-go"></a>
+</h2>
+<hr class="half-width">
+<p>If you’ve completed the steps above and verified your dataset and
+working directory, you are ready to run the interactive guide script
+<code>guide.sh</code>. It will prompt you to select input data,
+processing modes, and will initiate your run.</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre><code>ngen-run/
-├── config/
-├── forcings/
-├── lakeout/ (optional)
-├── metadata/ (auto-generated, do not edit)
-├── outputs/
-└── restart/ (optional)
-</code></pre>
-<blockquote>
-<p><strong>Tip:</strong> Always run a quick simulation with provided
-sample datasets to verify the successful setup of NGIAB.</p>
-</blockquote>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">./guide.sh</span></span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a>
+<p>This will walk you through the NGIAB setup and launch your first
+run.</p>
+<div id="guide.sh-tips" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="guide.sh-tips" class="callout-inner">
+<h3 class="callout-title">
+<code>guide.sh</code> Tips</h3>
+<div class="callout-content">
+<ul>
+<li>A series of prompts will appear that ask you if you want to use the
+existing Docker image or update to the latest image. Updating to the
+latest image will take longer, so for the purposes of this tutorial,
+using the existing Docker image is fine.</li>
+<li>When prompted to run NextGen in serial or parallel mode, either is
+fine.</li>
+<li>The option to open a Bash shell (interactive shell) will allow you
+to explore the data directory without quitting NGIAB.</li>
+<li>Redirecting command output to <code>/dev/null</code> significantly
+reduces the amount of output. Either is fine, but if you are curious
+about what is happening inside the model, we suggest that you do not
+redirect the output.</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="troubleshooting-1">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting-1"></a>
 </h2>
 <hr class="half-width">
 <ul>
@@ -855,36 +1028,19 @@ sample datasets to verify the successful setup of NGIAB.</p>
 <li><p>For permission errors on Linux, run Docker commands with
 <code>sudo</code> or add your user to the Docker group:</p></li>
 </ul>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> docker <span class="va">${USER}</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="ex">newgrp</span> docker</span></code></pre>
-</div>
-<div class="section level3">
-<h3 id="check-did-you-download-the-dataset">Check: Did You Download the Dataset?<a class="anchor" aria-label="anchor" href="#check-did-you-download-the-dataset"></a>
-</h3>
-<p>Run this command:</p>
-<div class="codewrapper sourceCode" id="cb14">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">ls</span>  ~/NextGen/ngen-data</span></code></pre>
-</div>
-<p>You should see a folder like:</p>
-<pre><code><span><span class="va">AWI_16_10154200_009</span></span></code></pre>
-<p>If you see it, your dataset was downloaded and extracted
-correctly.</p>
-<p>If you see nothing or just the <code>.tar.gz</code> file, run the
-following again:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">tar</span>  <span class="at">-xf</span>  AWI_16_10154200_009.tar.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> docker <span class="va">${USER}</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">newgrp</span> docker</span></code></pre>
 </div>
+<div id="are-you-in-the-right-directory" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="section level3">
-<h3 id="are-you-in-the-right-directory">Are You in the Right Directory?<a class="anchor" aria-label="anchor" href="#are-you-in-the-right-directory"></a>
-</h3>
+<div id="are-you-in-the-right-directory" class="callout-inner">
+<h3 class="callout-title">Are You in the Right Directory?</h3>
+<div class="callout-content">
 <p>Before running any script, always check your current folder:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -900,59 +1056,43 @@ following again:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="bu">cd</span> ~/NextGen/NGIAB-CloudInfra</span></code></pre>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="additional-resources">Additional Resources<a class="anchor" aria-label="anchor" href="#additional-resources"></a>
+</div>
+</div>
+<blockquote>
+<p><strong>Tip:</strong> Always execute a quick run with provided sample
+datasets to verify the successful setup of NGIAB.<br></p>
+</blockquote>
+<hr></section><section><h2 class="section-heading" id="additional-resources">Additional Resources<a class="anchor" aria-label="anchor" href="#additional-resources"></a>
 </h2>
 <hr class="half-width">
 <p>Are you interested in customizing your run with your own catchments
-and run configurations? Do you want to explore more functionalities of
-NGIAB? Check out the following episodes:</p>
+(watersheds) and run configurations? Do you want to explore more
+functionalities of NGIAB? Check out the following episodes:</p>
 <ul>
-<li><p>Data Preparation - NGIAB Data Preprocessor</p></li>
-<li><p>Evaluation - NGIAB TEEHR Integration</p></li>
-<li><p>Visualization - Data Visualizer</p></li>
-</ul></section><section><h2 class="section-heading" id="key-points">Key Points<a class="anchor" aria-label="anchor" href="#key-points"></a>
-</h2>
-<hr class="half-width">
-<ul>
-<li><p>NGIAB simplifies NextGen framework deployment through
-Docker.</p></li>
-<li><p>Use <code>guide.sh</code> for interactive configuration and
-simulation execution.</p></li>
-<li><p>Always confirm successful setup by running provided sample
-simulations.</p></li>
+<li><p><a href="../site/docs/data-preparation.html">Data Preparation -
+NGIAB Data Preprocessor</a></p></li>
+<li><p><a href="../site/docs/evaluation.html">Evaluation - NGIAB TEEHR
+Integration</a></p></li>
+<li><p><a href="../site/docs/visualization.html">Visualization - Data
+Visualizer</a></p></li>
+<li><p><a href="../site/docs/advanced-topics.html">Advanced
+Topics</a></p></li>
 </ul>
-<hr></section><section><h2 class="section-heading" id="youre-all-set">✅ You’re All Set!<a class="anchor" aria-label="anchor" href="#youre-all-set"></a>
-</h2>
-<hr class="half-width">
-<p>If you’ve completed the steps above and verified your dataset and
-working directory, you’re ready to run the interactive guide script:</p>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">./guide.sh</span></span></code></pre>
-</div>
-<p>This will walk you through the NGIAB setup and launch your first
-simulation.</p>
-<div id="callout1" class="callout">
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
+<i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>A series of prompts will appear that ask you if you want to use the
-existing Docker image or update to the latest image. Updating to the
-latest image will take longer, so for the purposes of this tutorial,
-using the existing Docker image is fine.</li>
-<li>When prompted to run NextGen in serial or parallel mode, either is
-fine.</li>
-<li>The option to open a Bash shell (interactive shell) will allow you
-to explore the data directory without quitting NGIAB.</li>
-<li>Redirecting command output to <code>/dev/null</code> significantly
-reduces the amount of output. Either is fine, but if you are curious
-about what is happening inside NextGen, we suggest that you don’t
-redirect the output.</li>
+<li>NGIAB simplifies NextGen framework deployment through Docker.<br>
+</li>
+<li>Use <code>guide.sh</code> for interactive configuration and run
+execution.<br>
+</li>
+<li>Always confirm successful setup by executing provided sample
+runs.</li>
 </ul>
 </div>
 </div>
@@ -963,7 +1103,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-data-preparation"><p>Content from <a href="data-preparation.html">Data Preparation</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/data-preparation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 50 minutes</p>
@@ -989,21 +1129,66 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Identify the required data structure of a NextGen run</li>
+<li>Identify the required data structure of a NextGen run in NGIAB</li>
 <li>Explain how the Data Preprocess tool interacts with NGIAB</li>
-<li>Prepare data for an NextGen run</li>
+<li>Prepare data for an NextGen run in NGIAB</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="nextgen-run-directory-structure-ngen-run">NextGen Run Directory Structure (<code>ngen-run/</code>)<a class="anchor" aria-label="anchor" href="#nextgen-run-directory-structure-ngen-run"></a>
+<section><h2 class="section-heading" id="data-preprocess-tool">Data Preprocess Tool<a class="anchor" aria-label="anchor" href="#data-preprocess-tool"></a>
+</h2>
+<hr class="half-width">
+<p><strong>The Data Preprocess tool streamlines data preparation for
+NextGen runs in NGIAB.</strong> This tool provides a graphical user
+interface (GUI) and a command line interface (CLI) to prepare input data
+and execute model runs. A graphical user interface facilitates catchment
+and date range selection options via an interactive map, simplifying the
+subsetting of hydrofabrics, generation of forcings, and creation of
+default NextGen realizations. While this module reduces procedural
+complexity, it incorporates pre-defined assumptions that may limit user
+flexibility in specific applications <a href="https://github.com/CIROH-UA/NGIAB_data_preprocess" class="external-link">(Cunningham,
+2025)</a>.</p>
+<div class="section level3">
+<h3 id="installing-and-using-the-data-preprocess-tool">Installing and Using the Data Preprocess Tool<a class="anchor" aria-label="anchor" href="#installing-and-using-the-data-preprocess-tool"></a>
+</h3>
+<p>The Data Preprocess tool (like all of our software) is constantly
+being updated and refined. To install and use the Data Preprocess tool,
+follow the latest instructions on the <a href="https://github.com/CIROH-UA/NGIAB_data_preprocess" class="external-link">Data Preprocess
+GitHub page</a>.</p>
+<table class="table">
+<colgroup><col width="100%"></colgroup>
+<thead><tr class="header">
+<th align="center"><img src="../fig/fig3-1.png" alt="Figure 1: Map showing an example drainage basin. View from the USGS National Map." class="figure"></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="center"><em>Figure 1: Map showing an example drainage basin.
+View from the USGS National Map.</em></td>
+</tr></tbody>
+</table>
+<table class="table">
+<colgroup><col width="100%"></colgroup>
+<thead><tr class="header">
+<th align="center"><img src="../fig/fig1-4.png" alt="Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots)." class="figure"></th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="center"><em>Figure 2: Map showing an example drainage basin.
+View from the Data Preprocess tool. The highlighted region (light orange
+area; downstream-most basin in pink) represents the specific study
+basin, illustrating the river network (blue lines), sub-basins (orange),
+and surrounding USGS gaging stations (black dots).</em></td>
+</tr></tbody>
+</table>
+</div>
+</section><section><h2 class="section-heading" id="nextgen-run-directory-structure-ngen-run">NextGen Run Directory Structure (<code>ngen-run/</code>)<a class="anchor" aria-label="anchor" href="#nextgen-run-directory-structure-ngen-run"></a>
 </h2>
 <hr class="half-width">
 <p>Running NextGen requires building a standard run directory complete
-with only the necessary files. Below is an explanation of the
-standard.</p>
+with only the necessary files. This is done automatically with the Data
+Preprocess tool. Below is an explanation of the standard run
+directory.</p>
 <p>A NextGen run directory <code>ngen-run</code> contains the following
 subfolders:</p>
 <ul>
@@ -1018,7 +1203,7 @@ precipitation, and solar radiation. (required)</li>
 <code>lakeout</code>: for t-route (optional)</li>
 <li>
 <code>metadata</code> programmatically generated folder used within
-ngen. Do not edit this folder. (optional)</li>
+ngen. Do not edit this folder. (automatically generated)</li>
 <li>
 <code>outputs</code>: This is where ngen will place the output
 files. (required)</li>
@@ -1038,19 +1223,20 @@ files. (required)</li>
 ├── outputs/
 │
 ├── restart/</code></pre>
-<div class="section level4">
-<h4 id="configuration-directory-ngen-runconfig">Configuration directory <code>ngen-run/config/</code>
+<div class="section level3">
+<h3 id="configuration-directory-ngen-runconfig">Configuration directory <code>ngen-run/config/</code>
 <a class="anchor" aria-label="anchor" href="#configuration-directory-ngen-runconfig"></a>
-</h4>
+</h3>
 <p>This folder contains the NextGen realization file, which serves as
 the primary model configuration for the ngen framework. This file
-specifies which models to run and with which parameters, run parameters
-like date and time, and hydrofabric specifications.</p>
-<p>Based on the models defined in the realization file, BMI
-configuration files may be required. For those models that require
-per-catchment configuration files, a folder will hold these files for
-each model in <code>ngen-run/config/cat-config</code>. See the directory
-structure convention below.</p>
+specifies which models to run (such as NoahOWP/CFE, LSTM, etc), run
+parameters like date and time, and hydrofabric specifications (like
+location, gage, catchment).</p>
+<p>Based on the models defined in the realization file, <a href="https://bmi.csdms.io/en/stable/index.html" class="external-link">BMI</a> configuration
+files may be required. For those models that require per-catchment
+configuration files, a folder will hold these files for each model in
+<code>ngen-run/config/cat-config</code>. See the directory structure
+convention below.</p>
 <pre><code>ngen-run/
 |
 ├── config/
@@ -1070,52 +1256,10 @@ structure convention below.</p>
 |   |   ├──NOAH-OWP-M/</code></pre>
 <p>NextGen requires a single geopackage file. This file is the <a href="https://mikejohnson51.github.io/hyAggregate/" class="external-link">hydrofabric
 (Johnson, 2022)</a> (spatial data). An example geopackage can be found
-on Lynker-Spatial <a href="https://www.lynker-spatial.com/data?path=hydrofabric%2Fv2.2%2F" class="external-link">here</a>.
-Tools to subset a geopackage into a smaller domain can be found at <a href="https://github.com/LynkerIntel/hfsubset" class="external-link">Lynker’s
+on <a href="https://www.lynker-spatial.com/data?path=hydrofabric%2Fv2.2%2F" class="external-link">Lynker-Spatial’s
+website</a>. Tools to subset a geopackage into a smaller domain can be
+found at <a href="https://github.com/LynkerIntel/hfsubset" class="external-link">Lynker’s
 hfsubset</a>.</p>
-</div>
-</section><section><h2 class="section-heading" id="data-preprocess-tool">Data Preprocess Tool<a class="anchor" aria-label="anchor" href="#data-preprocess-tool"></a>
-</h2>
-<hr class="half-width">
-<p><strong>The Data Preprocess tool streamlines data preparation for
-NextGen simulations.</strong> This tool provides a graphical user
-interface and a command line interface to prepare input data and run
-simulations. A graphical user interface facilitates catchment and date
-range selection options via an interactive map, simplifying the
-subsetting of hydrofabrics, generation of forcings, and creation of
-default NextGen realizations. While this module reduces procedural
-complexity, it incorporates pre-defined assumptions that may limit user
-flexibility in specific applications <a href="https://github.com/CIROH-UA/NGIAB_data_preprocess" class="external-link">(Cunningham,
-2025)</a>.</p>
-<div class="section level4">
-<h4 id="installing-and-using-the-data-preprocess-tool">Installing and Using the Data Preprocess Tool<a class="anchor" aria-label="anchor" href="#installing-and-using-the-data-preprocess-tool"></a>
-</h4>
-<p>The Data Preprocess tool (like all of our software) is constantly
-being updated and refined. To install and use the Data Preprocess tool,
-follow the latest instructions <a href="https://github.com/CIROH-UA/NGIAB_data_preprocess" class="external-link">here</a>.</p>
-<table class="table">
-<colgroup><col width="100%"></colgroup>
-<thead><tr class="header">
-<th align="center"><img src="../fig/fig3-1.png" alt="Figure 1" class="figure"></th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="center"><em>Figure 1: Map showing an example drainage basin.
-View from the USGS National Map.</em></td>
-</tr></tbody>
-</table>
-<table class="table">
-<colgroup><col width="100%"></colgroup>
-<thead><tr class="header">
-<th align="center"><img src="../fig/fig1-4.png" alt="Figure 2" class="figure"></th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="center"><em>Figure 2: Map showing an example drainage basin.
-View from the Data Preprocess tool. The highlighted region (light orange
-area; downstream-most basin in pink) represents the specific study
-basin, illustrating the river network (blue lines), sub-basins (orange),
-and surrounding USGS gaging stations (black dots).</em></td>
-</tr></tbody>
-</table>
 </div>
 </section><section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
 </h2>
@@ -1151,7 +1295,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-model-execution"><p>Content from <a href="model-execution.html">Model Execution</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/model-execution.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1177,18 +1321,21 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Recognize methods to execute NextGen models</li>
-<li>Run a NextGen simulation using NGIAB</li>
+<li>Execute a NextGen run using NGIAB</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="model-execution-using-ngiab-container">Model Execution using NGIAB container<a class="anchor" aria-label="anchor" href="#model-execution-using-ngiab-container"></a>
+<section><h2 class="section-heading" id="model-execution-using-guide-sh">Model Execution using <code>guide.sh</code>
+<a class="anchor" aria-label="anchor" href="#model-execution-using-guide-sh"></a>
 </h2>
 <hr class="half-width">
-<p>To run a NextGen simulation, simply execute the following
-commands:</p>
+<p><code>guide.sh</code> is used to execute pre-configured NextGen runs
+in NGIAB. These settings can be configured by users ahead of time using
+the <a href="../site/docs/data-preparation.html">Data Preprocess tool</a>.
+Execute the following commands:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1197,27 +1344,26 @@ commands:</p>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> NGIAB-CloudInfra</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">./guide.sh</span></span></code></pre>
 </div>
-<p>The interactive guide script <code>guide.sh</code> will prompt you to
-enter input data pathways and allow you to select a computational mode
-(serial or parallel processing). After the simulation is complete, the
-guide script will give you the option to evaluate model predictions and
-visualize results (discussed in the next two episodes).</p>
+<p><code>guide.sh</code> will prompt you to enter input data pathways
+and allow you to select a computational mode (serial or parallel
+processing). After the run is complete, <code>guide.sh</code> will give
+you the option to evaluate model predictions and visualize results
+(discussed in the next two episodes).</p>
 </section><section><h2 class="section-heading" id="model-execution-using-data-preprocess-tool">Model Execution using Data Preprocess tool<a class="anchor" aria-label="anchor" href="#model-execution-using-data-preprocess-tool"></a>
 </h2>
 <hr class="half-width">
-<p>A secondary method for executing a NextGen simulation is by using the
-Data Preprocess tool’s CLI. The <code>-a</code> argument in the command
-will schedule an automatic execution of NGIAB after preprocessing
-selected data. As this module is being updated constantly, check back on
-its <a href="https://github.com/CIROH-UA/NGIAB_data_preprocess" class="external-link">GitHub
-page</a> for the latest updates on its functionality.</p>
+<p>A secondary method for executing a NextGen run in NGIAB is by using
+the Data Preprocess tool’s CLI. The <code>-a</code> argument in the
+command will automatically run NGIAB after preprocessing selected data.
+As this module is being updated constantly, check back on its <a href="https://github.com/CIROH-UA/NGIAB_data_preprocess" class="external-link">GitHub page</a>
+for the latest updates on its functionality.</p>
 </section><section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
 </h2>
 <hr class="half-width">
-<p>Use the guide script <code>guide.sh</code> to run a NextGen
-simulation using your preprocessed data.</p>
+<p>Use <code>guide.sh</code> to execute a NextGen run in NGIAB using
+your preprocessed data.</p>
 <p>Extra Credit: Use the Data Preprocess tool to automatically execute a
-NextGen run.</p>
+NextGen run in NGIAB.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1226,10 +1372,9 @@ NextGen run.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>To execute a NextGen simulation with full functionality, use the
-interactive guide script <code>guide.sh</code> in the NGIAB
-container.</li>
-<li>A NextGen simulation can also be automatically executed
+<li>To execute a NextGen run in NGIAB with full functionality, use
+<code>guide.sh</code> in the NGIAB container.</li>
+<li>A NextGen run in NGIAB can also be automatically executed
 post-preprocessing using the Data Preprocess tool.</li>
 </ul>
 </div>
@@ -1241,7 +1386,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-evaluation"><p>Content from <a href="evaluation.html">Evaluation</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/evaluation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1257,7 +1402,7 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>How do I use Tools for Exploratory Evaluation in Hydrologic Research
-(TEEHR) to evaluate my NextGen models?</li>
+(TEEHR) to evaluate my NextGen models in NGIAB?</li>
 </ul>
 </div>
 </div>
@@ -1268,51 +1413,66 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Explain how TEEHR interacts with NGIAB</li>
-<li>Evaluate a NextGen run using TEEHR</li>
+<li>Evaluate a NextGen run using TEEHR in NGIAB</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="tools-for-exploratory-evaluation-in-hydrologic-research-teehr">Tools for Exploratory Evaluation in Hydrologic Research (TEEHR)<a class="anchor" aria-label="anchor" href="#tools-for-exploratory-evaluation-in-hydrologic-research-teehr"></a>
+<section><h2 class="section-heading" id="using-tools-for-exploratory-evaluation-in-hydrologic-research-teehr-with-ngiab">Using Tools for Exploratory Evaluation in Hydrologic Research
+(TEEHR) with NGIAB<a class="anchor" aria-label="anchor" href="#using-tools-for-exploratory-evaluation-in-hydrologic-research-teehr-with-ngiab"></a>
 </h2>
 <hr class="half-width">
-<p>TEEHR is a Python-based package enabling iterative and exploratory
-analysis of hydrologic model performance <a href="https://github.com/RTIInternational/teehr" class="external-link">(RTI International,
-2025)</a>. The package facilitates custom metric definition,
-bootstrapping implementation, and data manipulation via grouping and
-filtering operations. TEEHR also provides tools to fetch the U.S.
+<p>A TEEHR evaluation run is executed by default upon execution of
+<code>guide.sh</code>. A separate <code>runTeehr.sh</code> script is
+also available in the NGIAB-CloudInfra repository.</p>
+</section><section><h2 class="section-heading" id="what-is-teehr">What is TEEHR?<a class="anchor" aria-label="anchor" href="#what-is-teehr"></a>
+</h2>
+<hr class="half-width">
+<p>TEEHR is a Python-based package enabling analysis of hydrologic model
+performance <a href="https://github.com/RTIInternational/teehr" class="external-link">(RTI
+International, 2025)</a>. TEEHR also provides tools to fetch the U.S.
 Geological Survey (USGS) streamflow data and NWM gridded and point-based
 retrospective and near real-time forecast data. This functionality
 supports <strong>comprehensive model evaluation and uncertainty
-analysis</strong>. NGIAB leverages TEEHR as a robust tool for
-hydrological model evaluation, enabling researchers to assess
-performance trends and investigate key drivers such as climate
-variability, time-period influences, and basin characteristics <a href="https://github.com/CIROH-UA/ngiab-teehr" class="external-link">(CIROH, 2024)</a>.
+analysis</strong>. NGIAB leverages TEEHR as a tool for hydrological
+model evaluation <a href="https://github.com/CIROH-UA/ngiab-teehr" class="external-link">(CIROH, 2024)</a>.
 Researchers can explore a comprehensive range of metrics, including
 error statistics, skill scores, hydrologic signatures, and uncertainty
 quantification.</p>
-<div class="section level4">
-<h4 id="teehr-folder-contents">TEEHR folder contents<a class="anchor" aria-label="anchor" href="#teehr-folder-contents"></a>
-</h4>
-<p>TEEHR consolidates data streams from the USGS and NWM into a uniform
-folder structure, organizing the primary (observed) and secondary
-(modeled) time-series to allow side‐by‐side visual comparisons of
-hydrographs over the simulation intervals. Figure 1 shows the default
-comparison of the outlet hydrograph simulation by the models specified
-in the NextGen framework realization and the corresponding time series
-from the NWM 3.0. While the default configuration produces this simple
-comparative view, the TEEHR user documentation provides additional
-examples of capabilities for customized plotting functions.</p>
+<div id="gridded-data-vs.-point-data" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="gridded-data-vs.-point-data" class="callout-inner">
+<h3 class="callout-title">Gridded Data vs. Point Data</h3>
+<div class="callout-content">
+<p>Gridded data consists of values at regularly spaced 2-dimensional
+cells that form a grid covering a region on Earth. Point data consists
+of values on specific 0-dimensional points. The NWM real-time forecast
+produces point-type stream routing and reservoir variables.</p>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="teehr-folder-contents">TEEHR folder contents<a class="anchor" aria-label="anchor" href="#teehr-folder-contents"></a>
+</h3>
+<p>TEEHR consolidates data from the USGS and NWM, allowing side‐by‐side
+visual comparisons of observed and simulated over the model run
+intervals. Figure 1 shows the default comparison of the modeled outlet
+hydrograph and the corresponding time series from the NWM 3.0. While the
+default configuration produces this view, the TEEHR user documentation
+provides additional examples of capabilities for customized plotting
+functions.</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig5-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig5-1.png" alt="Figure 1: Comparison of the NextGen-based model (labeled “ngen”; blue line) and the NWM time series (labeled “nwm30_retrospective”; orange/gold line) for the same location. The figure is automatically generated by the TEEHR-based analysis that accompanies the guide.sh script included with NGIAB and is named timeseries_plot_streamflow_hourly_inst.html in the teehr folder." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
-<td align="center"><em>Figure 1: Comparison of the NextGen-based
-simulation (labeled “ngen”; blue line) and the NWM time series (labeled
+<td align="center"><em>Figure 1: Comparison of the NextGen-based model
+(labeled “ngen”; blue line) and the NWM time series (labeled
 “nwm30_retrospective”; orange/gold line) for the same location. The
 figure is automatically generated by the TEEHR-based analysis that
 accompanies the <code>guide.sh</code> script included with NGIAB and is
@@ -1325,35 +1485,27 @@ performance metrics such as Kling-Gupta Efficiency (KGE), Nash-Sutcliffe
 Efficiency (NSE), and Relative Bias (RB) to quantify the accuracy of
 model predictions against observed data (<a href="https://doi.org/10.1016/j.jhydrol.2009.08.003" class="external-link">Gupta et al.,
 2009</a>; <a href="https://doi.org/10.1016/0022-1694(70)90255-6" class="external-link">Nash
-and Sutcliffe, 1970</a>). These results are then stored in a
-standardized output directory, enabling rapid assessments and
-reproducible analyses. For instance, the <code>metrics.csv</code> file
-in the TEEHR folder structure contains aggregated statistics for each
-configuration, providing a transparent record of each model’s
-performance.</p>
-<p>Through this systematic approach, NGIAB and TEEHR together foster a
-community modeling paradigm, wherein hydrologists and stakeholders can
-easily inspect, compare, and refine model predictions in an open-source
-environment.</p>
-</div>
-<div class="section level4">
-<h4 id="using-teehr-with-ngiab">Using TEEHR with NGIAB<a class="anchor" aria-label="anchor" href="#using-teehr-with-ngiab"></a>
-</h4>
-<p>A TEEHR run is executed by default upon execution of the main NGIAB
-guide script. A separate <code>runTeehr.sh</code> script is also
-available in the NGIAB-CloudInfra repository.</p>
+and Sutcliffe, 1970</a>). Users do not need to understand all these
+metrics immediately, and can refer to the references above to learn
+more. These results are then stored in a standardized output directory.
+For instance, the <code>metrics.csv</code> file in the TEEHR folder
+structure contains aggregated statistics for each configuration.</p>
+<p>Through this systematic approach, NGIAB and TEEHR together allow
+hydrologists and stakeholders to inspect, compare, and refine model
+predictions in an open-source environment.</p>
 </div>
 </section><section><h2 class="section-heading" id="your-turn">Your Turn<a class="anchor" aria-label="anchor" href="#your-turn"></a>
 </h2>
 <hr class="half-width">
-<p>Go ahead and execute the TEEHR run using the guide script and explore
-your TEEHR folder!</p>
-<div id="callout1" class="callout">
+<p>Go ahead and execute the TEEHR run using <code>guide.sh</code> and
+explore your TEEHR folder!</p>
+<div id="guide.sh-tips" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
+<div id="guide.sh-tips" class="callout-inner">
+<h3 class="callout-title">
+<code>guide.sh</code> Tips</h3>
 <div class="callout-content">
 <ul>
 <li>The default TEEHR image is fine to use.</li>
@@ -1386,7 +1538,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-visualization"><p>Content from <a href="visualization.html">Visualization</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/visualization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1412,7 +1564,8 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Explain how the Data Visualizer complements NGIAB.</li>
-<li>Use the Data Visualizer to visualize results of a NextGen run.</li>
+<li>Use the Data Visualizer to visualize results of a NextGen run in
+NGIAB.</li>
 </ul>
 </div>
 </div>
@@ -1423,38 +1576,35 @@ any links that you are not going to use.
 </h2>
 <hr class="half-width">
 <p>The Data Visualizer component developed using the Tethys Platform <a href="https://doi.org/10.1016/j.envsoft.2015.01.014" class="external-link">(Swain et al.,
-2015)</a> complements NGIAB and its other extensions by providing a
-robust environment for <strong>geospatial and time series visualization
-of catchments and nexus points</strong>. Through a web-based
-architecture, researchers can seamlessly explore hydrological data in a
-spatiotemporal context, facilitating a deeper understanding of model
-outputs and key hydrological processes <a href="https://github.com/CIROH-UA/ngiab-client" class="external-link">(CIROH, 2025)</a>. In
+2015)</a> complements NGIAB by providing an environment for
+<strong>geospatial and time series visualization of catchments and nexus
+points</strong> (locations where objects in the hydrofabric like streams
+or water bodies connect). Through a web-based architecture, researchers
+can explore hydrological data in a spatiotemporal context <a href="https://github.com/CIROH-UA/ngiab-client" class="external-link">(CIROH, 2025)</a>. In
 addition to standard map-based displays, this component also
 <strong>supports the visualization of the TEEHR output</strong>,
 including tabular metrics and interactive time series plots.</p>
-<div class="section level4">
-<h4 id="using-the-data-visualizer-with-ngiab">Using the Data Visualizer with NGIAB<a class="anchor" aria-label="anchor" href="#using-the-data-visualizer-with-ngiab"></a>
-</h4>
-<p>Like TEEHR, the Data Visualizer is automatically executed by default
-upon execution of the main NGIAB guide script, <code>guide.sh</code>. A
-separate <code>viewOnTethys.sh</code> script is also available in the
+<div class="section level3">
+<h3 id="using-the-data-visualizer-with-ngiab">Using the Data Visualizer with NGIAB<a class="anchor" aria-label="anchor" href="#using-the-data-visualizer-with-ngiab"></a>
+</h3>
+<p>Like TEEHR, the Data Visualizer can be activated upon execution of
+the main NGIAB guide script, <code>guide.sh</code>. A separate
+<code>viewOnTethys.sh</code> script is also available in the
 NGIAB-CloudInfra repository.</p>
-<p>Once a simulation is complete, users can launch the Data Visualizer
-through their web browser when prompted by the guide script. Through its
-interactive tools, users can analyze geospatial patterns, temporal
-trends, and overall model behavior. Although TEEHR’s outputs can be
-displayed within the Data Visualizer, this tool is primarily designed to
-provide a broad overview of model results. Users seeking TEEHR’s more
-advanced analysis features can still access them outside the Data
-Visualizer.</p>
+<p>Once a run is complete, users can launch the Data Visualizer through
+their web browser when prompted by the guide script. Although TEEHR’s
+outputs can be displayed within the Data Visualizer, this tool is
+primarily designed to provide a broad overview of model results. Users
+seeking TEEHR’s more advanced analysis features can still access them
+outside the Data Visualizer.</p>
 <p>Figures 1 and 2 demonstrate several ways the Data Visualizer can be
 used to visualize model outputs, including geopatial visualization for
 nexus points, catchment-based visualization, and TEEHR time series
-representation.</p>
+representation (hydrographs).</p>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig6-1.png" alt="Figure 1" class="figure"></th>
+<th align="center"><img src="../fig/fig6-1.png" alt="Figure 1: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for an entire study area (Provo River near Woodland, UT)." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 1: A map showing the geospatial
@@ -1465,7 +1615,7 @@ an entire study area (Provo River near Woodland, UT).</em></td>
 <table class="table">
 <colgroup><col width="100%"></colgroup>
 <thead><tr class="header">
-<th align="center"><img src="../fig/fig1-5.png" alt="alt text" class="figure"></th>
+<th align="center"><img src="../fig/fig1-5.png" alt="Figure 2: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for a selected outlet nexus point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labeled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series." class="figure"></th>
 </tr></thead>
 <tbody><tr class="odd">
 <td align="center"><em>Figure 2: A map showing the geospatial
@@ -1477,16 +1627,19 @@ relative bias). The Visualizer can also show the performance of the NWM
 3.0 compared to the observed time series.</em></td>
 </tr></tbody>
 </table>
-<div id="callout1" class="callout">
+<div id="using-data-visualizer-with-ssh" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
+<div id="using-data-visualizer-with-ssh" class="callout-inner">
+<h3 class="callout-title">Using Data Visualizer with SSH</h3>
 <div class="callout-content">
-<p>To use the Data Visualizer through an SSH connection, you will have
-to set up port forwarding. See the instructions in the Advanced Topics
-episode.</p>
+<p>To use the Data Visualizer through an Secure Shell (SSH) connection,
+you will have to set up port forwarding when connecting to the remote
+machine. Port forwarding will allow you to access a remotely hosted
+browser session on your local machine. See the instructions under “Using
+NGIAB through an SSH connection” in the <a href="../site/docs/advanced-topics.html">Advanced Topics episode</a> in
+this training module.</p>
 </div>
 </div>
 </div>
@@ -1495,7 +1648,8 @@ episode.</p>
 </h2>
 <hr class="half-width">
 <p>Go ahead and run the Data Visualizer in the guide script, open it in
-your browser, and explore the visualization of your NextGen run.</p>
+your browser, and explore the visualization of your NextGen run in
+NGIAB.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1506,10 +1660,10 @@ your browser, and explore the visualization of your NextGen run.</p>
 <ul>
 <li>The Data Visualizer, built on the Tethys Platform, provides
 interactive geospatial and time series visualization for NextGen model
-outputs.</li>
+outputs in NGIAB.</li>
 <li>It complements NGIAB by offering a web-based environment to explore
 catchments, nexus points, temporal patterns, and TEEHR outputs in your
-simulation results.</li>
+run results.</li>
 <li>The Data Visualizer runs automatically with the
 <code>guide.sh</code> script.</li>
 </ul>
@@ -1522,7 +1676,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-advanced-topics"><p>Content from <a href="advanced-topics.html">Advanced Topics</a></p>
 <hr>
-<p>Last updated on 2025-04-18 |
+<p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/episodes/advanced-topics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 65 minutes</p>
@@ -1595,34 +1749,33 @@ commands:</p>
 <div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>The most up-to-date information on installing NGIAB on an HPC can be
-found <a href="https://github.com/CIROH-UA/NGIAB-HPCInfra" class="external-link">here</a>.
-Other than a different installation process and the use of Singularity
-instead of Docker, the workflow is the same to execute a NextGen run.
-Tools like the Data Preprocessor, TEEHR, and the Data Visualizer are
-still available. The NGIAB-HPCInfra contains its own interactive
-<code>guide.sh</code> script, which allows users to specify input data
-pathways and run configurations (serial or parallel), as well as trigger
-the execution of TEEHR and the Data Visualizer.</p>
-<div class="section level4">
-<h4 id="singularity">Singularity<a class="anchor" aria-label="anchor" href="#singularity"></a>
-</h4>
+found on <a href="https://github.com/CIROH-UA/NGIAB-HPCInfra" class="external-link">CIROH’S
+NGIAB HPC GitHub page</a>. Other than a different installation process
+and the use of Singularity instead of Docker, the workflow is the same
+to execute a NextGen run in NGIAB. Tools like the Data Preprocessor,
+TEEHR, and the Data Visualizer are still available. The NGIAB-HPCInfra
+contains its own interactive <code>guide.sh</code> script, which allows
+users to specify input data pathways and run configurations (serial or
+parallel), as well as trigger the execution of TEEHR and the Data
+Visualizer.</p>
+<div class="section level3">
+<h3 id="singularity">Singularity<a class="anchor" aria-label="anchor" href="#singularity"></a>
+</h3>
 <p>NGIAB uses Singularity as its containerization platform for HPC
 environments. Singularity enables secure execution of containerized
 applications on multi-user HPC clusters. Key features of Singularity
-include native HPC integration, which allows the execution of
-containerized applications within existing batch job schedulers such as
-SLURM (Simple Linux Utility for Resource Management) workload manager,
-PBS (Portable Batch System) and LSF (Load Sharing Facility); enforced
-security – it runs containers as non-root users, reducing security
-risks; and seamless access to host file systems – it enables users to
-interact with datasets and computational resources without additional
-configuration directly. Singularity images, known as Singularity Image
-Format (SIF) files, encapsulate the entire runtime environment, ensuring
-full reproducibility of simulations. These images can be transferred
-between systems without requiring reinstallation of software
-dependencies, making Singularity a reliable choice for running
-hydrologic models on large-scale computational infrastructures (Jajula
-and Bangalore, 2024).</p>
+include:</p>
+<ul>
+<li>Native HPC integration, which allows the execution of containerized
+applications within existing batch job schedulers such as SLURM (Simple
+Linux Utility for Resource Management) workload manager, PBS (Portable
+Batch System) and LSF (Load Sharing Facility)</li>
+<li>Enforced security – it runs containers as non-root users, reducing
+security risks; and</li>
+<li>Access to host file systems – it enables users to interact with
+datasets and computational resources without additional configuration
+directly.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1640,11 +1793,13 @@ and Bangalore, 2024).</p>
 <div class="accordion-body">
 <p>This section explains how to run <strong>NextGen In A Box
 (NGIAB)</strong> using <strong>Singularity</strong> on the
-<strong>Pantarhei HPC system</strong> at the University of Alabama.</p>
+<strong>Pantarhei HPC system</strong> at the University of Alabama. To
+access Pantarhei, please follow the instructions on <a href="https://docs.ciroh.org/docs/services/access/#accessing-on-premises-infrastructure" class="external-link">CIROH’s
+DocuHub page</a>.</p>
 <hr>
-<div class="section level5">
-<h5 id="log-into-pantarhei">1. Log Into Pantarhei<a class="anchor" aria-label="anchor" href="#log-into-pantarhei"></a>
-</h5>
+<div class="section level3">
+<h3 id="log-into-pantarhei">1. Log Into Pantarhei<a class="anchor" aria-label="anchor" href="#log-into-pantarhei"></a>
+</h3>
 <p>Open a terminal and connect to the login node:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1655,9 +1810,9 @@ and Bangalore, 2024).</p>
 username.</p>
 <hr>
 </div>
-<div class="section level5">
-<h5 id="request-a-compute-node-do-not-run-on-login-node">2. Request a Compute Node (Do NOT run on login node)<a class="anchor" aria-label="anchor" href="#request-a-compute-node-do-not-run-on-login-node"></a>
-</h5>
+<div class="section level3">
+<h3 id="request-a-compute-node-do-not-run-on-login-node">2. Request a Compute Node (Do NOT run on login node)<a class="anchor" aria-label="anchor" href="#request-a-compute-node-do-not-run-on-login-node"></a>
+</h3>
 <p>On the login node, request an interactive session:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1668,9 +1823,9 @@ username.</p>
 special resources.</p>
 <hr>
 </div>
-<div class="section level5">
-<h5 id="verify-that-singularity-is-available">3. Verify that Singularity is available:<a class="anchor" aria-label="anchor" href="#verify-that-singularity-is-available"></a>
-</h5>
+<div class="section level3">
+<h3 id="verify-that-singularity-is-available">3. Verify that Singularity is available:<a class="anchor" aria-label="anchor" href="#verify-that-singularity-is-available"></a>
+</h3>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1678,9 +1833,9 @@ special resources.</p>
 </div>
 <hr>
 </div>
-<div class="section level5">
-<h5 id="prepare-project-directory">4. Prepare Project Directory<a class="anchor" aria-label="anchor" href="#prepare-project-directory"></a>
-</h5>
+<div class="section level3">
+<h3 id="prepare-project-directory">4. Prepare Project Directory<a class="anchor" aria-label="anchor" href="#prepare-project-directory"></a>
+</h3>
 <p>Create the directory and move into it:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1690,9 +1845,9 @@ special resources.</p>
 </div>
 <hr>
 </div>
-<div class="section level5">
-<h5 id="download-sample-dataset">5. Download Sample Dataset<a class="anchor" aria-label="anchor" href="#download-sample-dataset"></a>
-</h5>
+<div class="section level3">
+<h3 id="download-sample-dataset">5. Download Sample Dataset<a class="anchor" aria-label="anchor" href="#download-sample-dataset"></a>
+</h3>
 <p>Pick one of the sample datasets to download and extract:</p>
 <div class="section level6">
 <h6 id="option-1-awi-009-provo-river-ut">Option 1: AWI-009 (Provo River, UT)<a class="anchor" aria-label="anchor" href="#option-1-awi-009-provo-river-ut"></a>
@@ -1703,13 +1858,14 @@ special resources.</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">wget</span> https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-009/AWI_16_10154200_009.tar.gz</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> AWI_16_10154200_009.tar.gz</span></code></pre>
 </div>
-<p>Other options: AWI-007 or AWI-008 can be used similarly.</p>
+<p>Other options: AWI-007 or AWI-008 can be used similarly, see the <a href="../site/docs/installation.html#step-2-download-sample-data">Installation
+and Setup episode</a>.</p>
 <hr>
 </div>
 </div>
-<div class="section level5">
-<h5 id="clone-the-ngiab-hpcinfra-repository">6. Clone the NGIAB-HPCInfra Repository<a class="anchor" aria-label="anchor" href="#clone-the-ngiab-hpcinfra-repository"></a>
-</h5>
+<div class="section level3">
+<h3 id="clone-the-ngiab-hpcinfra-repository">6. Clone the NGIAB-HPCInfra Repository<a class="anchor" aria-label="anchor" href="#clone-the-ngiab-hpcinfra-repository"></a>
+</h3>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1723,9 +1879,10 @@ inside the <code>NGIAB-HPCInfra</code> folder.</p>
 </blockquote>
 <hr>
 </div>
-<div class="section level5">
-<h5 id="run-the-ngiab-guide-script">7. Run the NGIAB Guide Script<a class="anchor" aria-label="anchor" href="#run-the-ngiab-guide-script"></a>
-</h5>
+<div class="section level3">
+<h3 id="run-guide-sh">7. Run <code>guide.sh</code>
+<a class="anchor" aria-label="anchor" href="#run-guide-sh"></a>
+</h3>
 <p>Make the script executable if needed:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1770,19 +1927,19 @@ outputs/
 </li>
 </ul>
 <hr>
-</div>
-<div class="section level5">
-<h5 id="notes">Notes<a class="anchor" aria-label="anchor" href="#notes"></a>
-</h5>
+<div class="section level4">
+<h4 id="notes">Notes<a class="anchor" aria-label="anchor" href="#notes"></a>
+</h4>
 <ul>
 <li><p>Do not run the model or load modules on the login node.</p></li>
 <li><p>All commands should be executed on a <strong>compute
 node</strong>.</p></li>
-<li><p>If output files don’t appear, double-check the input path and
+<li><p>If output files do not appear, double-check the input path and
 folder structure.</p></li>
-<li><p>If <code>outputs/</code> doesn’t exist, create an empty folder
+<li><p>If <code>outputs/</code> does not exist, create an empty folder
 manually before running.</p></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -1802,7 +1959,7 @@ manually before running.</p></li>
 forwarding. However, to use the Data Visualizer, you will have to set up
 port forwarding to view visualization results on your local machine’s
 browser.</p>
-<p>To do so, open a terminal on your local machine and run:</p>
+<p>To do so, run the following command on your local machine:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1827,9 +1984,9 @@ tunnel, and access Data Visualizer results in your local browser.</p>
 <div class="accordion-body">
 <p>The most up-to-date guidelines on community contributions for each
 repository can be found on its respective GitHub page.</p>
-<div class="section level4">
-<h4 id="general-contribution-guidance">General contribution guidance<a class="anchor" aria-label="anchor" href="#general-contribution-guidance"></a>
-</h4>
+<div class="section level3">
+<h3 id="general-contribution-guidance">General contribution guidance<a class="anchor" aria-label="anchor" href="#general-contribution-guidance"></a>
+</h3>
 <ul>
 <li>You can use the issue tracker on GitHub to suggest feature requests,
 report bugs, or ask questions.</li>
@@ -1905,7 +2062,7 @@ any links that you are not going to use.
 	
         | <a href="https://github.com/CIROH-UA/training-NGIAB-101/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/CIROH-UA/training-NGIAB-101/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/CIROH-UA/training-NGIAB-101/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:apatel54@ua.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/CIROH-UA/training-NGIAB-101/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:ciroh-it-support@ua.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
 
@@ -1934,7 +2091,7 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://CIROH-UA.github.io/training-NGIAB-101/instructor/aio.html",
   "identifier": "https://CIROH-UA.github.io/training-NGIAB-101/instructor/aio.html",
-  "dateCreated": "2025-04-10",
+  "dateCreated": "2025-04-22",
   "dateModified": "2025-04-22",
   "datePublished": "2025-04-22"
 }

@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html">Troubleshooting</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="troubleshooting.html">DevCon 2025 Troubleshooting</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -288,7 +288,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li>
+                      <li><a href="reference.html">Reference</a></li><li><a href="troubleshooting.html">DevCon 2025 Troubleshooting</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -324,7 +324,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reference</h1>
-        <p>Last updated on 2025-04-18 |
+        <p>Last updated on 2025-04-22 |
 
         <a href="https://github.com/CIROH-UA/training-NGIAB-101/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -339,7 +339,7 @@
 <hr class="half-width"><ul><li>Modeling Terms
 <ul><li>National Water Model (NWM)
 <ul><li>Hydrologic model used operationally by NOAA’s National Weather
-Service to provide hydroloigc predictions for over 3.4 million rivers
+Service to provide hydrologic predictions for over 3.4 million rivers
 and streams across the United States</li>
 </ul></li>
 <li>Next Generation Water Resources Modeling Framework (NextGen)
@@ -353,7 +353,7 @@ framework and essential modeling components into a self-contained,
 reproducible application</li>
 </ul></li>
 <li>Data Preprocess
-<ul><li>A tool to streamline data preparation for NextGen simulations</li>
+<ul><li>A tool to streamline data preparation for NextGen runs</li>
 </ul></li>
 <li>Tools for Exploratory Evaluation in Hydrologic Research (TEEHR)
 <ul><li>A Python-based package enabling iterative and explorative analysis
@@ -367,18 +367,61 @@ series visualization of catchments and nexus points</li>
 <ul><li>External inputs that drive a model</li>
 </ul></li>
 <li>t-route
-<ul><li>Channel routing model</li>
+<ul><li>Channel routing model used in the NWM. t-route is used in
+NextGen.</li>
+</ul></li>
+<li>Channel routing
+<ul><li>Predicts the magnitude and shape of a hydrograph as water moves
+through waterways.</li>
 </ul></li>
 <li>ngen
 <ul><li>The NextGen model engine</li>
 </ul></li>
 <li>Realization file
 <ul><li>A file that configures models and the variables exchanged between
-them</li>
+them. For example, our realization files define which hydrologic model
+we are using, over what time period, and over which regions.</li>
 </ul></li>
 <li>Hydrofabric
-<ul><li>See <a href="https://noaa-owp.github.io/hydrofabric/articles/01-intro-deep-dive.html" class="external-link">here</a>
+<ul><li>See <a href="https://noaa-owp.github.io/hydrofabric/articles/01-intro-deep-dive.html" class="external-link">the
+hydrofabric documentation</a>
 </li>
+</ul></li>
+<li>Conceptual Functional Equivalent (CFE) Model
+<ul><li>A simplified conceptual rainfall-runoff model designed to be
+functionally equivalent to the NWM. This is an available model in
+NGIAB.</li>
+</ul></li>
+<li>Rainfall-runoff model
+<ul><li>Describes how rainfall is converted into runoff in a catchment,
+producing a hydrograph in response to a rainfall event</li>
+</ul></li>
+<li>NoahOWP
+<ul><li>Version of the Noah-MP land surface model used by NOAA’s Office of
+Water Prediction. This is an available model in NGIAB.</li>
+</ul></li>
+<li>Land surface model
+<ul><li>Describes the exchange of water and energy between the land surface
+and the atmosphere</li>
+</ul></li>
+<li>Long short-term memory (LSTM) model
+<ul><li>A type of recurrent neural network that excels at learning long-term
+dependencies in sequential data. This is an available model in
+NGIAB.</li>
+</ul></li>
+<li>Error statistics
+<ul><li>The difference between the true value and the modeled variable</li>
+</ul></li>
+<li>Skill score
+<ul><li>The accuracy of a model relative to a reference approach, like
+random chance or persistence</li>
+</ul></li>
+<li>Persistence
+<ul><li>A forecast that the future condition will be the same as the present
+condition</li>
+</ul></li>
+<li>Uncertainty quantification
+<ul><li>Estimation of uncertainty and errors in models</li>
 </ul></li>
 </ul></li>
 <li>Computing Terms
@@ -425,13 +468,24 @@ point like a river or water body. Also known as a watershed</li>
 </ul></li>
 <li>Streamflow
 <ul><li>The flow of water in a channel, measured in units of volume/time
-(e.g. cubic meters per second (CMS), cubic feet per second (CFS))</li>
+(e.g. cubic meters per second (CMS), cubic feet per second (CFS)). Also
+known as discharge</li>
 </ul></li>
-<li>Hydrologic simulation
+<li>Hydrologic model
 <ul><li>A computer-based replication of the natural water cycle</li>
 </ul></li>
 <li>CONUS (Continental United States)
 <ul><li>Refers to the 48 contiguous states and D.C.</li>
+</ul></li>
+<li>Surface runoff
+<ul><li>Unconfined flow of water over the ground surface</li>
+</ul></li>
+<li>Hydrologic signature
+<ul><li>Quantitative metrics that define streamflow, such as maximum flow,
+baseflow, mean flow, or slope</li>
+</ul></li>
+<li>Hydrograph
+<ul><li>Graph that depicts streamflow at a specific location over time</li>
 </ul></li>
 </ul></li>
 </ul><!--
@@ -466,7 +520,7 @@ any links that you are not going to use.
 	
         | <a href="https://github.com/CIROH-UA/training-NGIAB-101/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/CIROH-UA/training-NGIAB-101/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/CIROH-UA/training-NGIAB-101/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:apatel54@ua.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/CIROH-UA/training-NGIAB-101/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:ciroh-it-support@ua.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
 
@@ -494,8 +548,8 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://CIROH-UA.github.io/training-NGIAB-101/reference.html",
   "identifier": "https://CIROH-UA.github.io/training-NGIAB-101/reference.html",
-  "dateCreated": "2025-04-10",
-  "dateModified": "2025-04-18",
+  "dateCreated": "2025-04-22",
+  "dateModified": "2025-04-22",
   "datePublished": "2025-04-22"
 }
 
