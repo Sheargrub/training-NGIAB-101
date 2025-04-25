@@ -27,13 +27,10 @@ exercises: 45
 
 The Data Preprocess tool (like all of our software) is constantly being updated and refined. To install and use the Data Preprocess tool, follow the latest instructions on the [Data Preprocess GitHub page](https://github.com/CIROH-UA/NGIAB_data_preprocess). 
 
-| ![Figure 1: Map showing an example drainage basin. View from the USGS National Map.](fig/fig3-1.png) |
-| :--: |
-| *Figure 1: Map showing an example drainage basin. View from the USGS National Map.* |
+![Figure 1: Map showing an example drainage basin. View from the USGS National Map.](fig/fig3-1.png){alt='A screenshot of the USGS National Map centered on the Provo River network in Utah, showing streamflow and watershed data. A blue map marker identifies a Monitoring Location. A red dot marks an Active Monitoring Location farther downstream. The Upstream Basin is shaded in grey, while Upstream Flowlines and Downstream Flowlines are highlighted in dark and light blue, respectively. A scale bar in the bottom right shows distances of 5 kilometers and 3 miles. A map legend in the lower right corner explains the color codes for flowlines and monitoring locations.'}
 
-| ![Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).](fig/fig1-4.png) |
-| :--: |
-| *Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).* |
+
+![Figure 2: Map showing an example drainage basin. View from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).](fig/fig1-4.png){alt='A map view displaying the Provo River network and basin boundaries in the area around Woodland, UT. The map includes the stream network shown in blue, basin boundaries in orange shaded regions, the downstream-most basin in a pink shaded reagion, and black dots representing USGS gage locations.'}
 
 ## NextGen Run Directory Structure (`ngen-run/`)
 
