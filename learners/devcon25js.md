@@ -53,21 +53,17 @@ After that, simply type in your password to gain access to your instance's termi
    ```
 
 3. When prompted, enter the following input data directory path: 
-   ```
-   /home/exouser/ngiab_preprocess_output/gage-10154200 
-   ```
-
-4. Follow the prompts. Choose between serial or parallel mode. Serial will run NextGen on one process, whereas parallel will run NextGen on multiple processes at once. 
-
-5. When prompted to redirect command output to `/dev/null`, select yes. This keeps your output logs clean.
-
-6. After the run is completed, run the TEEHR evaluation when prompted. Choose Option 1 (use existing Docker image).
-
-7. Open the Tethys visualizer when prompted. Choose Option 1 (use existing Docker image).
+```
+/home/exouser/ngiab_preprocess_output/gage-10154200 
+```
+4. When prompted about which Docker image to use, select Option 2 (pull the latest Docker image).
+5. Choose parallel mode, which will run NextGen on multiple processes. 
+6. When prompted to redirect command output to `/dev/null`, select no. This allows you to see details about your NextGen run.
+7. After the run is completed, run the TEEHR evaluation when prompted. When given the option to select an image tag, choose `x86`, and choose option 2 (pull the latest Docker image.)
+8. Open the Tethys visualizer when prompted. Choose Option 2 (pull the latest Docker image).
     - If you are opening the visualizer in your web browser, open the Tethys server on the same port that you chose to tunnel with.
     - If you are opening the visualizer in a VNC client, open the Tethys server on port `80`.
-
-8. Open the visualizer!
+9. Open the visualizer!
     - If you are opening the visualizer in your web browser, simply enter the link provided by the console output.
     - If you are opening the visualizer in a VNC client, first connect to `localhost:5906`. Then, open the link provided by the console output in the remote desktop's web browser.
 
@@ -81,17 +77,19 @@ After that, simply type in your password to gain access to your instance's termi
    uvx --from ngiab_data_preprocess map_app
    ```
 
+To view the map app in your VNC viewer, use the second IP address listed after the map app is started.
 2. Copy the given command and run it to preprocess data. If you include the `--run` tag, the Data Preprocessor will automatically execute a NextGen run.
 
 3. If you included the `--run` tag, you will need to run the `runTeehr.sh` and `viewOnTethys.sh` scripts separately in order to use TEEHR and the Data Visualizer.
-   ```bash
-   ./runTeehr.sh
-   ./viewOnTethys.sh
-   ```
-   
-   If you did not include the `--run` tag, you can run `guide.sh` as described in Task 1.
-   ```bash
-   ./guide.sh
-   ```
+```bash
+chmod +x runTeehr.sh viewOnTethys.sh
+./runTeehr.sh
+./viewOnTethys.sh
+```
+When you run `viewOnTethys.sh`, make sure to select a different port (we like 8081).
 
+If you did not include the `--run` tag, you can run `guide.sh` as described in Task 1.
+```bash
+./guide.sh
+```
 4. Experiment with different basins or options as much as you'd like!
