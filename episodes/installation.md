@@ -262,12 +262,19 @@ tar  -xf  AWI_16_10154200_009.tar.gz
 
 ### CAUTION: For Windows users: pulling with LFs
 
-Before cloning the repository, please ensure that Git is configured to pull with LF line breaks instead of CRLFs. If CRLFs are used, then the carriage return characters will prevent the shell scripts from running properly. If you do accidentally pull with CRLFs, Visual Studio Code can be used to manually toggle between line breaks. 
+Before cloning the repository, please ensure that Git is configured to pull with LF line breaks instead of CRLFs. If CRLFs are used, then the carriage return characters will prevent the shell scripts from running properly. 
+
+There are a couple options to configure this.
+
+1. Visual Studio Code can be used to manually toggle between line breaks. 
+
+2. Git can be configured from the command line.
 
 ```bash
 git config --global core.autocrlf false
 ```
 
+3. Download, extract, and run [this interactive `.bat` script](data/ngiab-newline-fixer.zip)
 :::::::::::::::::::::::::::::::::::::::::::::
 
 ```bash
