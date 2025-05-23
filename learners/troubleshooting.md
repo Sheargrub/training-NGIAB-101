@@ -17,7 +17,7 @@ You will be provided with a cloud instance (Jetstream) that already includes all
 
 ## Wi-Fi Access
 
-Instructions for connecting to UVM's Guest Wifi are found on the [UVM IT page](https://www.uvm.edu/it/catalog/service/guest-access-guestnet).
+Instructions for connecting to UVM's Guest Wi-Fi are found on the [UVM IT page](https://www.uvm.edu/it/catalog/service/guest-access-guestnet).
 
 ----------
 
