@@ -69,7 +69,7 @@ After that, simply type in your password to gain access to your instance's termi
 
 ## Task 2: Running NGIAB with Your Own Data
 
-1. Use the Data Preprocess tool's graphical user interface (map app) to select your favorite catchments and time period that you would like to perform a NextGen run on. To use be able to use TEEHR, you must select a region that contains USGS gages. You can show or hide USGS gages in the map app by toggling the "Show/Hide gages" button in the upper left.
+1. Use the Data Preprocess tool's graphical user interface (map app) to select your favorite catchments and time period that you would like to perform a NextGen run on. To be able to use TEEHR, you must select a region that contains USGS gages. You can show or hide USGS gages in the map app by toggling the "Show/Hide gages" button in the upper left.
 
    ![Figure 1: Example view from the Data Preprocess tool. The highlighted region (light orange area; downstream-most basin in pink) represents the specific study basin, illustrating the river network (blue lines), sub-basins (orange), and surrounding USGS gaging stations (black dots).](fig/fig1-4.png){alt='A map view displaying the Provo River network and basin boundaries in the area around Woodland, UT. The map includes the stream network shown in blue, basin boundaries in orange shaded regions, the downstream-most basin in a pink shaded reagion, and black dots representing USGS gage locations.'}
 
