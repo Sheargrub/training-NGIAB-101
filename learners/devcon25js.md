@@ -27,7 +27,7 @@ The -L flag is used to initiate SSH tunneling, which is necessary to view the NG
 
 Your selected port in the above command will differ depending on how you'd prefer to connect to the visualizer.
 
-- **[Recommended]** To open the visualizer via a Virtual Network Computing (VNC) client, user port `5906`.
+- **[Recommended]** To open the visualizer via a Virtual Network Computing (VNC) client, use port `5906`.
     - This approach requires a VNC client to be installed on your computer. [RealVNC](https://www.realvnc.com/en/connect/download/viewer/) and [TigerVNC](https://tigervnc.org/) are common choices.
 - To open the visualizer directly in your web browser, use a port such as `80` or `8080`.
     - You may receive a message such as "Could not request local forwarding." If this happens, you will need to select a different port.
