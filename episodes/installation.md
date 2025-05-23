@@ -74,13 +74,13 @@ Note: Users who already have Docker installed will still need to install a separ
     ```
     This should generate a message that shows that your installation is working.
 
-5. Install Astral UV.
+5. Install Astral UV:
 
     ```bash
     # Install UV
     curl -LsSf https://astral.sh/uv/install.sh | sh
-    # It can be installed via pip if that fails
-    # pip install uv
+    # Alternatively, install via pip if the above fails
+    pip install uv
     ```
 
 ::::::::::::::::::::::::::::::::::::: caution
