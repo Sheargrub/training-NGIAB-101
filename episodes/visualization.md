@@ -181,7 +181,7 @@ The following figures demonstrate several ways the Data Visualizer can be used t
 
 ![Figure 5: NGIAB Visualizer time series visualization for Catchments](fig/fig6-5.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Catchments variables'}
 
-**TEEHR** evaluation can be visualized when the user hits a point that contains **TEERH** evaluation output, the user can also look at a **Nexus** point on the dropdown assigned and enter the id of the **Nexus** points that contains **TEERH** evaluation output.
+**TEEHR** evaluation can be visualized when the user hits a point that contains **TEEHR** evaluation output, the user can also look at a **Nexus** point on the dropdown assigned and enter the id of the **Nexus** points that contains **TEEHR** evaluation output.
 
 ![Figure 6: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for a selected outlet nexus point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labeled “ngen”; orange line)](fig/fig6-6.png){alt='alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The left panel contains a "Time Series Menu" where the user can select a Nexus ID, variable (e.g., flow), and TEEHR data source. A map in the center displays a stream reach with a highlighted section representing the drainage basin and a blue point, indicating the selected nexus location. Below the map, a time series plot compares USGS (blue line) and Ngen (orange line) streamflow data from 2017 to 2023.'}
 
