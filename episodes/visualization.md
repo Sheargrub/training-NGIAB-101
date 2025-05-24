@@ -167,7 +167,7 @@ The `ViewOnTethys.sh` script automates updating `ngiab_visualizer.json` and copy
 
 ### NGIAB Visualizer UI
 
-The following figures demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation (hydrographs).
+The following figures demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geospatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation (hydrographs).
 
 **Nexus** points can be visualized when the user selects the output that wants to visualize. Time series can be retrieved by clicking on any of the **Nexus** points, or by changing the select dropdown assigned to the Nexus. 
 
