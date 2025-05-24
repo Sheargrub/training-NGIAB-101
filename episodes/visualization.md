@@ -206,7 +206,7 @@ The Visualizer also allows the user to download data as well from an [S3 bucket]
   ℹ No existing Datastream cache found – a fresh download will be used.
 ```
 
-The `.datastream_ngiab.json` appends the different downlaods with metadata that allows the user to know the file its downloading. The `prefix` belongs to the path on the s3 bucket. The `label` is created wiht the following format: `ngen.<date>_<forecast_type>_<cycle>_<VPU>`
+The `.datastream_ngiab.json` appends the different downloads with metadata that allows the user to know the file being downloaded. The `prefix` belongs to the path on the s3 bucket. The `label` is created with the following format: `ngen.<date>_<forecast_type>_<cycle>_<VPU>`
 
 ```json
 {
