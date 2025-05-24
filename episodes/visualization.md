@@ -21,13 +21,148 @@ exercises: 10
 
 The Data Visualizer component developed using the Tethys Platform [(Swain et al., 2015)](https://doi.org/10.1016/j.envsoft.2015.01.014) complements NGIAB by providing an environment for **geospatial and time series visualization of catchments and nexus points** (locations where objects in the hydrofabric like streams or water bodies connect). Through a web-based architecture, researchers can explore hydrological data in a spatiotemporal context [(CIROH, 2025)](https://github.com/CIROH-UA/ngiab-client). In addition to standard map-based displays, this component also **supports the visualization of the TEEHR output**, including tabular metrics and interactive time series plots.
 
-### Using the Data Visualizer with NGIAB
+## Using the Data Visualizer with NGIAB
+
+### `ViewOnTethys` Script
 
 Like TEEHR, the Data Visualizer can be activated upon execution of the main NGIAB guide script, `guide.sh`. A separate `viewOnTethys.sh` script is also available in the NGIAB-CloudInfra repository.
 
 Once a run is complete, users can launch the Data Visualizer through their web browser when prompted by the guide script. Although TEEHR’s outputs can be displayed within the Data Visualizer, this tool is primarily designed to provide a broad overview of model results. Users seeking TEEHR’s more advanced analysis features can still access them outside the Data Visualizer.
 
-Figures 1 and 2 demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation (hydrographs).
+One of the advantages of the `viewOnTethys.sh` script is that it allows the user to keep multiple outputs for the same hdyrofabric. It prompts the user if he/she wants to use the same oputput directory by renaming it and adding it to the collection of outoputs or if it wants to overwrite it.
+
+```bash
+
+  ⚠ ~/ngiab_visualizer is not empty.
+  → Keep (K) or Fresh start (F)? [K/F]: k
+ℹ Reclaiming ownership of ~/ngiab_visualizer  (sudo may prompt)…
+  ⚠ Directory exists: ~/ngiab_visualizer/gage-10154200
+  → Overwrite (O) or Duplicate (D)? [O/D]: o
+  ✓ Overwritten ➜ ~/ngiab_visualizer/gage-10154200
+Checking for ~/ngiab_visualizer/ngiab_visualizer.json...
+
+```
+
+You should be able to see multiple outputs through the UI:
+
+(fig/fig6-2.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays the ability of the visualizer to use multiple outputs'}
+
+### Visualizer Directory Organization
+
+The Visualizer organizes data in a really simple way. It uses a directory called `ngiab_visualizer` which contains all the different outputs, and it contains a file called `ngiab_visualizer.json` which contains metadata for the visualizer to find the data of the diferent ouputs, that the user might have run through the `./guide.sh` script. The metadata is specifif to the visualizer and it is quite simple. It is a `json` file that provides a list of the outputs by specifying a label, path to the data, and a unique id. All of these is manage by the `./ViewOnTethys.sh` script. 
+
+```json
+{
+  "model_runs": [
+    {
+      "label": "gage-10154200",
+      "path": "/var/lib/tethys_persist/ngiab_preprocess_output/gage-10154200",
+      "date": "2025-05-23:13:51:51",
+      "id": "61026834-4235-4d39-8a8e-f076a8854148",
+      "subset": "",
+      "tags": []
+    },
+    {
+      "label": "gage-20454200",
+      "path": "/var/lib/tethys_persist/ngiab_visualizer/gage-20454200",
+      "date": "2025-05-23:17:00:34",
+      "id": "68f6cf78-188c-4e86-b797-6c40ea36e0e6",
+      "subset": "",
+      "tags": []
+    },
+    {
+      "label": "gage-35054600",
+      "path": "/var/lib/tethys_persist/ngiab_visualizer/gage-35054600",
+      "date": "2025-05-23:17:01:10",
+      "id": "6d0cb736-2dac-4ea0-a3a3-ad26cd45ef36",
+      "subset": "",
+      "tags": []
+    }
+  ]
+}
+
+```
+The path `/var/lib/tethys_persist/` belongs to the `$HOME` env variable of the container running the visualizer. When the user runs the `./ViewOnTethys.sh`, it mounts the directory from the host at `~/ngiab_visualizer` to `/var/lib/tethys_persist/ngiab_visualizer`. 
+
+However, if the user wants more control, the user can copy their data directory to `~/ngiab_visualizer` on the host(not the container) while the container is **stop**, 
+
+```bash
+chown -R $USER: ~/ngiab_visualizer
+cp -R your/data/path ~/ngiab_visualizer
+
+```
+finally the user can open the `~/ngiab_visualizer/ngiab_visualizer.json` on the host(not the container), and add the specific run to the visualizer: 
+
+```json
+....
+    {
+      "label": "gage-35054600",
+      "path": "/var/lib/tethys_persist/ngiab_visualizer<MY_SPECIFIC_OUTPUT_DIRECTORY_NAME>",
+      "date": "2025-05-23:17:01:10",
+      "id": "6d0cb736-2dac-4ea0-a3a3-ad26cd45ef36",
+      "subset": "",
+      "tags": []
+    }
+```
+The user can then run `./ViewOnTethys.sh` script to spin again the container or if the user wants more control and just define the env variables and running the container
+
+```bash
+export CONFIG_FILE="$HOME/.host_data_path.conf"          \
+       TETHYS_CONTAINER_NAME="tethys-ngen-portal"        \
+       TETHYS_REPO="awiciroh/tethys-ngiab"               \
+       TETHYS_TAG="latest"                               \
+       NGINX_PORT=80                                     \
+       MODELS_RUNS_DIRECTORY="$HOME/ngiab_visualizer"    \
+       DATASTREAM_DIRECTORY="$HOME/.datastream_ngiab"    \
+       VISUALIZER_CONF="$MODELS_RUNS_DIRECTORY/ngiab_visualizer.json" \
+       TETHYS_PERSIST_PATH="/var/lib/tethys_persist"     \
+       SKIP_DB_SETUP=false                               \
+       CSRF_TRUSTED_ORIGINS="[\"http://localhost:${NGINX_PORT}\",\"http://127.0.0.1:${NGINX_PORT}\"]"
+```
+
+```bash
+docker run --rm -d \
+  -v "$MODELS_RUNS_DIRECTORY:$TETHYS_PERSIST_PATH/ngiab_visualizer" \
+  -v "$DATASTREAM_DIRECTORY:$TETHYS_PERSIST_PATH/.datastream_ngiab" \
+  -p "$NGINX_PORT:$NGINX_PORT" \
+  --name "$TETHYS_CONTAINER_NAME" \
+  -e MEDIA_ROOT="$TETHYS_PERSIST_PATH/media" \
+  -e MEDIA_URL="/media/" \
+  -e SKIP_DB_SETUP="$SKIP_DB_SETUP" \
+  -e DATASTREAM_CONF="$TETHYS_PERSIST_PATH/.datastream_ngiab" \
+  -e VISUALIZER_CONF="$TETHYS_PERSIST_PATH/ngiab_visualizer/ngiab_visualizer.json" \
+  -e NGINX_PORT="$NGINX_PORT" \
+  -e CSRF_TRUSTED_ORIGINS="$CSRF_TRUSTED_ORIGINS" \
+  "${TETHYS_REPO}:${TETHYS_TAG}"
+```
+
+You should see something like this using `docker ps`
+
+```bash
+docker ps
+
+CONTAINER ID   IMAGE                          COMMAND                  CREATED          STATUS                             PORTS                                 NAMES
+b1818a03de9b   awiciroh/tethys-ngiab:latest   "/usr/local/bin/_ent…"   25 seconds ago   Up 24 seconds (health: starting)   0.0.0.0:80->80/tcp, [::]:80->80/tcp   tethys-ngen-portal
+
+```
+
+Once it is healthy, you can acess it at localhost on the `NGINX_PORT` that you defined: http://localhost:${NGINX_PORT}
+
+
+The `ViewOnTethys.sh` script does this for the user. It append the model ouputs to `ngiab_visualizer.json` file and copy the output data folder that you want to use to `~/ngiab_visualizer`
+
+## Visualizer UI
+
+The following figures demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation (hydrographs).
+
+**Nexus** points can be visualized when the user selects the output that wants to visualize. Time series can be retrieved by clicking on any of the **Nexus** points, or by changing the select dropdown assing to the Nexus. 
+
+(fig/fig6-3.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Nexus points'}
+
+**Troute**  variables time series can also be displayed using the **Troute** select dropdown.
+
+(fig/fig6-4.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Troute variables'}
+
 
 ![Figure 1: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for an entire study area (Provo River near Woodland, UT).](fig/fig6-1.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays a the Provo River basin network near Woodland, UT. The gray shaded area represents the basin, dark gray lines represent catchment boundaries, black lines represent major streams, and blue circles with numbers in the middle represent the number of nexus points near that circle.'}
 
