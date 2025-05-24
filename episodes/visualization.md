@@ -21,6 +21,8 @@ exercises: 10
 
 The Data Visualizer component developed using the Tethys Platform [(Swain et al., 2015)](https://doi.org/10.1016/j.envsoft.2015.01.014) complements NGIAB by providing an environment for **geospatial and time series visualization of catchments and nexus points** (locations where objects in the hydrofabric like streams or water bodies connect). Through a web-based architecture, researchers can explore hydrological data in a spatiotemporal context [(CIROH, 2025)](https://github.com/CIROH-UA/ngiab-client). In addition to standard map-based displays, this component also **supports the visualization of the TEEHR output**, including tabular metrics and interactive time series plots.
 
+![Figure 1: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for an entire study area (Provo River near Woodland, UT).](fig/fig6-1.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The map displays a the Provo River basin network near Woodland, UT. The gray shaded area represents the basin, dark gray lines represent catchment boundaries, black lines represent major streams, and blue circles with numbers in the middle represent the number of nexus points near that circle.'}
+
 ## Using the Data Visualizer with NGIAB
 
 ### `ViewOnTethys` Script
@@ -45,7 +47,7 @@ Checking for ~/ngiab_visualizer/ngiab_visualizer.json...
 
 You should be able to see multiple outputs through the UI:
 
-(fig/fig6-2.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays the ability of the visualizer to use multiple outputs'}
+![Figure 2: NGIAB Visualizer dropdown for multiple outputs ](fig/fig6-2.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The map displays the ability of the visualizer to use multiple outputs'}
 
 ### Visualizer Directory Organization
 
@@ -151,22 +153,39 @@ Once it is healthy, you can acess it at localhost on the `NGINX_PORT` that you d
 
 The `ViewOnTethys.sh` script does this for the user. It append the model ouputs to `ngiab_visualizer.json` file and copy the output data folder that you want to use to `~/ngiab_visualizer`
 
-## Visualizer UI
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+### key points
+
+The `ViewOnTethys.sh` script does a lot for the user. It append the model ouputs to `ngiab_visualizer.json` file and copy the output data folder that you want to use to `~/ngiab_visualizer`. However, if the user wants more control defining `env` varibles  and running the `awiciroh/tethys-ngiab` image
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+### Visualizer UI
 
 The following figures demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation (hydrographs).
 
 **Nexus** points can be visualized when the user selects the output that wants to visualize. Time series can be retrieved by clicking on any of the **Nexus** points, or by changing the select dropdown assing to the Nexus. 
 
-(fig/fig6-3.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Nexus points'}
+![Figure 3: NGIAB Visualizer time series visualization from Nexus points](fig/fig6-3.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Nexus points'}
 
 **Troute**  variables time series can also be displayed using the **Troute** select dropdown.
 
-(fig/fig6-4.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Troute variables'}
+![Figure 4: NGIAB Visualizer time series visualization from Troute variables](fig/fig6-4.png){alt='A screenshot of the NGIAB and DataStream Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Troute variables'}
 
+**Catchments** time series can be retrieved by clicking on any of the **Catchments** polygons, or by changing the select dropdown assigned to the Catchments.
 
-![Figure 1: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for an entire study area (Provo River near Woodland, UT).](fig/fig6-1.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The map displays a the Provo River basin network near Woodland, UT. The gray shaded area represents the basin, dark gray lines represent catchment boundaries, black lines represent major streams, and blue circles with numbers in the middle represent the number of nexus points near that circle.'}
+![Figure 5: NGIAB Visualizer time series visualization for Catchments](fig/fig6-5.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The map displays the ability of the visualizer to retrieve time series from Catchments variables'}
 
-![Figure 2: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for a selected outlet nexus point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labeled “ngen”; orange line) with the performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.](fig/fig1-5.png){alt='A screenshot of the NextGen in a Box Visualizer web interface. The left panel contains a "Time Series Menu" where the user can select a Nexus ID, variable (e.g., flow), and TEEHR data source. A map in the center displays a stream reach with a highlighted section representing the drainage basin and a blue point, indicating the selected nexus location. Below the map, a time series plot compares USGS (blue line) and Ngen (orange line) streamflow data from 2017 to 2023. On the lower left, a table labeled "Teehr Metrics" presents performance metrics (e.g., Kling-Gupta Efficiency, Nash-Sutcliffe Efficiency, and Relative Bias) for the selected model versus reference data.'}
+**TEEHR** evaluation can be visualized when the user hits a point that contains **TEERH** evaluation output, the user can also look at a **Nexus** point on the dropdown assigned and enter the id of the **Nexus** points that contains **TEERH** evaluation output.
+
+![Figure 6: A map showing the geospatial visualization using the Data Visualizer within the Tethys framework for a selected outlet nexus point as well as displaying a time series plot between observed (labeled “USGS”; blue line) and simulated (labeled “ngen”; orange line)](fig/fig6-6.png){alt='alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The left panel contains a "Time Series Menu" where the user can select a Nexus ID, variable (e.g., flow), and TEEHR data source. A map in the center displays a stream reach with a highlighted section representing the drainage basin and a blue point, indicating the selected nexus location. Below the map, a time series plot compares USGS (blue line) and Ngen (orange line) streamflow data from 2017 to 2023.'}
+
+Similarly, a **TEEHR** evaluation metric can be visualized by going to the metrics tab
+
+[Figure 7: NGIAB Visualizer performance metrics (KGE, NSE, and relative bias). The Visualizer can also show the performance of the NWM 3.0 compared to the observed time series.](fig/fig6-7.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface. The map displays the ability of the visualizer to retrieve the TEEHR metrics on a table."Teehr Metrics" presents performance metrics (e.g., Kling-Gupta Efficiency, Nash-Sutcliffe Efficiency, and Relative Bias) for the selected model versus reference data.'}
 
 ::::::::::::::::::::::::::::::::::::: callout
 
