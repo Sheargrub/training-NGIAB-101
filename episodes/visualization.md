@@ -232,13 +232,13 @@ This functionality allows the user to be able to quicklu search the data they wa
 
 Use the `ViewOnTethys.sh` script to launch the Data Visualizer in Docker, then open `http://localhost:${NGINX_PORT}` in your browser. Explore at least three different visualization modes—such as Nexus time series, catchment hydrographs, and TEEHR performance metrics. Next, edit `~/ngiab_visualizer/ngiab_visualizer.json` to add a new model run (define its label and path), restart the visualizer, and confirm it appears in the dropdown menu.
 
-:::
-
 ::::::::::::::::::::::::::::::::::::: keypoints
+
 - The Data Visualizer (built on the Tethys Platform) provides interactive geospatial maps and time series plots for NextGen model outputs in NGIAB.
 - It integrates seamlessly with NGIAB via `guide.sh` or `ViewOnTethys.sh`.
 - Model outputs reside under `~/ngiab_visualizer`, with metadata stored in `ngiab_visualizer.json`.
 - You can visualize Nexus points, catchment summaries, Troute variables, and TEEHR hydrographs and performance metrics.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/
