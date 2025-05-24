@@ -206,10 +206,7 @@ The Visualizer also allows the user to download data as well from an [S3 bucket]
   ℹ No existing Datastream cache found – a fresh download will be used.
 ```
 
-The `.datastream_ngiab.json` appends the different downlaods with metadata that allows the user to know the file its downloading. The `prefix` belongs to the path on the s3 bucket. The `label` is created wiht the following format: `ngen.<date>_<forecast_type>_<cycle>_<VPU>` 
-
-**Note** assuming only the first ensemble. If we are specific it will look like this: `ngen.<date>_<forecast_type>_<cycle>_<ensemble>_<VPU>`
-
+The `.datastream_ngiab.json` appends the different downlaods with metadata that allows the user to know the file its downloading. The `prefix` belongs to the path on the s3 bucket. The `label` is created wiht the following format: `ngen.<date>_<forecast_type>_<cycle>_<VPU>`
 
 ```json
 {
@@ -225,6 +222,9 @@ The `.datastream_ngiab.json` appends the different downlaods with metadata that 
     ]
 }
 ```
+
+**Note** assuming only the first ensemble. If we are specific it will look like this: 
+`ngen.<date>_<forecast_type>_<cycle>_<ensemble>_<VPU>`
 
 This functionality allows the user to be able to quicklu search the data they want from the [S3 bucket](https://datastream.ciroh.org/index.html) containing the output of the [NextGen DataStream](https://github.com/CIROH-UA/ngen-datastream). They can explore and download as needed.
 
