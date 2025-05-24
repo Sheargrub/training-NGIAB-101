@@ -148,22 +148,24 @@ b1818a03de9b   awiciroh/tethys-ngiab:latest   "/usr/local/bin/_ent…"   25 seco
 
 ```
 
-Once it is healthy, you can acess it at localhost on the `NGINX_PORT` that you defined: http://localhost:${NGINX_PORT}
+Once it's healthy, you can access the visualizer at:
+
+`http://localhost:${NGINX_PORT}`
 
 
-The `ViewOnTethys.sh` script does this for the user. It append the model ouputs to `ngiab_visualizer.json` file and copy the output data folder that you want to use to `~/ngiab_visualizer`
+The `ViewOnTethys.sh` script automates updating `ngiab_visualizer.json` and copying your model output into `~/ngiab_visualizer`.
+
+::: callout-keypoints
+
+### Key points
+
+- `ViewOnTethys.sh` automates adding model outputs to `ngiab_visualizer.json` and syncing data to `~/ngiab_visualizer`.
+- To customize your setup, set environment variables and run the `awiciroh/tethys-ngiab` Docker image manually.
+
+:::
 
 
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-### key points
-
-The `ViewOnTethys.sh` script does a lot for the user. It append the model ouputs to `ngiab_visualizer.json` file and copy the output data folder that you want to use to `~/ngiab_visualizer`. However, if the user wants more control defining `env` varibles  and running the `awiciroh/tethys-ngiab` image
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-### Visualizer UI
+### NGIAB Visualizer UI
 
 The following figures demonstrate several ways the Data Visualizer can be used to visualize model outputs, including geopatial visualization for nexus points, catchment-based visualization, and TEEHR time series representation (hydrographs).
 
@@ -189,21 +191,58 @@ Similarly, a **TEEHR** evaluation metric can be visualized by going to the metri
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-## Using Data Visualizer with SSH
+### Using Data Visualizer with SSH
 
 To use the Data Visualizer through an Secure Shell (SSH) connection, you will have to set up port forwarding when connecting to the remote machine. Port forwarding will allow you to access a remotely hosted browser session on your local machine. See the instructions under "Using NGIAB through an SSH connection" in the [Advanced Topics episode](/training-NGIAB-101/advanced-topics.html) in this training module. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+### NGIAB DataStream UI
+
+The Visualizer also allows the user to download data as well from an [S3 bucket](https://datastream.ciroh.org/index.html) containing the output of the [NextGen DataStream](https://github.com/CIROH-UA/ngen-datastream). The `ViewOnTethys.sh` script will create a `~/.datastream_ngiab` directory in which it saves all the different outputs downloaded by the visualizer. It will also create a `~/.datastream_ngiab/datastream_ngiab.json` in which metadata will be saved to locate the downloaded output directories. It serves as a cache, so it allows the user to look first at the `~/.datastream_ngiab` before trying to download the data
+
+```bash
+ℹ Reclaiming ownership of /home/aquagio/.datastream_ngiab  (sudo may prompt)…
+  ℹ No existing Datastream cache found – a fresh download will be used.
+```
+
+The `.datastream_ngiab.json` appends the different downlaods with metadata that allows the user to know the file its downloading. The `prefix` belongs to the path on the s3 bucket. The `label` is created wiht the following format: `ngen.<date>_<forecast_type>_<cycle>_<VPU>` 
+
+**Note** assuming only the first ensemble. If we are specific it will look like this: `ngen.<date>_<forecast_type>_<cycle>_<ensemble>_<VPU>`
+
+
+```json
+{
+    "datastream": [
+        {
+            "label": "ngen.20250522_medium_range_06_VPU_02",
+            "bucket": "ciroh-community-ngen-datastream",
+            "prefix": "v2.2/ngen.20250522/medium_range/06/VPU_02/ngen-run.tar.gz",
+            "path": "/var/lib/tethys_persist/.datastream_ngiab/ngen.20250522_medium_range_06_VPU_02",
+            "date": "2021-01-01:00:00:00",
+            "id": "15145d327f19426b890e4465160f963a"
+        }
+    ]
+}
+```
+
+This functionality allows the user to be able to quicklu search the data they want from the [S3 bucket](https://datastream.ciroh.org/index.html) containing the output of the [NextGen DataStream](https://github.com/CIROH-UA/ngen-datastream). They can explore and download as needed.
+
+
+![Figure 8: NGIAB Visualizer Visualization of DataStream Data](fig/fig6-8.png){alt='A screenshot of the  NGIAB and DataStream Visualizer web interface displaying the hydrofabric for DataStream output'}
+
 ## Your Turn
 
-Go ahead and run the Data Visualizer in the guide script, open it in your browser, and explore the visualization of your NextGen run in NGIAB.
+Use the `ViewOnTethys.sh` script to launch the Data Visualizer in Docker, then open `http://localhost:${NGINX_PORT}` in your browser. Explore at least three different visualization modes—such as Nexus time series, catchment hydrographs, and TEEHR performance metrics. Next, edit `~/ngiab_visualizer/ngiab_visualizer.json` to add a new model run (define its label and path), restart the visualizer, and confirm it appears in the dropdown menu.
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+:::
 
-- The Data Visualizer, built on the Tethys Platform, provides interactive geospatial and time series visualization for NextGen model outputs in NGIAB.
-- It complements NGIAB by offering a web-based environment to explore catchments, nexus points, temporal patterns, and TEEHR outputs in your run results.
-- The Data Visualizer runs automatically with the `guide.sh` script.
+### Key points
+
+- The Data Visualizer (built on the Tethys Platform) provides interactive geospatial maps and time series plots for NextGen model outputs in NGIAB.
+- It integrates seamlessly with NGIAB via `guide.sh` or `ViewOnTethys.sh`.
+- Model outputs reside under `~/ngiab_visualizer`, with metadata stored in `ngiab_visualizer.json`.
+- You can visualize Nexus points, catchment summaries, Troute variables, and TEEHR hydrographs and performance metrics.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
