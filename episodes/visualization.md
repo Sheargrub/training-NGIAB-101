@@ -156,12 +156,9 @@ Once it's healthy, you can access the visualizer at:
 The `ViewOnTethys.sh` script automates updating `ngiab_visualizer.json` and copying your model output into `~/ngiab_visualizer`.
 
 ::: callout-keypoints
-
 ### Key points
-
 - `ViewOnTethys.sh` automates adding model outputs to `ngiab_visualizer.json` and syncing data to `~/ngiab_visualizer`.
 - To customize your setup, set environment variables and run the `awiciroh/tethys-ngiab` Docker image manually.
-
 :::
 
 
@@ -237,13 +234,11 @@ Use the `ViewOnTethys.sh` script to launch the Data Visualizer in Docker, then o
 
 :::
 
-### Key points
-
+::::::::::::::::::::::::::::::::::::: keypoints
 - The Data Visualizer (built on the Tethys Platform) provides interactive geospatial maps and time series plots for NextGen model outputs in NGIAB.
 - It integrates seamlessly with NGIAB via `guide.sh` or `ViewOnTethys.sh`.
 - Model outputs reside under `~/ngiab_visualizer`, with metadata stored in `ngiab_visualizer.json`.
 - You can visualize Nexus points, catchment summaries, Troute variables, and TEEHR hydrographs and performance metrics.
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 [r-markdown]: https://rmarkdown.rstudio.com/
