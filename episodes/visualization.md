@@ -31,7 +31,7 @@ Like TEEHR, the Data Visualizer can be activated upon execution of the main NGIA
 
 Once a run is complete, users can launch the Data Visualizer through their web browser when prompted by the guide script. Although TEEHR’s outputs can be displayed within the Data Visualizer, this tool is primarily designed to provide a broad overview of model results. Users seeking TEEHR’s more advanced analysis features can still access them outside the Data Visualizer.
 
-One of the advantages of the `viewOnTethys.sh` script is that it allows the user to keep multiple outputs for the same hdyrofabric. It prompts the user if he/she wants to use the same oputput directory by renaming it and adding it to the collection of outoputs or if it wants to overwrite it.
+One of the advantages of the `viewOnTethys.sh` script is that it allows the user to keep multiple outputs for the same hydrofabric. It prompts the user if they want to use the same output directory by renaming it and adding it to the collection of outputs or if they want to overwrite it.
 
 ```bash
 
