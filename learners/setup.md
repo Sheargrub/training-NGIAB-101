@@ -7,7 +7,9 @@ Welcome to the NextGen In A Box (NGIAB) 101 training module!
 
 ## Source Code and Documentation
 
-The source code for NextGen In A Box (NGIAB) is found at [our GitHub repository](https://github.com/CIROH-UA/NGIAB-CloudInfra). The documentation for NGIAB and its extensions are found on the [CIROH docs](https://docs.ciroh.org/docs/products/Community%20Hydrologic%20Modeling%20Framework/).
+The source code for NextGen In A Box (NGIAB) is found at [our GitHub repository](https://github.com/CIROH-UA/NGIAB-CloudInfra). The full documentation for NGIAB and its extensions are found on the [CIROH docs](https://docs.ciroh.org/docs/products/ngiab/).
+
+This lesson was built with [The Carpentries Workbench][https://carpentries.github.io/sandpaper-docs]. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -17,6 +19,7 @@ For all users, the [Key Points summary page](/training-NGIAB-101/key-points.html
 
 Note: This module requires you to use Bash scripting in your command line and Git. All commands will be given in this module. However, if you are interested in learning more, you can refer to this [quick Bash tutorial by Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview), [this basic Git tutorial in the Git documentation](https://git-scm.com/docs/gittutorial), and this [Git workflow tutorial by CIROH](https://github.com/AlabamaWaterInstitute/data_access_examples/blob/main/doc/GIT_USAGE.md).
 
+<!--
 ::::::::::::::::::::::::::::::::::::: callout
 
 ## DevCon 2025 NGIAB Workshop Attendees
@@ -30,6 +33,7 @@ Are you joining us for the DevCon 2025 NGIAB workshop? We have prepared two DevC
 After the workshop, feel free to explore the rest of this module to learn more about NGIAB!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+-->
 
 ::::::::::::::::::::::::::::::::::::: callout
 
