@@ -1,0 +1,51 @@
+name: Deploy static content to composite target
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["gh-pages"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  TARGET_REPO: CIROH-UA/subdomain-ngiab
+  TARGET_PATH: /ngiab-101
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: ci-ngiab-101-prod
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Set GitHub Actions as Commit Author
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: "production"
+      
+      # The native Carpentries workflows already take care of building, so this can be deployed with no extra steps!
+
+      - name: Deploy to composite repository
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: "production/"
+          ssh-key: ${{ secrets.SSH_DEPLOY_NGIAB_SUBDOMAIN }}
+          respository-name: ${{ env.TARGET_REPO }}
+          target-folder: ${{ env.TARGET_PATH }}
+          clean: true # Set to false if deploying to a composite repository's root!
