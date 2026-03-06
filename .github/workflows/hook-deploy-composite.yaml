@@ -1,7 +1,7 @@
 name: Deploy static content to composite target
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the GitHub pages branch
   push:
     branches: ["gh-pages"]
 
@@ -30,6 +30,7 @@ jobs:
       - name: Deploy to composite repository
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          folder: '.'
           ssh-key: ${{ secrets.SSH_DEPLOY_NGIAB_SUBDOMAIN }}
           repository-name: ${{ env.TARGET_REPO }}
           target-folder: ${{ env.TARGET_PATH }}
