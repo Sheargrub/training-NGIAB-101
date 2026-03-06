@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  TARGET_REPO: CIROH-UA/subdomain-ngiab
+  TARGET_REPO: ${{ vars.COMPOSITE_TARGET_REPO }}
   TARGET_PATH: /ngiab-101
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
