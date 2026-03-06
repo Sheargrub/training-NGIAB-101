@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: 'gh-pages'
 
       # The native Carpentries workflows already take care of building, so this can be deployed with no extra steps!
       - name: Deploy to composite repository
