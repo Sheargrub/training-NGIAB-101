@@ -29,23 +29,17 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Set GitHub Actions as Commit Author
-        run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
-
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: "production"
       
       # The native Carpentries workflows already take care of building, so this can be deployed with no extra steps!
 
       - name: Deploy to composite repository
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: "production/"
           ssh-key: ${{ secrets.SSH_DEPLOY_NGIAB_SUBDOMAIN }}
           respository-name: ${{ env.TARGET_REPO }}
           target-folder: ${{ env.TARGET_PATH }}
           clean: true # Set to false if deploying to a composite repository's root!
+          git-config-name: "github-actions"
+          git-config-email: "github-actions@github.com"
