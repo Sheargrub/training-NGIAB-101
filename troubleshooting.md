@@ -2,198 +2,87 @@
 title: DevCon 2025 Troubleshooting
 ---
 
-# 💧 NGIAB-CloudInfra – DevCon 2025 Workshop Setup Guide
+# NGIAB-CloudInfra – DevCon 2025 Workshop Setup Guide
 
 Welcome to the NGIAB Workshop!  
-This guide will help you install everything, run the model, and troubleshoot problems — **no technical background required**.
-
-> 📦 NGIAB stands for **NextGen In A Box** – a simplified way to run the NextGen National Water Model on your local computer using Docker.
-
-Organized and supported by **Arpita Patel** and the NGIAB team.
+This guide will help you troubleshoot problems.
 
 ----------
 
-## 💻 1. Pre-Setup Requirements
+## Pre-Setup Requirements
 
-> ✉️ **Note:** You will be provided with a cloud instance (Jetstream or 2i2c) that already includes all the required tools (Docker, WSL, libraries). You do **not** need to install anything on your personal computer.
-
-We will provide:
-
--   Pre-configured **Jetstream** and **2i2c** instances
-    
--   Docker and required dependencies already installed
-    
-
-You will only need to connect and log in. Instructions for that are below.
+You will be provided with a cloud instance (Jetstream) that already includes all the required tools (Docker and libraries). You will need the login credentials emailed to you before the workshop and a Virtual Network Computing (VNC) client installed.
 
 ----------
 
-## 🌐 Wi-Fi Access @ University
+## Wi-Fi Access
 
-_Instructions for connecting to university Wi-Fi will be added here._
-
-----------
-
-## 🔑 Login Instructions
-
-_Login instructions for accessing Jetstream or 2i2c instances will be added here._
+Instructions for connecting to UVM's Guest Wi-Fi are found on the [UVM IT page](https://www.uvm.edu/it/catalog/service/guest-access-guestnet).
 
 ----------
 
-## 📂 2. Set Up Project Folder
+## Troubleshooting Checklist
 
-Once logged into your instance, open your terminal and run the following:
+If you didn’t get the expected output, check these:
 
-```
-mkdir -p ~/NextGen/ngen-data
-cd ~/NextGen/ngen-data
-```
+### Issues with VNC Client or Port Forwarding
 
-----------
+If you are having issues with your VNC client, try using a different service, or port forward to your local web browser. Try both [RealVNC](https://www.realvnc.com/en/connect/download/viewer/) and [TigerVNC](https://tigervnc.org/). Try entering `localhost:5906`, and if that doesn't work, enter `5906`. Lastly, try port forwarding. 
 
-## 🌐 3. Download Input Data
+If you continue to have problems, make sure that the port you are using in your `ssh` command is not being used on your local machine. You can use the `netstat` command on all platforms to check which ports are being used. 
 
-Pick **one** dataset to work with.
+### No Browser on Web Desktop
 
-### Option 1: Provo River (Recommended)
+If Firefox is not installed on the Jetstream image's web desktop, run this command:
 
-```
-wget https://ciroh-ua-ngen-data.s3.us-east-2.amazonaws.com/AWI-009/AWI_16_10154200_009.tar.gz
-tar -xf AWI_16_10154200_009.tar.gz
+```bash
+sudo apt install firefox
 ```
 
+### Invalid Data Preprocess Command
 
-----------
+Make sure that you are copying the command as one line, without any newline characters.
 
-## 🧱 4. Clone NGIAB and Run
-
-Now go **up one folder** and clone the repo:
-
-```
-cd ~/NextGen
-git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
-cd NGIAB-CloudInfra
-```
-
-Then, make the script executable and run it:
-
-```
-chmod +x guide.sh
-./guide.sh
-```
-
-----------
-
-## 🗂 Expected Output Structure
-
-After running, you’ll have:
-
-```
-ngen-run/
-├── config/
-├── forcings/
-├── outputs/
-├── lakeout/
-├── metadata/
-├── restart/
-```
-
-This is your simulation folder — the model reads from it and writes results here.
-
-----------
-
-## 👀 (Optional) Visualize the Output
-
-```
-chmod +x viewOnTethys.sh
-./viewOnTethys.sh
-```
-
-This will launch a web-based interface to explore the output.
-
-----------
-
-## ⚡ Only If You're Stuck: Troubleshooting Checklist
-
-If you did everything above but didn’t get the expected output, check these:
-
-### 🧭 Are You on the Cloud Instance or Local Machine?
+### Are You on the Cloud Instance or Local Machine?
 
 Sometimes people accidentally run commands on their local machine instead of the cloud instance. Here's how to check:
 
-```
+```bash
 whoami
 ```
 
-✅ If you're on the ** 2i2c cloud instance**, you’ll see something like:
+✅ If you're on the **Jetstream cloud instance**, you’ll see this:
 
 ```
-jovyan 
+exouser
 ```
 
 ❌ If it says something like `DESKTOP-ABC123`, `MacBook-Pro.local`, or anything else personal — **you're on your own computer**.
 
 **Fix:** Go back and follow the login instructions provided earlier to connect to your assigned instance before proceeding.
 
-### 📅 Are You in the Right Directory?
+### Are You in the Right Directory?
 
 Before running any script, always check your current folder:
 
-```
+```bash
 pwd
 ```
 
 You **should see something like**:
 
 ```
-/home/yourname/NextGen/NGIAB-CloudInfra
+/home/exouser/NGIAB_demo/NGIAB-CloudInfra
 ```
 
 If not, move into the folder:
 
-```
-cd ~/NextGen/NGIAB-CloudInfra
-```
-✅ Done! I’ve added a check that lets participants verify whether they’ve downloaded and extracted the dataset properly. It appears in the "⚡ Only If You're Stuck: Troubleshooting Checklist" section right after the instance check.
-
-Here’s the new part I added to your **Canvas document**:
-
-----------
-
-### 📦 Check: Did You Download the Dataset?
-
-Run this command:
-
 ```bash
-ls ~/NextGen/ngen-data
-
-```
-
-You should see a folder like:
-
-```
-AWI_16_10154200_009
-
-```
-
-✅ If you see it, your dataset was downloaded and extracted correctly.  
-❌ If you see nothing or just the `.tar.gz` file, run the following again:
-
-```bash
-tar -xf AWI_16_10154200_009.tar.gz
-
+cd ~/NGIAB_demo/NGIAB-CloudInfra
 ```
 
 ----------
 
-## 🙋 Need Help?
+## Need Help?
 
 -   Ask a facilitator during the session
-    
-
-    
-
-----------
-
-
-

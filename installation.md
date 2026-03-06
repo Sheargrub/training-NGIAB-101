@@ -25,6 +25,15 @@ This episode can be a standalone tutorial for those who want a quick introductio
 
 This lesson guides you through installing and setting up NGIAB, a containerized solution designed to simplify running the NextGen modeling framework locally. NGIAB leverages Docker containers to ensure consistent and reproducible runs.
 
+::::::::::::::::::::::::::::::::::::: callout
+
+## Are you using an HPC?
+
+Instead of following these instructions, follow the guidance in the HPC sections in [Advanced Topics](/training-NGIAB-101/advanced-topics.html).
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 ## System Requirements
 
 Before installing NGIAB, ensure you have:
@@ -37,7 +46,7 @@ Before installing NGIAB, ensure you have:
 
 ## Connecting to a remote machine through SSH?
 
-To use the Data Visualizer through an Secure Shell (SSH) connection, you will have to set up port forwarding when connecting to the remote machine. Port forwarding will allow you to access a remotely hosted browser session on your local machine. See the instructions under "Using NGIAB through an SSH connection" in the [Advanced Topics episode](/site/docs/advanced-topics.html) in this training module. 
+To use the Data Visualizer through an Secure Shell (SSH) connection, you will have to set up port forwarding when connecting to the remote machine. Port forwarding will allow you to access a remotely hosted browser session on your local machine. See the instructions under "Using NGIAB through an SSH connection" in the [Advanced Topics episode](/training-NGIAB-101/advanced-topics.html) in this training module. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -49,7 +58,7 @@ To use the Data Visualizer through an Secure Shell (SSH) connection, you will ha
 Note: Users who already have Docker installed will still need to install a separate WSL distro and set it as their default, if they have not already.
 
 1. Install Windows Subsystem for Linux (WSL):
-   ``` bash
+   ``` PowerShell
    wsl --install
 	```
 
@@ -64,6 +73,30 @@ Note: Users who already have Docker installed will still need to install a separ
     
     ```
     This should generate a message that shows that your installation is working.
+
+5. Install Astral UV:
+
+    ```bash
+    # Install UV
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # Alternatively, install via pip if the above fails
+    pip install uv
+    ```
+
+::::::::::::::::::::::::::::::::::::: caution
+
+### CAUTION: WSL distributions
+
+NGIAB commands cannot be run through the `docker-desktop` distribution. If you installed Docker before WSL, you will likely need to install a new WSL distribution and set it as your default.
+
+For example, Ubuntu can be installed and set as the default distribution with the following commands:
+```bash
+wsl --install -d Ubuntu
+wsl --setdefault Ubuntu
+
+```
+
+:::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::
 
@@ -83,6 +116,15 @@ Note: Users who already have Docker installed will still need to install a separ
     ```
     This should generate a message that shows that your installation is working.
 
+4. Install Astral UV.
+
+    ```bash
+    # Install UV
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # It can be installed via pip if that fails
+    # pip install uv
+    ```
+
 ::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
@@ -99,6 +141,15 @@ Note: Users who already have Docker installed will still need to install a separ
     
     ```
     This should generate a message that shows that your installation is working.
+
+3. Install Astral UV.
+
+    ```bash
+    # Install UV
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # It can be installed via pip if that fails
+    # pip install uv
+    ```
 
 ::::::::::::::::::::::::
 
@@ -207,6 +258,25 @@ tar  -xf  AWI_16_10154200_009.tar.gz
 
 ### Step 3: Clone and Run NGIAB
 
+::::::::::::::::::::::::::::::::::::: caution
+
+### CAUTION: For Windows users: pulling with LFs
+
+Before cloning the repository, please ensure that Git is configured to pull with LF line breaks instead of CRLFs. If CRLFs are used, then the carriage return characters will prevent the shell scripts from running properly. 
+
+There are a couple options to configure this.
+
+1. Visual Studio Code can be used to manually toggle between line breaks. 
+
+2. Git can be configured from the command line.
+
+```bash
+git config --global core.autocrlf false
+```
+
+3. Download, extract, and run [this interactive `.bat` script](data/ngiab-newline-fixer.zip)
+:::::::::::::::::::::::::::::::::::::::::::::
+
 ```bash
 cd ../  # back to NextGen folder
 git clone https://github.com/CIROH-UA/NGIAB-CloudInfra.git
@@ -272,13 +342,13 @@ cd ~/NextGen/NGIAB-CloudInfra
 
 Are you interested in customizing your run with your own catchments (watersheds) and run configurations? Do you want to explore more functionalities of NGIAB? Check out the following episodes:
 
--   [Data Preparation - NGIAB Data Preprocessor](/site/docs/data-preparation.html)
+-   [Data Preparation - NGIAB Data Preprocessor](/training-NGIAB-101/data-preparation.html)
     
--   [Evaluation - NGIAB TEEHR Integration](/site/docs/evaluation.html)
+-   [Evaluation - NGIAB TEEHR Integration](/training-NGIAB-101/evaluation.html)
     
--   [Visualization - Data Visualizer](/site/docs/visualization.html)
+-   [Visualization - Data Visualizer](/training-NGIAB-101/visualization.html)
 
--   [Advanced Topics](/site/docs/advanced-topics.html)
+-   [Advanced Topics](/training-NGIAB-101/advanced-topics.html)
     
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
