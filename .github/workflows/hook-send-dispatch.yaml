@@ -16,4 +16,4 @@ jobs:
       - name: 'Send repository dispatch'
         uses: peter-evans/repository-dispatch@v4
         with:
-          event-type: deployment_pushed
+          event-type: deployment-pushed
