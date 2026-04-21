@@ -233,7 +233,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#data-preprocess-tool">Data Preprocess Tool</a></li>
 <li><a href="#nextgen-run-directory-structure-ngen-run">NextGen Run Directory Structure (<code>ngen-run/</code>)</a></li>
@@ -416,7 +416,7 @@ installing it.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">uvx</span> <span class="at">--from</span> ngiab_data_preprocess cli <span class="at">-i</span> gage-10154200 <span class="at">-sfr</span> <span class="at">--start</span> 2017-09-01 <span class="at">--end</span> 2018-09-01 <span class="at">--source</span> aorc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">uvx</span> <span class="at">--from</span> ngiab_data_preprocess cli <span class="at">-i</span> gage-10154200 <span class="at">-sfr</span> <span class="at">--start</span> 2017-09-01 <span class="at">--end</span> 2018-09-01 <span class="at">--source</span> aorc</span></code></pre>
 </div>
 <p><code>uvx --from ngiab_data_preprocess cli</code> indicates that the
 Data Preprocess tool will run without the user installing it. The
@@ -439,7 +439,7 @@ Preprocess GitHub page</a>.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">uv</span> run cli <span class="at">-i</span> gage-10155000 <span class="at">-sfr</span> <span class="at">--start</span> 2022-08-13 <span class="at">--end</span> 2022-08-23</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">uv</span> run cli <span class="at">-i</span> gage-10155000 <span class="at">-sfr</span> <span class="at">--start</span> 2022-08-13 <span class="at">--end</span> 2022-08-23</span></code></pre>
 </div>
 <p><code>uv run cli</code> indicates that the Data Preprocess CLI within
 your activated Astral UV environment will run. The <code>-i</code> flag
@@ -461,7 +461,7 @@ the time period 2022-01-01 to 2022-02-28.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ngiab_data_cli <span class="at">-i</span> cat-7080 <span class="at">-f</span> <span class="at">--start</span> 2022-01-01 <span class="at">--end</span> 2022-02-28</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">python</span> <span class="at">-m</span> ngiab_data_cli <span class="at">-i</span> cat-7080 <span class="at">-f</span> <span class="at">--start</span> 2022-01-01 <span class="at">--end</span> 2022-02-28</span></code></pre>
 </div>
 <p><code>python -m ngiab_data_cli</code> indicates that the Data
 Preprocess CLI tool will execute.</p>
@@ -614,7 +614,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/CIROH-UA/varnish/tree/93b60afcd3653ecde8cdf672fc782d83a37801a7" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/CIROH-UA/varnish/tree/93b60afcd3653ecde8cdf672fc782d83a37801a7" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -637,7 +637,7 @@ any links that you are not going to use.
   "identifier": "https://CIROH-UA.github.io/training-NGIAB-101/data-preparation.html",
   "dateCreated": "2025-05-19",
   "dateModified": "2026-03-06",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-21"
 }
 
   </script><script>
