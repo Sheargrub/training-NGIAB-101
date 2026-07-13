@@ -1,7 +1,7 @@
 ---
 title: Setup
 ---
-Welcome to the NextGen In A Box (NGIAB) 101 training module! 
+Welcome to the NextGen In A Box (NGIAB) 101 training module!
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -11,32 +11,32 @@ The source code for NextGen In A Box (NGIAB) is found at [our GitHub repository]
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-To dive right into NGIAB as quickly as possible, follow the quick start guide on our [GitHub repository](https://github.com/CIROH-UA/NGIAB-CloudInfra), or head straight to our second episode, Installation. If you are interested in taking your time and learning in-depth about the features of NGIAB, follow the episodes in this module. 
+To dive right into NGIAB as quickly as possible, follow the quick start guide on our [GitHub repository](https://github.com/CIROH-UA/NGIAB-CloudInfra/blob/main/docs/02_INSTALL.md), or head straight to our second episode, Installation. If you are interested in taking your time and learning in-depth about the features of NGIAB, follow the episodes in this module.
 
-For all users, the [Key Points summary page](/training-NGIAB-101/key-points.html) and the [Glossary](/training-NGIAB-101/reference.html) may be useful references. The [Advanced Topics episode](/training-NGIAB-101/advanced-topics.html) is optional, but may contain useful content depending on your specific use case.
+For all users, the [Glossary](./reference.html) may be a useful reference. The [Advanced Topics episode](./advanced-topics.html) is optional, but may contain useful content depending on your specific use case.
 
 Note: This module requires you to use Bash scripting in your command line and Git. All commands will be given in this module. However, if you are interested in learning more, you can refer to this [quick Bash tutorial by Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview), [this basic Git tutorial in the Git documentation](https://git-scm.com/docs/gittutorial), and this [Git workflow tutorial by CIROH](https://github.com/AlabamaWaterInstitute/data_access_examples/blob/main/doc/GIT_USAGE.md).
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-## DevCon 2025 NGIAB Workshop Attendees
-Are you joining us for the DevCon 2025 NGIAB workshop? We have prepared two DevCon-specific documents for you.
-
-- [DevCon 2025 Jetstream Instructions](/training-NGIAB-101/devcon25js.html) will walk you through the specific steps we will take in this hands-on workshop. 
-- [DevCon 2025 Troubleshooting](/training-NGIAB-101/troubleshooting.html) contains useful reference material if you are stuck during the workshop. 
-
-**These documents are key, since we will not be following the default episodes exactly as written.**
-
-After the workshop, feel free to explore the rest of this module to learn more about NGIAB!
+## HPC Users
+Are you planning on running NGIAB on an HPC? You can follow the episodes in order, but replace Episode 2: Installation and Setup with the HPC-specific instructions in the [Advanced Topics module](./advanced-topics.html).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-## HPC Users
-Are you planning on running NGIAB on an HPC? You can follow the episodes in order, but replace Episode 2: Installation and Setup with the HPC-specific instructions in the [Advanced Topics module](/training-NGIAB-101/advanced-topics.html).
+## 2i2c JupyterHub Users
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+Are you planning on running NGIAB through CIROH-2i2c JupyterHub? If so, you do not need to install Docker, NGIAB, or supporting software on your local machine.
+
+Instead, open the HydroShare resource below and select **Open With → CIROH-2i2c JupyterHub**:
+
+https://www.hydroshare.org/resource/27045581bdea4808a393330f2417379c/
+
+The resource contains a complete NextGen modeling workflow with notebooks for data preparation, model execution, evaluation, output analysis, and calibration. Once your JupyterHub server starts, you can begin working through the workflow immediately in the cloud environment.
+
+::::::::::::::::::::::::::::::::::::::::::::
 
 ## System Requirements
 
@@ -65,7 +65,7 @@ The Installation episode will walk you through the steps to install Windows Subs
 
 ### Linux
 
-- **Software:** Docker, Git, Astral UV  
+- **Software:** Docker, Git, Astral UV
 - **Recommended Minimum RAM:** 8 GB
 
 ::::::::::::::::::::::::
